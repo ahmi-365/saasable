@@ -1,8 +1,7 @@
-'use client';
 import PropTypes from 'prop-types';
 
 // @next
-import NextLink from 'next/link';
+import { NextLink } from '@/components/routes';
 
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Divider from '@mui/material/Divider';

@@ -1,7 +1,5 @@
-'use client';
-
 // @next
-import NextLink from 'next/link';
+import { NextLink } from '@/components/routes';
 
 // @mui
 import Grid from '@mui/material/Grid';
@@ -135,7 +133,7 @@ export default function Footer7() {
     <Stack sx={{ alignItems: 'flex-start', gap: { xs: 1.5, sm: 3 } }}>
       <LogoSection />
       <Typography variant="h6" sx={{ maxWidth: { sm: 280 }, mb: { xs: -1, sm: -2.5 } }}>
-        {process.env.NEXT_PUBLIC_VERSION}
+        {import.meta.env.VITE_VERSION}
       </Typography>
       <Typography variant="body2" sx={{ maxWidth: { sm: 280 } }}>
         Explore the different versions of our {branding.brandName} template.

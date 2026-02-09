@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Button from '@mui/material/Button';
 
 // @project
-import { NextLink } from 'src/components/routes';
+import { NextLink } from '@/components/routes';
 
 /***************************  NAVBAR - SECONDARY BUTTON  ***************************/
 

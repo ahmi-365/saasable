@@ -1,5 +1,3 @@
-'use client';
-
 // @mui
 import { keyframes } from '@mui/material/styles';
 import Avatar from '@mui/material/Avatar';

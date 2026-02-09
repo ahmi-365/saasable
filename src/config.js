@@ -1,5 +1,6 @@
-// @next
-import { Archivo, Figtree, Roboto } from 'next/font/google';
+// Font families - loaded via CSS in globals.css
+// Add to globals.css:
+// @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Figtree:wght@400;500;600;700&family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
 export let Themes;
 
@@ -27,10 +28,6 @@ export default config;
 
 /***************************  THEME - FONT FAMILY  ***************************/
 
-const fontRobot = Roboto({ subsets: ['latin'], weight: ['100', '300', '400', '500', '700', '900'] });
-const fontArchivo = Archivo({ subsets: ['latin'], weight: ['400', '500', '600', '700'] });
-const fontFigtree = Figtree({ subsets: ['latin'], weight: ['400', '500', '600', '700'] });
-
-export const FONT_ROBOTO = fontRobot.style.fontFamily;
-export const FONT_ARCHIVO = fontArchivo.style.fontFamily;
-export const FONT_FIGTREE = fontFigtree.style.fontFamily;
+export const FONT_ROBOTO = '"Roboto", sans-serif';
+export const FONT_ARCHIVO = '"Archivo", sans-serif';
+export const FONT_FIGTREE = '"Figtree", sans-serif';

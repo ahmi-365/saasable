@@ -1,17 +1,17 @@
-'use client';
 import PropTypes from 'prop-types';
 
 import { Suspense, useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
 // @mui
+import CssBaseline from '@mui/material/CssBaseline';
 import InitColorSchemeScript from '@mui/material/InitColorSchemeScript';
 import { ThemeProvider as MuiThemeProvider } from '@mui/material/styles';
-import CssBaseline from '@mui/material/CssBaseline';
 
 // @project
-import Loader from './Loader';
 import { Themes } from '@/config';
 import useConfig from '@/hooks/useConfig';
+import Loader from './Loader';
 
 import aiTheme from '@/views/landings/ai/theme';
 
@@ -23,7 +23,8 @@ const themeMap = {
 /***************************  COMMON - THEME PROVIDER  ***************************/
 
 export default function ThemeProvider({ children }) {
-  const { state } = useConfig();
+  const { state, setField } = useConfig();
+  const location = useLocation();
 
   const [loader, setLoader] = useState(true);
 
@@ -32,6 +33,18 @@ export default function ThemeProvider({ children }) {
   useEffect(() => {
     setLoader(false);
   }, []);
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const themeParam = params.get('theme');
+    const normalizedTheme = themeParam === 'cryptomake' ? Themes.THEME_CRYPTO : themeParam;
+
+    if (!normalizedTheme) return;
+    if (!Object.values(Themes).includes(normalizedTheme)) return;
+    if (normalizedTheme === state.currentTheme) return;
+
+    setField('currentTheme', normalizedTheme);
+  }, [location.search, setField, state.currentTheme]);
 
   /**
    * A loader is needed here to initialize the configuration from localStorage and set the default theme.

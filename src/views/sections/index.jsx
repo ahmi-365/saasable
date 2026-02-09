@@ -1,27 +1,26 @@
-'use client';
 import { useEffect, useState } from 'react';
 
-// @next
-import NextLink from 'next/link';
+// @project
+import { NextLink } from '@/components/routes';
 
 // @mui
-import { alpha, useTheme } from '@mui/material/styles';
+import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import CardMedia from '@mui/material/CardMedia';
 import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import Stack from '@mui/material/Stack';
+import { alpha, useTheme } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
 
 // @third-party
 import { motion } from 'framer-motion';
 
 // @project
 import branding from '@/branding.json';
-import ContainerWrapper from '@/components/ContainerWrapper';
 import { GraphicsCard } from '@/components/cards';
+import ContainerWrapper from '@/components/ContainerWrapper';
 import SectionHero from '@/components/SectionHero';
 import SvgIcon from '@/components/SvgIcon';
 

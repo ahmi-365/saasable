@@ -1,10 +1,9 @@
-'use client';
 import PropTypes from 'prop-types';
 
 import { Fragment, useCallback, useEffect, useId, useRef, useState } from 'react';
 
 // @next
-// import NextLink from 'next/link';
+// import { NextLink } from '@/components/routes';
 
 // @mui
 import { useTheme } from '@mui/material/styles';

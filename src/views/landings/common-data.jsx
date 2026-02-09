@@ -7,9 +7,9 @@ import Typography from '@mui/material/Typography';
 
 // @project
 import branding from '@/branding.json';
+import { Themes } from '@/config';
 import { MegaMenuType } from '@/enum';
 import { ADMIN_PATH, BUY_NOW_URL, DOCS_URL, PAGE_PATH, PRIVIEW_PATH } from '@/path';
-import { Themes } from '@/config';
 
 const linkProps = { target: '_blank', rel: 'noopener noreferrer' };
 
@@ -69,49 +69,57 @@ export const landingMegamenu = {
         title: 'CRM',
         theme: Themes.THEME_CRM,
         image: '/assets/images/mega-menu/crm-light.svg',
-        status: 'Pro'
+        status: 'Pro',
+        link: { href: '/?theme=crm' }
       },
       {
         title: 'AI',
         theme: Themes.THEME_AI,
         image: '/assets/images/mega-menu/ai-light.svg',
-        status: 'Pro'
+        status: 'Pro',
+        link: { href: '/?theme=ai' }
       },
       {
         title: 'Crypto',
         theme: Themes.THEME_CRYPTO,
         image: '/assets/images/mega-menu/crypto-light.svg',
-        status: 'Pro'
+        status: 'Pro',
+        link: { href: '/?theme=crypto' }
       },
       {
         title: 'Hosting',
         theme: Themes.THEME_HOSTING,
         image: '/assets/images/mega-menu/hosting-light.svg',
-        status: 'Pro'
+        status: 'Pro',
+        link: { href: '/?theme=hosting' }
       },
       {
         title: 'PMS',
         theme: Themes.THEME_PMS,
         image: '/assets/images/mega-menu/pms-light.svg',
-        status: 'Pro'
+        status: 'Pro',
+        link: { href: '/?theme=pms' }
       },
       {
         title: 'HRM',
         theme: Themes.THEME_HRM,
         image: '/assets/images/mega-menu/hrm-light.svg',
-        status: 'Pro'
+        status: 'Pro',
+        link: { href: '/?theme=hrm' }
       },
       {
         title: 'Plugin',
         theme: Themes.THEME_PLUGIN,
         image: '/assets/images/mega-menu/plugin-light.svg',
-        status: 'Pro'
+        status: 'Pro',
+        link: { href: '/?theme=plugin' }
       },
       {
         title: 'LMS',
         theme: Themes.THEME_LMS,
         image: '/assets/images/mega-menu/lms-light.svg',
-        status: 'Pro'
+        status: 'Pro',
+        link: { href: '/?theme=lms' }
       }
     ],
     footerData: FooterData()

@@ -1,9 +1,8 @@
-'use client';
 import PropTypes from 'prop-types';
 
 // @next
-import NextLink from 'next/link';
-import { useRouter } from 'next/navigation';
+import { NextLink } from '@/components/routes';
+import { useNavigate } from 'react-router-dom';
 
 // @mui
 import { useTheme } from '@mui/material/styles';

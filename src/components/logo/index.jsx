@@ -1,26 +1,26 @@
-'use client';
 import PropTypes from 'prop-types';
 
 // @next
-import NextLink from 'next/link';
+import { NextLink } from '@/components/routes';
 
 // @mui
-import { useTheme } from '@mui/material/styles';
 import ButtonBase from '@mui/material/ButtonBase';
+import { useTheme } from '@mui/material/styles';
 
 // @project
 import { generateFocusVisibleStyles } from '@/utils/CommonFocusStyle';
-import LogoMain from './LogoMain';
 import LogoIcon from './LogoIcon';
+import LogoMain from './LogoMain';
 
 /***************************  MAIN - LOGO  ***************************/
 
 export default function LogoSection({ isIcon, sx, to }) {
   const theme = useTheme();
   const palette = theme?.vars ? theme.vars.palette : theme.palette;
+  const baseName = import.meta.env.VITE_BASE_NAME || '/';
 
   return (
-    <NextLink href={!to ? process.env.NEXT_PUBLIC_BASE_NAME || '/' : to} passHref>
+    <NextLink href={!to ? baseName : to} passHref>
       <ButtonBase
         disableRipple
         sx={{ ...sx, display: 'block', '&:focus-visible': generateFocusVisibleStyles(palette.primary.main) }}

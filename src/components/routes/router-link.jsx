@@ -1,23 +1,16 @@
-'use client';
-
 /**
- * Client-only wrapper for Next.js `Link`.
+ * Router Link wrapper for React Router.
  *
- * Why this file exists:
- * - Next.js 16 enforces a strict separation between Server and Client Components.
- * - MUI components (e.g. Button, Link, MenuItem) require `NextLink` to be
- *   imported from a Client Component.
- * - Importing `next/link` directly inside Server Components causes build
- *   or prerender errors.
- *
- * Usage:
- * ```ts
- * import { NextLink } from 'components/NextLink';
- * ```
- *
- * Reference:
- * https://mui.com/material-ui/integrations/nextjs/#next-js-v16-client-component-restriction
+ * This file provides a NextLink-compatible interface using React Router's Link
+ * for seamless migration from Next.js to Vite + React Router.
  */
-import NextLink from 'next/link';
+import { forwardRef } from 'react';
+import { Link as RouterLink } from 'react-router-dom';
 
-export { NextLink };
+// NextLink compatible wrapper - forwards ref and handles href prop
+const NextLink = forwardRef(function NextLink({ href, ...props }, ref) {
+  return <RouterLink ref={ref} to={href || '/'} {...props} />;
+});
+
+export { RouterLink as Link, NextLink };
+

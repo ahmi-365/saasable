@@ -14,7 +14,7 @@ import { FIGMA_LINK } from '@/utils/constant';
 /***************************  PRIVACY POLICY - BREADCRUMBS  ***************************/
 
 let breadcrumbs = [
-  { title: 'Home', to: process.env.NEXT_PUBLIC_BASE_NAME || '/' },
+  { title: 'Home', to: import.meta.env.VITE_BASE_NAME || '/' },
   { title: 'Blocks', to: SECTION_PATH },
   { title: 'Privacy policy' }
 ];

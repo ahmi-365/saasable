@@ -2,8 +2,8 @@
 import Stack from '@mui/material/Stack';
 
 // @project
-import branding from '@/branding.json';
 import Typography from '@/blocks/Typography';
+import branding from '@/branding.json';
 import ContainerWrapper from '@/components/ContainerWrapper';
 import SectionHero from '@/components/SectionHero';
 import SimulatorTypeset from '@/components/SimulatorTypeset';
@@ -13,7 +13,7 @@ import { FIGMA_LINK } from '@/utils/constant';
 /***************************  TYPOGRAPHY - BREADCRUMBS  ***************************/
 
 let breadcrumbs = [
-  { title: 'Home', to: process.env.NEXT_PUBLIC_BASE_NAME || '/' },
+  { title: 'Home', to: import.meta.env.VITE_BASE_NAME || '/' },
   { title: 'Components', to: SECTION_PATH },
   { title: 'Typography' }
 ];

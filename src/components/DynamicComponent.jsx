@@ -1,17 +1,33 @@
-import PropTypes from 'prop-types';
-import dynamic from 'next/dynamic';
 import { DynamicComponentType } from '@/enum';
+import PropTypes from 'prop-types';
+import { lazy, Suspense, useMemo } from 'react';
 
 /***************************  DYNAMIC - IMPORT  ***************************/
+
+const imageModules = import.meta.glob('../images/**/*.jsx');
+const iconModules = import.meta.glob('../icons/**/*.jsx');
+
+function resolveModule(modules, component, basePath) {
+  const trimmed = component.replace(/^\/+/, '');
+  const withExt = trimmed.endsWith('.jsx') ? trimmed : `${trimmed}.jsx`;
+  const modulePath = `${basePath}/${withExt}`;
+  const importer = modules[modulePath];
+
+  if (!importer) {
+    return Promise.reject(new Error(`Dynamic component not found: ${modulePath}`));
+  }
+
+  return importer();
+}
 
 function loadComponent(component, type) {
   switch (type) {
     case DynamicComponentType.IMAGE:
-      return import(`@/images/${component}`);
+      return resolveModule(imageModules, component, '../images');
     case DynamicComponentType.ICON:
-      return import(`@/icons/${component}`);
+      return resolveModule(iconModules, component, '../icons');
     default:
-      return import(`@/components/logo`);
+      return import('../components/logo');
   }
 }
 
@@ -27,9 +43,16 @@ function loadComponent(component, type) {
 
 // eslint-disable-next-line
 function DynamicComponent({ component, type, props }) {
-  const ImportedComponent = dynamic(() => loadComponent(component, type), { ssr: false });
+  const ImportedComponent = useMemo(
+    () => lazy(() => loadComponent(component, type)),
+    [component, type]
+  );
 
-  return <ImportedComponent {...props} />;
+  return (
+    <Suspense fallback={null}>
+      <ImportedComponent {...props} />
+    </Suspense>
+  );
 }
 
 export default DynamicComponent;

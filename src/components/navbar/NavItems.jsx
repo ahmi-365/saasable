@@ -1,21 +1,20 @@
-'use client';
 import PropTypes from 'prop-types';
 
 import { useState } from 'react';
 
 // @next
-import NextLink from 'next/link';
-import { usePathname } from 'next/navigation';
+import { NextLink } from '@/components/routes';
+import { useLocation } from 'react-router-dom';
 
 // @mui
-import { useTheme } from '@mui/material/styles';
-import useMediaQuery from '@mui/material/useMediaQuery';
+import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Collapse from '@mui/material/Collapse';
 import List from '@mui/material/List';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
-import Box from '@mui/material/Box';
+import { useTheme } from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 // @project
 import MenuPopper from './MenuPopper';
@@ -94,7 +93,7 @@ function NavList({ item, menuTextColor }) {
   const theme = useTheme();
   const downMD = useMediaQuery(theme.breakpoints.down('md'));
 
-  const currentPath = usePathname(); // Get the current path
+  const { pathname: currentPath } = useLocation();
   const toggleProps = { color: menuTextColor || 'text.primary', py: 1.5, typography: 'caption2', pl: { md: 2.25, lg: 3 } };
   const buttonProps = {
     sx: {

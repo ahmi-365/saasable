@@ -1,8 +1,7 @@
-'use client';
 import PropTypes from 'prop-types';
 
 // @next
-import { usePathname } from 'next/navigation';
+import { useLocation } from 'react-router-dom';
 
 import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
@@ -16,13 +15,15 @@ import SvgIcon from '@/components/SvgIcon';
 /***************************  PREVIEW CARD  ***************************/
 
 export default function PreviewCard({ title, theme, image, status }) {
-  const pathname = usePathname();
+  const { search } = useLocation();
+  const selectedThemeParam = new URLSearchParams(search).get('theme');
+  const selectedTheme = selectedThemeParam === 'cryptomake' ? 'crypto' : selectedThemeParam;
 
   const cardStyle = {
-    bgcolor: theme && pathname.includes(theme) ? 'grey.100' : 'transparent',
+    bgcolor: theme && selectedTheme === theme ? 'grey.100' : 'transparent',
     borderRadius: 3,
     padding: 1,
-    '&:hover': { bgcolor: theme && pathname.includes(theme) ? 'grey.200' : 'grey.50', cursor: 'pointer' }
+    '&:hover': { bgcolor: theme && selectedTheme === theme ? 'grey.200' : 'grey.50', cursor: 'pointer' }
   };
 
   return (

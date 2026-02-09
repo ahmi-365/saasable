@@ -1,8 +1,7 @@
-'use client';
 import PropTypes from 'prop-types';
 
 // @next
-import NextLink from 'next/link';
+import { NextLink } from '@/components/routes';
 
 // @mui
 import Button from '@mui/material/Button';

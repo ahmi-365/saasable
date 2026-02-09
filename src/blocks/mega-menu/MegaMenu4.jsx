@@ -1,12 +1,11 @@
-'use client';
 import PropTypes from 'prop-types';
 
 // @next
-import NextLink from 'next/link';
+import { NextLink } from '@/components/routes';
 
+import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
-import Box from '@mui/material/Box';
 
 // @third-party
 import { motion } from 'motion/react';
@@ -36,7 +35,15 @@ export default function MegaMenu4({ menuItems, footerData, popperWidth = 936, fo
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
             >
-              <Link {...(item.link && { component: NextLink, ...item.link, sx: { ...item.link?.sx } })} aria-label={item.title}>
+              <Link
+                {...(item.link && {
+                  component: NextLink,
+                  underline: 'none',
+                  ...item.link,
+                  sx: { display: 'block', ...item.link?.sx }
+                })}
+                aria-label={item.title}
+              >
                 <PreviewCard {...item} />
               </Link>
             </motion.div>
