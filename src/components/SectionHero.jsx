@@ -5,25 +5,25 @@ import { NextLink } from '@/components/routes';
 import { useNavigate } from 'react-router-dom';
 
 // @mui
-import { useTheme } from '@mui/material/styles';
 import Autocomplete from '@mui/material/Autocomplete';
+import Box from '@mui/material/Box';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import CardMedia from '@mui/material/CardMedia';
 import Chip from '@mui/material/Chip';
 import Link from '@mui/material/Link';
 import ListItem from '@mui/material/ListItem';
 import Stack from '@mui/material/Stack';
+import { useTheme } from '@mui/material/styles';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
 
 // @project
 import ContainerWrapper from './ContainerWrapper';
 import SvgIcon from './SvgIcon';
 
+import { PAGE_PATH } from '@/path';
 import { withAlpha } from '@/utils/colorUtils';
 import { getBackgroundDots } from '@/utils/getBackgroundDots';
-import { PAGE_PATH } from '@/path';
 
 // @assets
 import Wave from '@/images/graphics/Wave';
@@ -74,14 +74,14 @@ const options = [
 
 export default function SectionHero({ heading, search = true, offer = false, breadcrumbs }) {
   const theme = useTheme();
-  const router = useRouter();
+  const navigate = useNavigate();
 
   const boxRadius = { xs: 24, sm: 40 };
 
   const handleSelect = (event, value) => {
     if (typeof value === 'object' && value !== null) {
       if (value.path) {
-        router.push(value.path);
+        navigate(value.path);
       }
     }
   };

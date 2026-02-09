@@ -94,17 +94,21 @@ const NotFound = lazy(() => import('@/views/sections/Error404'));
 
 function SectionsLayout() {
   return (
-    <Suspense fallback={<Loader />}>
-      <Outlet />
-    </Suspense>
+    <MainLayout>
+      <Suspense fallback={<Loader />}>
+        <Outlet />
+      </Suspense>
+    </MainLayout>
   );
 }
 
 function BlocksLayout() {
   return (
-    <Suspense fallback={<Loader />}>
-      <Outlet />
-    </Suspense>
+    <MainLayout>
+      <Suspense fallback={<Loader />}>
+        <Outlet />
+      </Suspense>
+    </MainLayout>
   );
 }
 
