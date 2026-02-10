@@ -21,7 +21,9 @@ export const CSS_VAR_PREFIX = '';
 /***************************  CONFIG  ***************************/
 
 const config = {
-  currentTheme: Themes.THEME_DEFAULT
+  currentTheme: Themes.THEME_DEFAULT,
+  primaryColor: '#BA1A1A',
+  colorScheme: 'light'
 };
 
 export default config;

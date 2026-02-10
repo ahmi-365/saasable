@@ -1,44 +1,53 @@
+// @mui
+import { darken, lighten } from '@mui/material/styles';
+
 // @project
 import { extendPaletteWithChannels } from '@/utils/colorUtils';
 
-/***************************  DEFAULT / AI THEME - PALETTE  ***************************/
+/*************************** DEFAULT / AI THEME - PALETTE  ***************************/
 
-export function buildPalette() {
-  const textPrimary = '#1A1C1E'; // AI/neutral/10 - on surface
-  const textSecondary = '#42474E'; // AI/neutral variant/30 - on surface variant
-  const divider = '#C2C7CE'; // AI/neutral variant/80 - outline variant
-  const background = '#FFF';
+export function buildPalette(primaryColor) {
+  const primaryMain = primaryColor || '#BA1A1A';
+  const secondaryMain = lighten(primaryMain, 0.3);
+
+  const primaryDarkMain = primaryMain;
+  const secondaryDarkMain = lighten(primaryMain, 0.15);
+
+  const textPrimary = '#1A1C1E';
+  const textSecondary = '#42474E';
+  const divider = '#C2C7CE';
+  const background = '#FFFFFF';
 
   const lightPalette = {
     primary: {
-      lighter: '#CCE5FF', // AI/primary/90 - primary container / primary fixed
-      light: '#92CCFF', // AI/primary/80 - primary fixed dim
-      main: '#006397', // AI/primary/40 - primary
-      dark: '#004B73', // AI/primary/30 - on primary fixed variant
-      darker: '#001D31' // AI/primary/10 - on primary container / on primary fixed
+      lighter: lighten(primaryMain, 0.5),
+      light: lighten(primaryMain, 0.3),
+      main: primaryMain,
+      dark: darken(primaryMain, 0.2),
+      darker: darken(primaryMain, 0.4)
     },
     secondary: {
-      lighter: '#D3E4F8', // AI/secondary/90 - secondary container / secondary fixed
-      light: '#B7C8DB', // AI/secondary/80 - secondary fixed dim
-      main: '#4F6070', // AI/secondary/40 - secondary
-      dark: '#384858', // AI/secondary/30 - on secondary fixed variant
-      darker: '#0B1D2B' // AI/secondary/10 - on secondary container / on secondary fixed
+      lighter: lighten(secondaryMain, 0.4),
+      light: lighten(secondaryMain, 0.2),
+      main: secondaryMain,
+      dark: darken(secondaryMain, 0.2),
+      darker: darken(secondaryMain, 0.35)
     },
     grey: {
-      50: '#F9F9FC', // AI/neutral/98 - surface / surface bright
-      100: '#F1F4F9', // AI/neutral/96 - surface container low
-      200: '#EBEEF3', // AI/neutral/94 - surface container
-      300: '#E6E8EE', // AI/neutral/92 - surface container high
-      400: '#E2E2E5', // AI/neutral/90 - surface container highest
-      500: '#D7DADF', // AI/neutral/87 - surface dim
-      600: divider, // AI/neutral variant/80 - outline variant
-      700: '#72787E', // AI/neutral variant/50 - outline
-      800: textSecondary, // AI/neutral variant/30 - on surface variant
-      900: textPrimary // AI/neutral/10 - on surface
+      50: '#F9F9FC',
+      100: '#F1F4F9',
+      200: '#EBEEF3',
+      300: '#E6E8EE',
+      400: '#E2E2E5',
+      500: '#D7DADF',
+      600: divider,
+      700: '#72787E',
+      800: textSecondary,
+      900: textPrimary
     },
     text: {
-      primary: textPrimary, // AI/neutral/10 - on surface
-      secondary: textSecondary // AI/neutral variant/30 - on surface variant
+      primary: textPrimary,
+      secondary: textSecondary
     },
     divider,
     background: {
@@ -46,9 +55,53 @@ export function buildPalette() {
     }
   };
 
+  const darkTextPrimary = '#F2F4F8';
+  const darkTextSecondary = '#C7CDD6';
+  const darkDivider = '#2C3138';
+  const darkBackground = '#0F1115';
+
+  const darkPalette = {
+    primary: {
+      lighter: lighten(primaryDarkMain, 0.35),
+      light: lighten(primaryDarkMain, 0.2),
+      main: primaryDarkMain,
+      dark: darken(primaryDarkMain, 0.2),
+      darker: darken(primaryDarkMain, 0.4)
+    },
+    secondary: {
+      lighter: lighten(secondaryDarkMain, 0.3),
+      light: lighten(secondaryDarkMain, 0.15),
+      main: secondaryDarkMain,
+      dark: darken(secondaryDarkMain, 0.25),
+      darker: darken(secondaryDarkMain, 0.4)
+    },
+    grey: {
+      50: '#1A1D24',
+      100: '#1F232B',
+      200: '#252A33',
+      300: '#2B313B',
+      400: '#323845',
+      500: '#3A4251',
+      600: darkDivider,
+      700: '#414A5B',
+      800: '#596173',
+      900: '#707A8E'
+    },
+    text: {
+      primary: darkTextPrimary,
+      secondary: darkTextSecondary
+    },
+    divider: darkDivider,
+    background: {
+      default: darkBackground,
+      paper: '#171A21'
+    }
+  };
+
   const commonColor = { common: { black: '#000', white: '#fff' } };
 
   const extendedLight = extendPaletteWithChannels(lightPalette);
+  const extendedDark = extendPaletteWithChannels(darkPalette);
   const extendedCommon = extendPaletteWithChannels(commonColor);
 
   return {
@@ -56,6 +109,11 @@ export function buildPalette() {
       mode: 'light',
       ...extendedCommon,
       ...extendedLight
+    },
+    dark: {
+      mode: 'dark',
+      ...extendedCommon,
+      ...extendedDark
     }
   };
 }

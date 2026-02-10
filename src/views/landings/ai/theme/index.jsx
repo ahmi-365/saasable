@@ -4,11 +4,11 @@
 import { createTheme } from '@mui/material/styles';
 
 // @project
-import { buildPalette } from './palette';
-import componentsOverride from './overrides';
-import typography from './typography';
 import { CSS_VAR_PREFIX } from '@/config';
 import useConfig from '@/hooks/useConfig';
+import componentsOverride from './overrides';
+import { buildPalette } from './palette';
+import typography from './typography';
 
 export const colorSchemeSelector = 'data-ai-color-scheme';
 
@@ -16,10 +16,10 @@ export const colorSchemeSelector = 'data-ai-color-scheme';
 
 export default function ThemeCustomization(selector) {
   const {
-    state: { themeDirection }
+    state: { themeDirection, primaryColor }
   } = useConfig();
 
-  const palette = buildPalette();
+  const palette = buildPalette(primaryColor);
   const muiTheme = createTheme();
 
   // create duplicate theme due to responsive typography and fontFamily

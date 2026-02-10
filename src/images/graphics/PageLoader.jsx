@@ -1,11 +1,10 @@
 // @mui
-import { keyframes } from '@mui/material/styles';
 import Avatar from '@mui/material/Avatar';
 import CircularProgress from '@mui/material/CircularProgress';
 import Stack from '@mui/material/Stack';
+import { keyframes } from '@mui/material/styles';
 
-//@project
-import LogoSection from '@/components/logo';
+const faviconSrc = '/assets/images/Logo&Icon/Favicon.png';
 
 const rotateAnimation = keyframes`
   0% { transform: rotate(0deg) }
@@ -24,9 +23,16 @@ export default function PageLoader() {
 
   return (
     <Stack direction="row" sx={{ position: 'relative', justifyContent: 'center', alignItems: 'center' }}>
-      <Avatar sx={{ width: 65, height: 65, bgcolor: 'primary.lighter', '& .MuiBox-root': { height: 'fit-content', width: 28 } }}>
-        <LogoSection isIcon />
-      </Avatar>
+      <Avatar
+        src={faviconSrc}
+        alt="App favicon"
+        imgProps={{ loading: 'eager', decoding: 'async', fetchPriority: 'high' }}
+        sx={{
+          width: 56,
+          height: 56,
+          bgcolor: 'primary.lighter'
+        }}
+      />
       <CircularProgress
         {...commonProps}
         value={100}

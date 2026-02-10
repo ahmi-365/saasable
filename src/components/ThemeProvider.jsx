@@ -35,6 +35,12 @@ export default function ThemeProvider({ children }) {
   }, []);
 
   useEffect(() => {
+    if (typeof document === 'undefined') return;
+    const mode = state.colorScheme || 'light';
+    document.documentElement.setAttribute('data-color-scheme', mode);
+  }, [state.colorScheme]);
+
+  useEffect(() => {
     const params = new URLSearchParams(location.search);
     const themeParam = params.get('theme');
     const normalizedTheme = themeParam === 'cryptomake' ? Themes.THEME_CRYPTO : themeParam;
@@ -55,7 +61,7 @@ export default function ThemeProvider({ children }) {
 
   return (
     <>
-      <InitColorSchemeScript attribute="data-color-scheme" defaultMode="light" />
+      <InitColorSchemeScript attribute="data-color-scheme" defaultMode={state.colorScheme || 'light'} />
       <Suspense fallback={<Loader />}>
         {loader ? (
           <Loader />
