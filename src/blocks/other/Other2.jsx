@@ -1,24 +1,24 @@
 // @mui
-import { useTheme } from '@mui/material/styles';
 import Grid from '@mui/material/Grid';
 import Skeleton from '@mui/material/Skeleton';
 import Stack from '@mui/material/Stack';
+import { useTheme } from '@mui/material/styles';
 
 // @project
-import ContainerWrapper from '@/components/ContainerWrapper';
-import { SECTION_COMMON_PY } from '@/utils/constant';
 import { GraphicsCard } from '@/components/cards';
+import ContainerWrapper from '@/components/ContainerWrapper';
 import { withAlpha } from '@/utils/colorUtils';
+import { SECTION_COMMON_PY } from '@/utils/constant';
 
 /***************************  OTHER - 2  ***************************/
 
 /**
  *
  * Demos:
- * - [Other2](https://www.saasable.io/blocks/other/other2)
+ * - [Other2](https://www.Planify.io/blocks/other/other2)
  *
  * API
- * - [Other2 API](https://phoenixcoded.gitbook.io/saasable/ui-kit/development/components/other/other2#props-details)
+ * - [Other2 API](https://phoenixcoded.gitbook.io/Planify/ui-kit/development/components/other/other2#props-details)
  */
 
 export default function Other2() {

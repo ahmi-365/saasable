@@ -7,10 +7,11 @@ import Typography from '@mui/material/Typography';
 import { NextLink } from '@/components/routes';
 
 export const cta4 = {
-  headLine: `Why Trust ${branding.brandName} with Your Project Management?`,
+  headLine: `Why Trust ${branding.brandName} with Your Workflows?`,
   primaryBtn: {
     children: 'Read Our Story',
-    href: 'https://blog.saasable.io/a-decade-of-expertise-the-phoenixcoded-story-and-why-you-should-trust-us', // Update to your actual blog link
+    // Preserving your updated link
+    href: 'https://blog.Planify.io/a-decade-of-expertise-the-phoenixcoded-story-and-why-you-should-trust-us',
     target: '_blank',
     rel: 'noopener noreferrer'
   },
@@ -22,14 +23,14 @@ export const cta4 = {
       { avatar: '/assets/images/user/avatar4.png' },
       { avatar: '/assets/images/user/avatar5.png' }
     ],
-    review: '10k+ Teams (4.8 out of 5)'
+    review: '10k+ Agile Teams (4.8/5)'
   },
   list: [
-    { primary: '99.9% Uptime SLA' },
-    { primary: 'Enterprise-Grade Security' },
-    { primary: 'Seamless Integrations' },
+    { primary: '99.99% Uptime SLA' },
+    { primary: 'SOC2 Type II Security' },
+    { primary: 'Seamless Tool Integrations' },
     { primary: '24/7 Priority Support' },
-    { primary: 'Agile Certified Tools' },
+    { primary: 'Methodology Agnostic' },
     { primary: 'Scalable Infrastructure' }
   ],
   clientContent: 'Learn More'
@@ -38,7 +39,7 @@ export const cta4 = {
 function DescriptionLine() {
   return (
     <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-      Have questions? Our experts are here to help. Join{' '}
+      Need help optimizing your board? Our experts are here. Join{' '}
       <Link component={NextLink} variant="caption2" color="primary" href={branding.company.socialLink.discord} underline="hover">
         our community
       </Link>
@@ -48,8 +49,8 @@ function DescriptionLine() {
 
 export const cta5 = {
   label: 'Join the Ecosystem',
-  heading: 'Connect with Agile Experts',
-  caption: 'Share workflow templates, get productivity hacks, and grow with other project managers.',
+  heading: 'Connect with Productivity Experts',
+  caption: 'Share board templates, discover workflow hacks, and grow with a global network of project managers.',
   primaryBtn: {
     children: 'Join Community',
     href: branding.company.socialLink.discord,
@@ -66,13 +67,14 @@ export const cta5 = {
       { avatar: '/assets/images/user/avatar4.png' },
       { avatar: '/assets/images/user/avatar5.png' }
     ],
-    review: '250k+ Messages (4.9 out of 5)'
+    review: '250k+ Discussions (4.9/5)'
   }
 };
 
 export const cta10 = {
-  heading: 'Help Us Redefine Productivity',
-  caption: 'Don’t see your perfect role? We are always looking for visionaries to help us build the future of work. Send us your details!',
+  heading: 'Help Us Redefine Work',
+  caption:
+    'Don’t see your perfect role? We are always looking for efficiency obsessives to help us build the future of workflow automation.',
   primaryBtn: { children: 'Send Your Resume', href: '#' },
   secondaryBtn: { children: 'Contact HR', href: '#' },
   image: '/assets/images/graphics/ai/graphics15-light.svg',

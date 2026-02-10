@@ -1,24 +1,24 @@
-# SaasAble Free React Material UI, UI-Kit
+# Planify Free React Material UI, UI-Kit
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Price](https://img.shields.io/badge/price-FREE-0098f7.svg)](https://github.com/phoenixcoded/saasable-ui/blob/main/LICENSE)
+[![Price](https://img.shields.io/badge/price-FREE-0098f7.svg)](https://github.com/phoenixcoded/Planify-ui/blob/main/LICENSE)
 
-SaasAble is a complete solution for building SaaS products as well as non-SaaS products. Whether you’re creating a user-friendly front-end or a powerful admin dashboard, SaasAble has all the tools you need. It’s also flexible — perfect not just for SaaS but also for agencies, digital products, CRMs, blogs, AI platforms, project management, learning systems, and more.
+Planify is a complete solution for building SaaS products as well as non-SaaS products. Whether you’re creating a user-friendly front-end or a powerful admin dashboard, Planify has all the tools you need. It’s also flexible — perfect not just for SaaS but also for agencies, digital products, CRMs, blogs, AI platforms, project management, learning systems, and more.
 
 ✨ Support us! If you like this theme, click the ⭐ (Top right) and let it shine
 
-![SaasAble Free React UI kit and Dashboard Template](https://ableproadmin.com/adv-banner-saasable/adv-github.png)
+![Planify Free React UI kit and Dashboard Template](https://ableproadmin.com/adv-banner-Planify/adv-github.png)
 
 ## Table of contents
 
 - [Getting Started](#getting-started)
 - [Download](#download)
-- [Why SaasAble?](#why-saasable)
+- [Why Planify?](#why-Planify)
 - [What's included in Premium Version?](#whats-included-in-premium-version)
 - [Documentation](#documentation)
 - [Browser support](#browser-support)
 - [Technology Stack](#technology-stack)
-- [SaasAble Figma UI Kit](#saasable-figma-ui-kit)
+- [Planify Figma UI Kit](#Planify-figma-ui-kit)
 - [More products from PhoenixCoded](#more-products-from-phoenixcoded)
 - [Issues?](#issues)
 - [License](#license)
@@ -30,7 +30,7 @@ SaasAble is a complete solution for building SaaS products as well as non-SaaS p
 1. Clone from Github
 
 ```
-git clone https://github.com/phoenixcoded/saasable-ui.git
+git clone https://github.com/phoenixcoded/Planify-ui.git
 ```
 
 2. Goto `uikit/react` directory and Install Packages
@@ -47,15 +47,14 @@ npm run dev
 
 ## Download
 
-| Product              | Preview                                                | Download                                                                                                                            |
-| -------------------- | ------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------- |
-| Ui Kit React Free    | [**Live Preview**](https://free.saasable.io/)          | [**Download**](https://github.com/phoenixcoded/saasable-ui/)</span>                                                                 |
-| Ui Kit React Pro     | [**Live Preview**](https://saasable.io/)               | [**Download**](https://mui.com/store/items/saasable-multipurpose-ui-kit-and-dashboard/)</span>                                      |
+| Product           | Preview                                      | Download                                                                                      |
+| ----------------- | -------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| Ui Kit React Free | [**Live Preview**](https://free.Planify.io/) | [**Download**](https://github.com/phoenixcoded/Planify-ui/)</span>                            |
+| Ui Kit React Pro  | [**Live Preview**](https://Planify.io/)      | [**Download**](https://mui.com/store/items/Planify-multipurpose-ui-kit-and-dashboard/)</span> |
 
+## Why Planify?
 
-## Why SaasAble?
-
-The SaasAble theme is a modern, responsive, and highly customizable solution for SaaS applications, dashboards, and admin panels. It comes with pre-built components, dark and light modes, and is optimized for performance and scalability. With regular updates. It saves development time while ensuring a professional and polished UI.
+The Planify theme is a modern, responsive, and highly customizable solution for SaaS applications, dashboards, and admin panels. It comes with pre-built components, dark and light modes, and is optimized for performance and scalability. With regular updates. It saves development time while ensuring a professional and polished UI.
 
 - Modern & Responsive Design
 - Pre-Built Components & Layouts
@@ -68,24 +67,24 @@ The SaasAble theme is a modern, responsive, and highly customizable solution for
 
 ## What's included in Premium Version?
 
-Looking for even more features? Check out SaasAble's [premium version](https://mui.com/store/items/saasable-multipurpose-ui-kit-and-dashboard/), which offers a complete UI solution that includes both Front End UI components (like Hero sections, CTAs, and Footers) and Admin Interface components (such as Roles & Permissions pages, Analytics dashboards, and Billing systems).
+Looking for even more features? Check out Planify's [premium version](https://mui.com/store/items/Planify-multipurpose-ui-kit-and-dashboard/), which offers a complete UI solution that includes both Front End UI components (like Hero sections, CTAs, and Footers) and Admin Interface components (such as Roles & Permissions pages, Analytics dashboards, and Billing systems).
 
-| [SaasAble Ui Kit React Free](https://free.saasable.io/)                        | [SaasAble Ui Kit React Pro](https://www.saasable.io/) |
-| ------------------------------------------------------------------------------ | :---------------------------------------------------- |
-| **1** Demo Landing                                                             | **7+** Demo Landing                                   |
-| **25** Component Blocks                                                        | **200+** Component blocks                             |
-| -                                                                              | ✓ Dark/Light Mode 🌓                                  |
-| -                                                                              | ✓ TypeScript version                                  |
-| -                                                                              | ✓ Design files (Figma)                                |
-| -                                                                              | ✓ Multiple color options                              |
-| -                                                                              | ✓ RTL                                                 |
-| -                                                                              | ✓ Supabase authentication                             |
-| -                                                                              | ✓ [More components](https://saasable.io/sections)     |
-| ✓ [MIT License](https://github.com/phoenixcoded/saasable-ui/blob/main/LICENSE) | ✓ [Pro License](https://mui.com/store/license/)       |
+| [Planify Ui Kit React Free](https://free.Planify.io/)                         | [Planify Ui Kit React Pro](https://www.Planify.io/) |
+| ----------------------------------------------------------------------------- | :-------------------------------------------------- |
+| **1** Demo Landing                                                            | **7+** Demo Landing                                 |
+| **25** Component Blocks                                                       | **200+** Component blocks                           |
+| -                                                                             | ✓ Dark/Light Mode 🌓                                |
+| -                                                                             | ✓ TypeScript version                                |
+| -                                                                             | ✓ Design files (Figma)                              |
+| -                                                                             | ✓ Multiple color options                            |
+| -                                                                             | ✓ RTL                                               |
+| -                                                                             | ✓ Supabase authentication                           |
+| -                                                                             | ✓ [More components](https://Planify.io/sections)    |
+| ✓ [MIT License](https://github.com/phoenixcoded/Planify-ui/blob/main/LICENSE) | ✓ [Pro License](https://mui.com/store/license/)     |
 
 ## Documentation
 
-[SaasAble Documentation](https://phoenixcoded.gitbook.io/saasable) helps you with installation, deployment, and troubleshooting.
+[Planify Documentation](https://phoenixcoded.gitbook.io/Planify) helps you with installation, deployment, and troubleshooting.
 
 ## Browser support
 
@@ -102,16 +101,14 @@ Looking for even more features? Check out SaasAble's [premium version](https://m
 - Figma
 - npm/yarn package installer
 
-## SaasAble Figma UI Kit
-
-
+## Planify Figma UI Kit
 
 <div>
   <a href="https://codedthemes.com/item/mantis-free-figma-ui-kit/">
-   <img src="https://org-public-assets.s3.us-west-2.amazonaws.com/Banners/Figma_Free_SaasAble.png" width="450" alt="Figma Free">
+   <img src="https://org-public-assets.s3.us-west-2.amazonaws.com/Banners/Figma_Free_Planify.png" width="450" alt="Figma Free">
   </a>&nbsp;&nbsp;&nbsp;&nbsp;
   <a href="https://codedthemes.com/item/mantis-figma-ui-kit/">
-  <img src="https://org-public-assets.s3.us-west-2.amazonaws.com/Banners/Figma_Pro_SaasAble.png" width="450" alt="Figma Pro">
+  <img src="https://org-public-assets.s3.us-west-2.amazonaws.com/Banners/Figma_Pro_Planify.png" width="450" alt="Figma Pro">
   </a>
 </div>
 
@@ -124,11 +121,11 @@ Looking for even more features? Check out SaasAble's [premium version](https://m
 
 ## Issues
 
-To report a bug, please submit an [issue](https://github.com/phoenixcoded/saasable-ui/issues) on Github. We will respond as soon as possible to resolve the issue.
+To report a bug, please submit an [issue](https://github.com/phoenixcoded/Planify-ui/issues) on Github. We will respond as soon as possible to resolve the issue.
 
 ## License
 
-- Licensed cover under [MIT](https://github.com/phoenixcoded/saasable-ui/blob/main/LICENSE)
+- Licensed cover under [MIT](https://github.com/phoenixcoded/Planify-ui/blob/main/LICENSE)
 
 ## Contributor
 
@@ -144,4 +141,4 @@ To report a bug, please submit an [issue](https://github.com/phoenixcoded/saasab
 
 - [Github](https://github.com/phoenixcoded)
 - [Phoenixcoded](https://themeforest.net/user/phoenixcoded)
-"# saasable" 
+  "# Planify"

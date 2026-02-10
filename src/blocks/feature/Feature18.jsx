@@ -3,22 +3,22 @@ import PropTypes from 'prop-types';
 import { useState } from 'react';
 
 // @mui
+import TabContext from '@mui/lab/TabContext';
+import TabList from '@mui/lab/TabList';
+import TabPanel from '@mui/lab/TabPanel';
+import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
 import Tab from '@mui/material/Tab';
-import TabContext from '@mui/lab/TabContext';
-import TabList from '@mui/lab/TabList';
-import TabPanel from '@mui/lab/TabPanel';
 import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
 
 // @third-party
 import { motion } from 'motion/react';
 
 // @project
-import ContainerWrapper from '@/components/ContainerWrapper';
 import { GraphicsCard } from '@/components/cards';
+import ContainerWrapper from '@/components/ContainerWrapper';
 import SvgIcon from '@/components/SvgIcon';
 import Typeset from '@/components/Typeset';
 import { SECTION_COMMON_PY } from '@/utils/constant';
@@ -32,10 +32,10 @@ import GraphicsImage from '@/components/GraphicsImage';
 /**
  *
  * Demos:
- * - [Feature18](https://www.saasable.io/blocks/feature/feature18)
+ * - [Feature18](https://www.Planify.io/blocks/feature/feature18)
  *
  * API
- * - [Feature18 API](https://phoenixcoded.gitbook.io/saasable/ui-kit/development/components/feature/feature18#props-details)
+ * - [Feature18 API](https://phoenixcoded.gitbook.io/Planify/ui-kit/development/components/feature/feature18#props-details)
  */
 
 export default function Feature18({ heading, caption, topics }) {

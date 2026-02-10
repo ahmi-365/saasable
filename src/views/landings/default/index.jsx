@@ -6,26 +6,11 @@ import { Hero17 } from '@/blocks/hero';
 import LazySection from '@/components/LazySection';
 
 // @data
-import {
-  metrics,
-  clientele,
-  cta4,
-  cta5,
-  faq,
-  feature20,
-  feature21,
-  feature18,
-  hero,
-  integration,
-  other,
-  pricing,
-  testimonial
-} from './data';
+import { clientele, cta4, cta5, faq, feature18, feature20, feature21, hero, integration, metrics, other, testimonial } from './data';
 
 /***************************  PAGE - MAIN  ***************************/
 
 export default function Main() {
-
   return (
     <>
       <Hero17 {...hero} />
@@ -52,8 +37,7 @@ export default function Main() {
       <LazySection
         sections={[
           { importFunc: () => import('@/blocks/testimonial').then((module) => ({ default: module.Testimonial10 })), props: testimonial },
-          { importFunc: () => import('@/blocks/clientele').then((module) => ({ default: module.Clientele3 })), props: clientele },
-          { importFunc: () => import('@/blocks/pricing').then((module) => ({ default: module.Pricing9 })), props: pricing }
+          { importFunc: () => import('@/blocks/clientele').then((module) => ({ default: module.Clientele3 })), props: clientele }
         ]}
         offset="200px"
       />

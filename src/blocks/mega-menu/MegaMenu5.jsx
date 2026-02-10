@@ -1,15 +1,15 @@
 import PropTypes from 'prop-types';
 
 // @mui
-import { useTheme } from '@mui/material/styles';
+import Box from '@mui/material/Box';
 import Chip from '@mui/material/Chip';
 import Grid from '@mui/material/Grid';
 import List from '@mui/material/List';
-import ListSubheader from '@mui/material/ListSubheader';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
+import ListSubheader from '@mui/material/ListSubheader';
+import { useTheme } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
 
 // @third-party
 import { motion } from 'motion/react';
@@ -23,10 +23,10 @@ import { withAlpha } from '@/utils/colorUtils';
 /**
  *
  * Demos:
- * - [MegaMenu5](https://www.saasable.io/blocks/megamenu/megamenu5)
+ * - [MegaMenu5](https://www.Planify.io/blocks/megamenu/megamenu5)
  *
  * API
- * - [MegaMenu5 API](https://phoenixcoded.gitbook.io/saasable/ui-kit/development/components/megamenu/megamenu5#props-details)
+ * - [MegaMenu5 API](https://phoenixcoded.gitbook.io/Planify/ui-kit/development/components/megamenu/megamenu5#props-details)
  */
 
 export default function MegaMenu5({ menuItems, bannerData, popperWidth = 750 }) {

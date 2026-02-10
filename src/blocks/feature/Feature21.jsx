@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
 
 // @mui
+import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
-import Box from '@mui/material/Box';
 
 // @third-party
 import { motion } from 'motion/react';
@@ -14,8 +14,8 @@ import ButtonAnimationWrapper from '@/components/ButtonAnimationWrapper';
 import { GraphicsCard, IconCard } from '@/components/cards';
 import ContainerWrapper from '@/components/ContainerWrapper';
 import GraphicsImage from '@/components/GraphicsImage';
-import Typeset from '@/components/Typeset';
 import SvgIcon from '@/components/SvgIcon';
+import Typeset from '@/components/Typeset';
 import { SECTION_COMMON_PY } from '@/utils/constant';
 
 /***************************  FEATURE - 21  ***************************/
@@ -23,10 +23,10 @@ import { SECTION_COMMON_PY } from '@/utils/constant';
 /**
  *
  * Demos:
- * - [Feature21](https://www.saasable.io/blocks/feature/feature21)
+ * - [Feature21](https://www.Planify.io/blocks/feature/feature21)
  *
  * API
- * - [Feature21 API](https://phoenixcoded.gitbook.io/saasable/ui-kit/development/components/feature/feature21#props-details)
+ * - [Feature21 API](https://phoenixcoded.gitbook.io/Planify/ui-kit/development/components/feature/feature21#props-details)
  */
 
 export default function Feature21({ heading, caption, image, features, primaryBtn, secondaryBtn }) {

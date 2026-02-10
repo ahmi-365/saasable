@@ -4,16 +4,16 @@ import PropTypes from 'prop-types';
 import { NextLink } from '@/components/routes';
 
 // @mui
-import { useTheme } from '@mui/material/styles';
 import Avatar from '@mui/material/Avatar';
+import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Chip from '@mui/material/Chip';
 import Divider from '@mui/material/Divider';
 import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
+import { useTheme } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
 
 // @third-party
 import { motion } from 'motion/react';
@@ -33,10 +33,10 @@ import { SECTION_COMMON_PY } from '@/utils/constant';
 /**
  *
  * Demos:
- * - [Pricing9](https://www.saasable.io/blocks/pricing/pricing9)
+ * - [Pricing9](https://www.Planify.io/blocks/pricing/pricing9)
  *
  * API
- * - [Pricing9 API](https://phoenixcoded.gitbook.io/saasable/ui-kit/development/components/pricing/pricing9#props-details)
+ * - [Pricing9 API](https://phoenixcoded.gitbook.io/Planify/ui-kit/development/components/pricing/pricing9#props-details)
  */
 
 export default function Pricing9({ heading, caption, features, plans }) {

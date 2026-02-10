@@ -18,10 +18,10 @@ import PreviewCard from '@/components/cards/PreviewCard';
 /**
  *
  * Demos:
- * - [MegaMenu4](https://www.saasable.io/blocks/megamenu/megamenu4)
+ * - [MegaMenu4](https://www.Planify.io/blocks/megamenu/megamenu4)
  *
  * API
- * - [MegaMenu4 API](https://phoenixcoded.gitbook.io/saasable/ui-kit/development/components/megamenu/megamenu4#props-details)
+ * - [MegaMenu4 API](https://phoenixcoded.gitbook.io/Planify/ui-kit/development/components/megamenu/megamenu4#props-details)
  */
 
 export default function MegaMenu4({ menuItems, footerData, popperWidth = 936, footerSX }) {

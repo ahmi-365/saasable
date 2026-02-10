@@ -4,23 +4,23 @@ import PropTypes from 'prop-types';
 import { NextLink } from '@/components/routes';
 
 // @mui
-import { useTheme } from '@mui/material/styles';
+import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import CardMedia from '@mui/material/CardMedia';
-import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
-import Typography from '@mui/material/Typography';
+import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
-import Box from '@mui/material/Box';
+import { useTheme } from '@mui/material/styles';
+import Typography from '@mui/material/Typography';
 
 // @third-party
 import { motion } from 'motion/react';
 
 // @project
 import ButtonAnimationWrapper from '@/components/ButtonAnimationWrapper';
+import { GraphicsCard } from '@/components/cards';
 import ContainerWrapper from '@/components/ContainerWrapper';
 import Typeset from '@/components/Typeset';
-import { GraphicsCard } from '@/components/cards';
 
 import useFocusWithin from '@/hooks/useFocusWithin';
 import { withAlpha } from '@/utils/colorUtils';
@@ -37,10 +37,10 @@ import Wave from '@/images/graphics/Wave';
 /**
  *
  * Demos:
- * - [Other1](https://www.saasable.io/blocks/other/other1)
+ * - [Other1](https://www.Planify.io/blocks/other/other1)
  *
  * API
- * - [Other1 API](https://phoenixcoded.gitbook.io/saasable/ui-kit/development/components/other/other1#props-details)
+ * - [Other1 API](https://phoenixcoded.gitbook.io/Planify/ui-kit/development/components/other/other1#props-details)
  */
 
 export default function Other1({ heading, description, primaryBtn, sections }) {

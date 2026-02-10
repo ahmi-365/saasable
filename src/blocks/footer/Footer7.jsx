@@ -22,12 +22,12 @@ import { CopyrightType } from '@/enum';
 import { DOCS_URL, FREEBIES_URL } from '@/path';
 import { SECTION_COMMON_PY } from '@/utils/constant';
 
-/***************************  FOOTER - 7 DATA  ***************************/
+/*************************** FOOTER - 7 DATA  ***************************/
 
 /**
  *
  * Demos:
- * - [Footer7](https://www.saasable.io/blocks/footer/footer7)
+ * - [Footer7](https://www.Planify.io/blocks/footer/footer7)
  */
 
 const linkProps = { target: '_blank', rel: 'noopener noreferrer' };
@@ -38,19 +38,19 @@ const data = [
     title: 'Resources',
     menu: [
       {
-        label: 'Freebies',
+        label: 'Board Templates',
         link: { href: FREEBIES_URL, ...linkProps }
       },
       {
-        label: 'Documentation',
+        label: 'Developer Guide',
         link: { href: DOCS_URL, ...linkProps }
       },
       {
-        label: 'Blog',
-        link: { href: 'https://blog.saasable.io/', ...linkProps }
+        label: 'Product Blog',
+        link: { href: 'https://blog.Planify.io/', ...linkProps }
       },
       {
-        label: 'Refund Policy',
+        label: 'Changelog',
         link: { href: 'https://mui.com/store/customer-refund-policy/', ...linkProps }
       }
     ]
@@ -61,15 +61,15 @@ const data = [
     title: 'Support',
     menu: [
       {
-        label: 'Pricing',
-        link: { href: 'https://mui.com/store/items/saasable-multipurpose-ui-kit-and-dashboard/', ...linkProps }
+        label: 'Plans & Pricing',
+        link: { href: 'https://mui.com/store/items/Planify-multipurpose-ui-kit-and-dashboard/', ...linkProps }
       },
       {
-        label: 'FAQs',
-        link: { href: 'https://phoenixcoded.gitbook.io/saasable/faq', ...linkProps }
+        label: 'Knowledge Base',
+        link: { href: 'https://phoenixcoded.gitbook.io/Planify/faq', ...linkProps }
       },
       {
-        label: 'Support',
+        label: 'Help Center',
         link: { href: branding.company.socialLink.support, ...linkProps }
       },
       {
@@ -77,7 +77,7 @@ const data = [
         link: { href: 'https://mui.com/store/license/', ...linkProps }
       },
       {
-        label: 'Discord',
+        label: 'Community Discord',
         link: { href: branding.company.socialLink.discord, ...linkProps }
       }
     ]
@@ -88,18 +88,18 @@ const data = [
     title: 'Company',
     menu: [
       {
-        label: 'Why Phoenixcoded?',
+        label: `Why ${branding.brandName}?`,
         link: {
-          href: 'https://blog.saasable.io/a-decade-of-expertise-the-phoenixcoded-story-and-why-you-should-trust-us',
+          href: 'https://blog.Planify.io/a-decade-of-expertise-the-phoenixcoded-story-and-why-you-should-trust-us',
           ...linkProps
         }
       },
       {
-        label: 'About',
-        link: { href: 'https://saasable.io/about', ...linkProps }
+        label: 'About Us',
+        link: { href: 'https://Planify.io/about', ...linkProps }
       },
       {
-        label: 'Contact Us',
+        label: 'Contact Sales',
         link: { href: '/contact', ...linkProps }
       }
     ]
@@ -111,32 +111,32 @@ const iconProps = { color: 'text.secondary' };
 const usefullLinks = [
   {
     icon: <SvgIcon name="tabler-brand-figma" {...iconProps} />,
-    title: 'Figma Version 1.1.0',
+    title: 'Figma Kanban Kit',
     href: 'https://www.figma.com/community/file/1425095061180549847'
   },
   {
-    icon: <SvgIcon name="tabler-route" {...iconProps} />,
-    title: 'React Material UI v7',
+    icon: <SvgIcon name="tabler-code" {...iconProps} />,
+    title: 'React Board Components',
     href: 'https://mui.com/material-ui/getting-started'
   },
   {
-    icon: <SvgIcon name="tabler-sparkles" {...iconProps} />,
-    title: 'Documentation',
+    icon: <SvgIcon name="tabler-book" {...iconProps} />,
+    title: 'Integration Docs',
     href: DOCS_URL
   }
 ];
 
-/***************************  FOOTER - 7  ***************************/
+/*************************** FOOTER - 7  ***************************/
 
 export default function Footer7() {
   const logoFollowContent = (
     <Stack sx={{ alignItems: 'flex-start', gap: { xs: 1.5, sm: 3 } }}>
       <LogoSection />
       <Typography variant="h6" sx={{ maxWidth: { sm: 280 }, mb: { xs: -1, sm: -2.5 } }}>
-        {import.meta.env.VITE_VERSION}
+        v{import.meta.env.VITE_VERSION}
       </Typography>
       <Typography variant="body2" sx={{ maxWidth: { sm: 280 } }}>
-        Explore the different versions of our {branding.brandName} template.
+        Build scalable task management applications with the {branding.brandName} UI Kit.
       </Typography>
     </Stack>
   );

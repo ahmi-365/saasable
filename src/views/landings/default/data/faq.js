@@ -3,101 +3,91 @@ import branding from '@/branding.json';
 
 export const faq = {
   heading: 'Frequently Asked Questions',
-  caption: `Answers to common queries about ${branding.brandName}.`,
-  defaultExpanded: 'Fees & Charges',
+  caption: `Everything you need to know about the ${branding.brandName} Project Management Kit.`,
+  defaultExpanded: 'Features & Capabilities',
   faqList: [
+    // --- GENERAL CATEGORY ---
     {
-      question: `Is ${branding.brandName} only for SaaS web apps?`,
-      answer: `While ${branding.brandName} is designed with SaaS applications in mind, it’s not limited to SaaS products. ${branding.brandName} is multipurpose and can be used for a variety of websites and applications, whether it’s for an agency, digital product, CRM, blog, AI platform, or any other system. ${branding.brandName} is versatile and adaptable to fit any use case, SaaS or not. It’s built for all types of projects!`,
+      question: `Is ${branding.brandName} only for Kanban boards?`,
+      answer: `While ${branding.brandName} specializes in Kanban and Agile workflows, it is a comprehensive Admin Template. It includes views for Scrum, Gantt charts, List views, and a fully functional dashboard. It is versatile enough to build CRM systems, Bug Trackers, or general SaaS admin panels alongside its core project management features.`,
       category: 'General'
     },
     {
-      question: `What makes ${branding.brandName} different from other UI Kits?`,
-      answer: `${branding.brandName} offers industry-specific templates, a React Material UI Kit, Figma UI Kit, and flexible customization options that cater to both front-end marketing and admin interfaces.`,
-      category: 'General'
-    },
-    {
-      question: `Is ${branding.brandName} suitable for both developers and designers?`,
+      question: `Is ${branding.brandName} suitable for teams and solo developers?`,
       answer: {
-        content: `Yes, ${branding.brandName} is built for both, with a Figma UI kit for designers and React code for developers.`,
+        content: `Absolutely. ${branding.brandName} is structured to support scalable team development while being intuitive enough for solo founders.`,
         type: 'list',
         data: [
-          { primary: 'Figma UI Kit for Designers.' },
-          { primary: 'React Material UI Code for Developers.' },
-          { primary: 'Seamless Collaboration.' }
+          { primary: 'Figma Kit for UI/UX Designers.' },
+          { primary: 'Production-ready React Code for Engineers.' },
+          { primary: 'Unified Design System for consistency.' }
         ]
       },
       category: 'General'
     },
     {
-      question: `What is the difference between the Figma and codebase versions?`,
+      question: `What is the difference between the Figma and Codebase versions?`,
       answer:
-        'The Figma version is for design and prototyping, while the codebase version provides ready-to-use React components for development.',
+        'The Figma version contains the design assets, auto-layout boards, and component library for prototyping. The Codebase version provides the functional React Material UI components, including the logic for task management and board interactions.',
       category: 'General'
-    },
-    {
-      question: 'How can I download the template after purchase?',
-      answer: 'You will receive the template in a .zip format immediately after successfully purchasing the template.',
-      category: 'General'
-    },
-    {
-      question: `What's included in the ${branding.brandName} license?`,
-      answer: {
-        content: 'It includes the Figma UI kit, React Material UI codebase, regular updates, and customer support.',
-        type: 'list',
-        data: [
-          { primary: `One License = One End Product` },
-          { primary: `Separate License for Each Product` },
-          { primary: `Comply with License Terms` }
-        ]
-      },
-      category: 'Pricing & Licenses'
-    },
-    {
-      question: `Can I use ${branding.brandName} for multiple projects?`,
-      answer: {
-        content:
-          'No, one license allows usage in a single end product. For each new product or project, you are required to purchase a separate license. This ensures compliance with the licensing terms and provides ongoing support for each individual product. Make sure to obtain the appropriate license for every new project you work on.',
-        type: 'list',
-        data: [
-          { primary: `One License = One End Product` },
-          { primary: `Separate License for Each Product` },
-          { primary: `Comply with License Terms` }
-        ]
-      },
-      category: 'Pricing & Licenses'
     },
 
+    // --- FEATURES & CAPABILITIES CATEGORY (Replaces Pricing) ---
     {
-      question: 'Do you offer refunds?',
-      answer:
-        'Yes, we offer refunds, but only if you provide a valid reason to support your claim. For more details, please review our MUI Store Refund Policy.',
-      category: 'Pricing'
+      question: `Does it support Drag and Drop natively?`,
+      answer: `Yes, the kit comes with pre-configured drag-and-drop functionality. You can move tasks between columns, reorder swimlanes, and prioritize items within lists using modern, touch-friendly libraries optimized for React.`,
+      category: 'Features & Capabilities'
     },
     {
-      question: 'Do I get access to future updates?',
+      question: `Can I customize columns and workflows?`,
+      answer: {
+        content: `The board architecture is fully dynamic. You can programmatically add, remove, or rename columns to match any workflow methodology.`,
+        type: 'list',
+        data: [
+          { primary: 'Custom Column States (To-Do, In Progress, QA)' },
+          { primary: 'WIP (Work In Progress) Limits' },
+          { primary: 'Collapsible Swimlanes' }
+        ]
+      },
+      category: 'Features & Capabilities'
+    },
+    {
+      question: `Does it handle subtasks and checklists?`,
+      answer: `Yes, the Task Detail view includes components for nested subtasks, progress bars, and checklist management, allowing for granular tracking of complex items.`,
+      category: 'Features & Capabilities'
+    },
+    {
+      question: `Are there collaborative features included?`,
+      answer: `The UI kit includes components designed for collaboration, such as "Member is typing" indicators, avatar piles for card assignees, and threaded comment sections within task details.`,
+      category: 'Features & Capabilities'
+    },
+
+    // --- SUPPORT & UPDATES CATEGORY ---
+    {
+      question: 'Do I get updates for new board features?',
       answer: {
         content:
-          'Yes, you will receive future updates for 1 year from the date of purchase. If you need updates after 1 year, you will need to purchase the license again. However, this is not a renewal—your license is valid for a lifetime, but updates are limited to the 1-year period.',
+          'Yes! We regularly release updates with new view types (e.g., Timeline, Calendar), performance improvements, and library upgrades.',
         type: 'list',
-        data: [{ primary: `1 Year Free Updates` }, { primary: `License validity is lifetime` }]
+        data: [{ primary: `Regular Feature Drops` }, { primary: `Performance Optimizations` }]
       },
       category: 'Support & Updates'
     },
     {
-      question: 'Is support included with the template purchase?',
+      question: 'Is technical support provided?',
       answer: {
         content:
-          'Support is included for 6 months, but it is limited to resolving issues within the template itself. We do not provide support for installation, customization queries, or troubleshooting unrelated issues. For ongoing support beyond 6 months, you will need to extend the support period with an additional purchase.',
+          'Yes, 6 months of premium support is included. We assist with bugs, layout issues, and general template questions. Please note that we do not provide support for custom business logic implementation or backend integration.',
         type: 'list',
-        data: [{ primary: `6 Months Support` }, { primary: `No Installation Support` }, { primary: `No Customization Support` }]
+        data: [{ primary: `6 Months Premium Support` }, { primary: `Bug Fixes & Guidance` }, { primary: `No Custom Backend Support` }]
       },
       category: 'Support & Updates'
     }
   ],
   getInTouch: {
-    link: { children: 'Get in Touch', href: branding.company.socialLink.support, target: '_blank', rel: 'noopener noreferrer' }
+    link: { children: 'Contact Support', href: branding.company.socialLink.support, target: '_blank', rel: 'noopener noreferrer' }
   },
-  categories: ['General', 'Pricing & Licenses', 'Support & Updates'],
+  // Removed "Pricing & Licenses" and added "Features & Capabilities"
+  categories: ['General', 'Features & Capabilities', 'Support & Updates'],
   activeCategory: 'General'
 };

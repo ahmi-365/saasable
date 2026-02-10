@@ -1,20 +1,20 @@
 import PropTypes from 'prop-types';
 
 // @mui
+import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import CardMedia from '@mui/material/CardMedia';
 import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
 
 // @project
 import ButtonAnimationWrapper from '@/components/ButtonAnimationWrapper';
-import { SECTION_COMMON_PY } from '@/utils/constant';
 import ContainerWrapper from '@/components/ContainerWrapper';
 import GraphicsImage from '@/components/GraphicsImage';
 import SvgIcon from '@/components/SvgIcon';
 import { NextLink } from '@/components/routes';
+import { SECTION_COMMON_PY } from '@/utils/constant';
 
 export default function ProPage({ image }) {
   return (
@@ -39,8 +39,8 @@ export default function ProPage({ image }) {
               Discover the Components Not Available in the Free Version
             </Typography>
             <Typography variant="body1" color="textSecondary" sx={{ mb: 3, color: 'grey.700', textAlign: 'center' }}>
-              <Link href="https://www.saasable.io/" target="_blank" underline="hover" component={NextLink}>
-                Check out SaasAble PRO
+              <Link href="https://www.Planify.io/" target="_blank" underline="hover" component={NextLink}>
+                Check out Planify PRO
               </Link>{' '}
               which offers updated components, auto layout, and Figma new variables, complete with dark mode!
             </Typography>
@@ -50,7 +50,7 @@ export default function ProPage({ image }) {
                 <Button
                   variant="outlined"
                   component={NextLink}
-                  href="https://www.figma.com/design/mlkXfeqxUKqIo0GQhPBqPb/SaasAble---UI-Kit---Preview-only?node-id=11-1833&t=JBHOIIEuYZpmN6v8-1"
+                  href="https://www.figma.com/design/mlkXfeqxUKqIo0GQhPBqPb/Planify---UI-Kit---Preview-only?node-id=11-1833&t=JBHOIIEuYZpmN6v8-1"
                   target="_blank"
                   sx={{ minWidth: 215 }}
                   startIcon={<CardMedia component="img" src="/assets/images/shared/figma.svg" sx={{ width: 16, height: 16 }} alt="figma" />}
@@ -64,7 +64,7 @@ export default function ProPage({ image }) {
                     variant="contained"
                     color="primary"
                     component={NextLink}
-                    href={'https://www.saasable.io/sections'}
+                    href={'https://www.Planify.io/sections'}
                     target="_blank"
                     startIcon={<SvgIcon name="tabler-sparkles" size={16} stroke={3} color="background.default" />}
                   >

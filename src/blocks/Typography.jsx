@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 // @mui
+import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
 
 // @project
 import { GraphicsCard } from '@/components/cards';
@@ -201,7 +201,7 @@ function FontSizeBlock({ desktop, tablet, mobile, type }) {
 /**
  *
  * Demos:
- * - [Typography](https://www.saasable.io/sections/typography)
+ * - [Typography](https://www.Planify.io/sections/typography)
  */
 
 export default function TypographyPage() {

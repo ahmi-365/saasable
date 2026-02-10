@@ -42,10 +42,10 @@ function IntegrationTag({ label, icon }) {
 /**
  *
  * Demos:
- * - [Integration2](https://www.saasable.io/blocks/integration/integration2)
+ * - [Integration2](https://www.Planify.io/blocks/integration/integration2)
  *
  * API:
- * - [Integration2 API](https://phoenixcoded.gitbook.io/saasable/ui-kit/development/components/integration/integration2#props-details)
+ * - [Integration2 API](https://phoenixcoded.gitbook.io/Planify/ui-kit/development/components/integration/integration2#props-details)
  */
 
 export default function Integration2({ headLine, captionLine, primaryBtn, tagList }) {

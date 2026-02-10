@@ -1,22 +1,22 @@
 import PropTypes from 'prop-types';
 
 // @mui
-import { useTheme } from '@mui/material/styles';
-import useMediaQuery from '@mui/material/useMediaQuery';
 import Avatar from '@mui/material/Avatar';
+import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
+import { useTheme } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 // @third-party
 import { motion } from 'motion/react';
 
 // @project
 import ButtonAnimationWrapper from '@/components/ButtonAnimationWrapper';
-import ContainerWrapper from '@/components/ContainerWrapper';
 import { GraphicsCard } from '@/components/cards';
+import ContainerWrapper from '@/components/ContainerWrapper';
 import GraphicsImage from '@/components/GraphicsImage';
 import SvgIcon from '@/components/SvgIcon';
 import Typeset from '@/components/Typeset';
@@ -31,10 +31,10 @@ import Star from '@/images/graphics/Star';
 /**
  *
  * Demos:
- * - [Feature20](https://www.saasable.io/blocks/feature/feature20)
+ * - [Feature20](https://www.Planify.io/blocks/feature/feature20)
  *
  * API
- * - [Feature20 API](https://phoenixcoded.gitbook.io/saasable/ui-kit/development/components/feature/feature20#props-details)
+ * - [Feature20 API](https://phoenixcoded.gitbook.io/Planify/ui-kit/development/components/feature/feature20#props-details)
  */
 
 export default function Feature20({ heading, caption, image, features, actionBtn, secondaryBtn }) {

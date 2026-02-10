@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
 
 // @mui
+import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
 
 // @project
 import { GraphicsCard } from '@/components/cards';
@@ -20,7 +20,7 @@ import Error500Server from '@/images/maintenance/Error500Server';
 /**
  *
  * Demos:
- * - [Error500](https://www.saasable.io/blocks/error500)
+ * - [Error500](https://www.Planify.io/blocks/error500)
  */
 
 export default function Error500Page({ primaryBtn, heading }) {

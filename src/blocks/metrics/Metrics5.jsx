@@ -34,10 +34,10 @@ function AnimatedCounter({ startCount, endCount }) {
 /**
  *
  * Demos:
- * - [Metrics5](https://www.saasable.io/blocks/metrics/metrics5)
+ * - [Metrics5](https://www.Planify.io/blocks/metrics/metrics5)
  *
  * API:
- * - [Metrics5 API](https://phoenixcoded.gitbook.io/saasable/ui-kit/development/components/metrics/metrics5#props-details)
+ * - [Metrics5 API](https://phoenixcoded.gitbook.io/Planify/ui-kit/development/components/metrics/metrics5#props-details)
  */
 
 export default function Metrics5({ heading, caption, blockDetail }) {

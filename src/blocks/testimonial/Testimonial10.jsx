@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
 
 // @mui
-import { useTheme } from '@mui/material/styles';
-import Stack from '@mui/material/Stack';
-import Typography from '@mui/material/Typography';
 import Masonry from '@mui/lab/Masonry';
+import Stack from '@mui/material/Stack';
+import { useTheme } from '@mui/material/styles';
+import Typography from '@mui/material/Typography';
 
 // @third-party
 import { motion } from 'motion/react';
@@ -23,10 +23,10 @@ import { SECTION_COMMON_PY } from '@/utils/constant';
 /**
  *
  * Demos:
- * - [Testimonial10](https://www.saasable.io/blocks/testimonial/testimonial10)
+ * - [Testimonial10](https://www.Planify.io/blocks/testimonial/testimonial10)
  *
  * API:
- * - [Testimonial10 API](https://phoenixcoded.gitbook.io/saasable/ui-kit/development/components/testimonial/testimonial10#props-details)
+ * - [Testimonial10 API](https://phoenixcoded.gitbook.io/Planify/ui-kit/development/components/testimonial/testimonial10#props-details)
  */
 
 export default function Testimonial10({ heading, caption, testimonials }) {

@@ -119,7 +119,7 @@ const menuItems = [
 /**
  *
  * Demos:
- * - [Terms Condition](https://www.saasable.io/sections/terms-condition)
+ * - [Terms Condition](https://www.Planify.io/sections/terms-condition)
  */
 
 export default function TermsConditionPage() {

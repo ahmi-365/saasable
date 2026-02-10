@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 
 // @mui
+import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Chip from '@mui/material/Chip';
 import Divider from '@mui/material/Divider';
@@ -8,16 +9,15 @@ import Grid from '@mui/material/Grid';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
 
 // @third-party
 import { motion } from 'motion/react';
 
 // @project
 import ButtonAnimationWrapper from '@/components/ButtonAnimationWrapper';
-import ContainerWrapper from '@/components/ContainerWrapper';
 import { GraphicsCard } from '@/components/cards';
 import { ProfileGroup } from '@/components/cards/profile-card';
+import ContainerWrapper from '@/components/ContainerWrapper';
 import LogoWatermark from '@/components/logo/LogoWatermark';
 import Typeset from '@/components/Typeset';
 
@@ -31,10 +31,10 @@ import Wave from '@/images/graphics/Wave';
 /**
  *
  * Demos:
- * - [CTA5](https://www.saasable.io/blocks/cta/cta5)
+ * - [CTA5](https://www.Planify.io/blocks/cta/cta5)
  *
  * API:
- * - [CTA5 API](https://phoenixcoded.gitbook.io/saasable/ui-kit/development/components/cta/cta5#props-details)
+ * - [CTA5 API](https://phoenixcoded.gitbook.io/Planify/ui-kit/development/components/cta/cta5#props-details)
  */
 
 export default function Cta5({ heading, caption, label, input = false, primaryBtn, secondaryBtn, description, saleData, profileGroups }) {
