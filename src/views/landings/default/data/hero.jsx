@@ -6,43 +6,66 @@ import { SECTION_PATH } from '@/path';
 
 export const hero = {
   chip: {
-    label: (
-      <>
-        <Typography variant="caption" sx={{ color: 'text.secondary' }}>
-          One Kit, Endless
-        </Typography>
-        <Chip
-          label={
-            <Typography variant="caption" sx={{ color: 'primary.main' }}>
-              Possibilities
-            </Typography>
-          }
-          sx={{ height: 24, bgcolor: 'primary.lighter', mr: -1, ml: 0.75, '& .MuiChip-label': { px: 1.25 } }}
-          icon={
-            <CardMedia
-              component="img"
-              image="/assets/images/shared/celebration.svg"
-              sx={{ width: 16, height: 16 }}
-              alt="celebration"
-              loading="lazy"
-            />
-          }
-        />
-      </>
-    )
+    label: null
   },
-  headLine: 'Multipurpose UI Kit and Dashboard Template',
+  headLine: 'Manage projects, clients, and teamseverything you need, in one place',
   captionLine: 'Design marketing pages and powerful admin dashboards with ease using our UI Kit, built following Material 3 guidelines.',
-  primaryBtn: { children: 'Explore Blocks', href: SECTION_PATH },
-  videoSrc: 'https://d2elhhoq00m1pj.cloudfront.net/saasable-intro.mp4',
-  videoThumbnail: '/assets/videos/thumbnails/intro-thumbnail.png',
-  listData: [
-    { image: '/assets/images/shared/react.svg', title: 'React 19' },
-    { image: '/assets/images/shared/next-js.svg', title: 'Next.js' },
-    { image: '/assets/images/shared/material-ui.svg', title: 'Material UI v7' },
-    { image: '/assets/images/shared/typescript.svg', title: 'TypeScript' },
-    { image: '/assets/images/shared/javascript.svg', title: 'JavaScript' },
-    { image: '/assets/images/shared/m3.svg', title: 'Material 3' },
-    { image: '/assets/images/shared/figma.svg', title: 'Figma' }
+  featureButtons: [
+    {
+      name: 'Task List',
+      image: '/assets/images/shared/TaskList.png'
+    },
+    {
+      name: 'Kanban',
+      image: '/assets/images/shared/kanban.png'
+    },
+    {
+      name: 'Scheduler',
+      image: '/assets/images/shared/scheduler.png'
+    },
+    {
+      name: 'Time Tracking',
+      image: '/assets/images/shared/time-tracking.png'
+    },
+    {
+      name: 'Analysis',
+      image: '/assets/images/shared/analytics.png'
+    },
+    {
+      name: 'Resource Management',
+      image: '/assets/images/shared/resource-management.png'
+    },
+    {
+      name: 'Task Management',
+      image: '/assets/images/shared/task-management.png'
+    },
+    {
+      name: 'Task Templates',
+      image: '/assets/images/shared/task-templates.png'
+    },
+    {
+      name: 'Projects Templates',
+      image: '/assets/images/shared/project-templates.png'
+    },
+    {
+      name: 'TimeSheets',
+      image: '/assets/images/shared/time-sheet.png'
+    },
+    {
+      name: 'Projects Finance',
+      image: '/assets/images/shared/project-finance.png'
+    },
+    {
+      name: 'Client Portal',
+      image: '/assets/images/shared/client-portal.png'
+    },
+    {
+      name: 'Team Utilization',
+      image: '/assets/images/shared/team-utilization.png'
+    },
+    {
+      name: 'Custom Columns',
+      image: '/assets/images/shared/custom-columns.png'
+    }
   ]
 };

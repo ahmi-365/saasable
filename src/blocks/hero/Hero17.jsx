@@ -1,46 +1,25 @@
 import PropTypes from 'prop-types';
-
 import { useEffect, useRef, useState } from 'react';
-
-// @mui
 import { useTheme } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-
-// @third-party
 import { motion, useScroll, useTransform } from 'motion/react';
-
-// @project
-import ButtonAnimationWrapper from '@/components/ButtonAnimationWrapper';
 import { GraphicsCard } from '@/components/cards';
 import ContainerWrapper from '@/components/ContainerWrapper';
-import GraphicsImage from '@/components/GraphicsImage';
-import SvgIcon from '@/components/SvgIcon';
 import { SECTION_COMMON_PY } from '@/utils/constant';
 import { getBackgroundDots } from '@/utils/getBackgroundDots';
 import { withAlpha } from '@/utils/colorUtils';
-
-// @assets
 import Wave from '@/images/graphics/Wave';
 
-// threshold - adjust threshold as needed
+
 const options = { root: null, rootMargin: '0px', threshold: 0.6 };
 
-/***************************  HERO - 17  ***************************/
 
-/**
- *
- * Demos:
- * - [Hero17](https://www.saasable.io/blocks/hero/hero17)
- *
- * API:
- * - [Hero17 API](https://phoenixcoded.gitbook.io/saasable/ui-kit/development/components/hero/hero17#props-details)
- */
 
-export default function Hero17({ chip, headLine, captionLine, primaryBtn, videoSrc, videoThumbnail, listData }) {
+export default function Hero17({ chip, headLine, captionLine, videoSrc, videoThumbnail, featureButtons }) {
   const theme = useTheme();
   const boxRadius = { xs: 24, sm: 32, md: 40 };
 
@@ -55,6 +34,7 @@ export default function Hero17({ chip, headLine, captionLine, primaryBtn, videoS
 
   const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [selectedFeatureIndex, setSelectedFeatureIndex] = useState(0);
 
   // Handle video play/pause based on intersection with the viewport
   useEffect(() => {
@@ -171,67 +151,105 @@ export default function Hero17({ chip, headLine, captionLine, primaryBtn, videoS
                 </Typography>
               </motion.div>
             </Stack>
-            <Stack sx={{ alignItems: 'center', gap: 2, mt: { xs: 3, sm: 4, md: 5 } }}>
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, ease: 'easeInOut' }}
-                whileHover={{ scale: 1.06 }}
+          </Box>
+          {/* Feature Buttons Section */}
+          {featureButtons && featureButtons.length > 0 && (
+            <Box sx={{ width: '100%' }}>
+              <Stack
+                direction="row"
+                sx={{
+                  gap: 0.75,
+                  mb: 3,
+                  flexWrap: 'wrap',
+                  justifyContent: 'center'
+                }}
               >
-                <ButtonAnimationWrapper>
-                  <Button
-                    color="primary"
-                    variant="contained"
-                    startIcon={<SvgIcon name="tabler-sparkles" size={16} stroke={3} color="background.default" />}
-                    {...primaryBtn}
-                  />
-                </ButtonAnimationWrapper>
-              </motion.div>
-              <Stack direction="row" sx={{ gap: 1, flexWrap: 'wrap', justifyContent: 'center' }}>
-                {listData.map((item, index) => (
+                {featureButtons.map((feature, index) => (
                   <motion.div
                     key={index}
-                    initial={{ opacity: 0, scale: 0.6 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.9, delay: index * 0.08, ease: 'linear' }}
+                    transition={{ duration: 0.3, delay: index * 0.05 }}
                   >
-                    <Chip
-                      label={item.title}
-                      variant="outlined"
-                      icon={<GraphicsImage image={item.image} sx={{ width: 16, height: 16 }} />}
-                      slotProps={{ label: { sx: { py: 0.75, px: 1, typography: 'caption2' } } }}
-                      sx={{ height: 32, px: 1, bgcolor: 'grey.100' }}
-                    />
+                    <Button
+                      onClick={() => setSelectedFeatureIndex(index)}
+                      variant={selectedFeatureIndex === index ? 'contained' : 'outlined'}
+                      color="primary"
+                      size="small"
+                      sx={{
+                        textTransform: 'capitalize',
+                        fontSize: '0.875rem',
+                        py: 0.75,
+                        px: 1.75,
+                        transition: 'all 0.3s ease',
+                        border: selectedFeatureIndex === index ? 'none' : '1.5px solid',
+                        borderColor: selectedFeatureIndex === index ? 'transparent' : 'primary.main',
+                        ...(selectedFeatureIndex === index && {
+                          boxShadow: `0 4px 12px ${withAlpha(theme.vars.palette.primary.main, 0.3)}`
+                        })
+                      }}
+                    >
+                      {feature.name}
+                    </Button>
                   </motion.div>
                 ))}
               </Stack>
-            </Stack>
-          </Box>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.6 }}
-            whileInView={{ opacity: 1, scale: 0.9 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.9, delay: 0.3 }}
-            style={{ scale }}
-          >
-            <GraphicsCard sx={{ border: '5px solid', borderColor: 'grey.300' }}>
-              <video
-                playsInline
-                ref={videoRef}
-                width="100%"
-                height="100%"
-                style={{ display: 'flex', objectFit: 'cover' }}
-                preload="metadata"
-                autoPlay={false}
-                loop={true}
-                muted={true}
-                poster={videoThumbnail}
+
+              {/* Display Selected Feature Image */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.6 }}
+                animate={{ opacity: 1, scale: 0.9 }}
+                key={selectedFeatureIndex}
+                transition={{ duration: 0.5 }}
+                style={{ scale }}
               >
-                <source src={videoSrc} type="video/mp4" />
-              </video>
-            </GraphicsCard>
-          </motion.div>
+                <GraphicsCard sx={{ border: '5px solid', borderColor: 'grey.300' }}>
+                  <Box
+                    component="img"
+                    src={featureButtons[selectedFeatureIndex]?.image}
+                    alt={featureButtons[selectedFeatureIndex]?.name}
+                    sx={{
+                      width: '100%',
+                      height: '100%',
+                      display: 'flex',
+                      objectFit: 'cover',
+                      borderRadius: 1
+                    }}
+                  />
+                </GraphicsCard>
+              </motion.div>
+            </Box>
+          )}
+          {/* Fallback to Video if no Feature Buttons */}
+          {(!featureButtons || featureButtons.length === 0) && videoSrc && (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.6 }}
+              whileInView={{ opacity: 1, scale: 0.9 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.9, delay: 0.3 }}
+              style={{ scale }}
+            >
+              <GraphicsCard sx={{ border: '5px solid', borderColor: 'grey.300' }}>
+                <video
+                  playsInline
+                  ref={videoRef}
+                  width="100%"
+                  height="100%"
+                  style={{ display: 'flex', objectFit: 'cover' }}
+                  preload="metadata"
+                  autoPlay={false}
+                  loop={true}
+                  muted={true}
+                  poster={videoThumbnail}
+                >
+                  <source src={videoSrc} type="video/mp4" />
+                </video>
+              </GraphicsCard>
+            </motion.div>
+          )}
         </Box>
       </ContainerWrapper>
     </>
@@ -242,8 +260,7 @@ Hero17.propTypes = {
   chip: PropTypes.object,
   headLine: PropTypes.string,
   captionLine: PropTypes.string,
-  primaryBtn: PropTypes.any,
   videoSrc: PropTypes.string,
   videoThumbnail: PropTypes.string,
-  listData: PropTypes.array
+  featureButtons: PropTypes.array
 };
