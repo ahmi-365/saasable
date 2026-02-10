@@ -1,15 +1,12 @@
 // @mui
-import CardMedia from '@mui/material/CardMedia';
-import Chip from '@mui/material/Chip';
-import Typography from '@mui/material/Typography';
-import { SECTION_PATH } from '@/path';
 
 export const hero = {
   chip: {
     label: null
   },
-  headLine: 'Manage projects, clients, and teamseverything you need, in one place',
-  captionLine: 'Design marketing pages and powerful admin dashboards with ease using our UI Kit, built following Material 3 guidelines.',
+  headLine: 'Master your workflow and move from "To-Do" to "Done" in one place.',
+  captionLine:
+    'Visualize progress, track team tasks, and eliminate bottlenecks with a high-performance Kanban interface built on Material 3 guidelines',
   featureButtons: [
     {
       name: 'Task List',
@@ -62,10 +59,6 @@ export const hero = {
     {
       name: 'Team Utilization',
       image: '/assets/images/shared/team-utilization.png'
-    },
-    {
-      name: 'Custom Columns',
-      image: '/assets/images/shared/custom-columns.png'
     }
   ]
 };

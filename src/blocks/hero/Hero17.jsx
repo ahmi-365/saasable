@@ -1,23 +1,20 @@
-import PropTypes from 'prop-types';
-import { useEffect, useRef, useState } from 'react';
-import { useTheme } from '@mui/material/styles';
+import { GraphicsCard } from '@/components/cards';
+import ContainerWrapper from '@/components/ContainerWrapper';
+import Wave from '@/images/graphics/Wave';
+import { withAlpha } from '@/utils/colorUtils';
+import { SECTION_COMMON_PY } from '@/utils/constant';
+import { getBackgroundDots } from '@/utils/getBackgroundDots';
+import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
+import { useTheme } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
 import { motion, useScroll, useTransform } from 'motion/react';
-import { GraphicsCard } from '@/components/cards';
-import ContainerWrapper from '@/components/ContainerWrapper';
-import { SECTION_COMMON_PY } from '@/utils/constant';
-import { getBackgroundDots } from '@/utils/getBackgroundDots';
-import { withAlpha } from '@/utils/colorUtils';
-import Wave from '@/images/graphics/Wave';
-
+import PropTypes from 'prop-types';
+import { useEffect, useRef, useState } from 'react';
 
 const options = { root: null, rootMargin: '0px', threshold: 0.6 };
-
-
 
 export default function Hero17({ chip, headLine, captionLine, videoSrc, videoThumbnail, featureButtons }) {
   const theme = useTheme();
@@ -177,7 +174,7 @@ export default function Hero17({ chip, headLine, captionLine, videoSrc, videoThu
                     <Button
                       onClick={() => setSelectedFeatureIndex(index)}
                       variant={selectedFeatureIndex === index ? 'contained' : 'outlined'}
-                      color="primary"
+                      // color="primary"
                       size="small"
                       sx={{
                         textTransform: 'capitalize',

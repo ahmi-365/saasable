@@ -1,60 +1,60 @@
 // @project
 import branding from '@/branding.json';
 import { IconType } from '@/enum';
-import { SECTION_PATH, BUY_NOW_URL, ADMIN_PATH, DOCS_URL } from '@/path';
+import { ADMIN_PATH, BUY_NOW_URL, DOCS_URL, SECTION_PATH } from '@/path';
 
 const linkProps = { target: '_blank', rel: 'noopener noreferrer' };
 
 export const feature2 = {
-  heading: 'Culture of Innovation',
+  heading: 'Master your workflow and move from "To-Do" to "Done" in one place.',
   caption:
-    'Join a team that embraces forward-thinking ideas, fosters innovation, and cultivates an environment where your creativity can flourish.',
+    'Visualize progress, track team tasks, and eliminate bottlenecks with a high-performance Kanban interface built on modern design guidelines.',
   features: [
     {
       icon: { name: 'tabler-users', type: IconType.STROKE, color: 'grey.900', stroke: 1 },
-      title: 'Teamwork',
-      content: 'We embrace varied perspectives and backgrounds, creating an inclusive environment.'
+      title: 'Collaborative Workflows',
+      content: 'Enable seamless team collaboration with real-time updates and shared boards.'
     },
     {
       icon: { name: 'tabler-star', type: IconType.STROKE, color: 'grey.900', stroke: 1 },
-      title: 'Inclusivity',
-      content: 'We embrace varied perspectives and backgrounds, creating an inclusive environment.'
+      title: 'Visual Clarity',
+      content: 'Gain instant insight into project status with intuitive, customizable Kanban boards.'
     },
     {
       icon: { name: 'tabler-chart-histogram', type: IconType.STROKE, color: 'grey.900', stroke: 1 },
-      title: 'Growth',
-      content: 'Our culture prioritizes continuous learning, encouraging personal and professional development. '
+      title: 'Process Optimization',
+      content: 'Identify and resolve bottlenecks to streamline your delivery pipeline.'
     }
   ]
 };
 
 export const feature5 = {
-  heading: 'Beyond the 9-to-5',
-  caption: 'Our benefits go beyond the standard, ensuring your life outside of work is just as fulfilling.',
+  heading: 'Optimize Your Project Lifecycle',
+  caption: 'From planning to execution, our tools ensure your project management is efficient and effective.',
   image1: '/assets/images/graphics/ai/graphics3-light.svg',
   image2: '/assets/images/graphics/ai/graphics2-light.svg',
   features: [
     {
       icon: 'tabler-coin',
-      title: 'Compensation',
-      content: 'Enjoy a competitive salary that recognizes your skills and contributions.'
+      title: 'Resource Management',
+      content: 'Maximize efficiency by effectively allocating and tracking team resources.'
     },
     {
       icon: 'tabler-health-recognition',
-      title: 'Healthcare',
-      content: "Access to a comprehensive healthcare plan, ensuring you and your family's well-being."
+      title: 'Project Health',
+      content: "Monitor key metrics to ensure projects stay on track and within scope."
     }
   ],
   features2: [
     {
       icon: 'tabler-briefcase',
-      title: 'Automated Scaling',
-      content: 'Embrace a flexible work environment, allowing you to balance work.'
+      title: 'Flexible Boards',
+      content: 'Adapt Kanban boards to fit any project methodology or team structure.'
     },
     {
       icon: 'tabler-users',
-      title: 'Real-Time',
-      content: 'Support your family commitments with family-friendly policies and benefits.'
+      title: 'Real-Time Sync',
+      content: 'Keep everyone aligned with instant updates across all devices and platforms.'
     }
   ],
   profileGroups: {
@@ -65,152 +65,152 @@ export const feature5 = {
       { avatar: '/assets/images/user/avatar4.png' },
       { avatar: '/assets/images/user/avatar5.png' }
     ],
-    review: '10k+ Reviews (4.5 out of 5)'
+    review: '10k+ Teams Trust Us'
   },
-  content: 'Explore diverse career paths within the company through our internal mobility programs.',
-  actionBtn: { children: 'Explore all Features', href: '#' }
+  content: 'Discover how our platform can transform your project management experience.',
+  actionBtn: { children: 'Explore Features', href: '#' }
 };
 
 export const feature20 = {
-  heading: 'Comprehensive UI Kit Tailored to your Need',
-  caption: 'Ready to transform your SaaS designs with one powerful UI Kit?',
-  actionBtn: { children: 'Buy Now', href: BUY_NOW_URL, ...linkProps },
-  secondaryBtn: { children: 'Explore Blocks', href: SECTION_PATH },
+  heading: 'Comprehensive Kanban UI Kit',
+  caption: 'Ready to build powerful project management tools with one robust UI Kit?',
+  // actionBtn: { children: 'Buy Now', href: BUY_NOW_URL, ...linkProps },
+  secondaryBtn: { children: 'Explore Components', href: SECTION_PATH },
   features: [
     {
       icon: 'tabler-accessible',
-      title: 'WCAG Compliant',
-      content: 'Ensure accessibility with WCAG compliant design for browsing.'
+      title: 'Accessibility First',
+      content: 'Ensure your Kanban boards are usable by everyone with WCAG compliant designs.'
     },
     {
       icon: 'tabler-brand-google',
-      title: 'SEO Friendly',
-      content: 'Boost visibility with SEO-friendly features for better search rankings.'
+      title: 'Performance Optimized',
+      content: 'Built for speed, ensuring smooth interactions even with complex boards.'
     },
     {
       icon: 'tabler-stack-2',
-      title: 'MUI Components',
-      content: 'Customize Material 3 design MUI components for enhanced aesthetics.'
+      title: 'Modern Design System',
+      content: 'Leverage the latest design standards for a modern, intuitive interface.'
     },
     {
       icon: 'tabler-rocket',
-      title: 'High Performance UI',
-      content: 'Adjust content layout for visual coherence on various screen sizes.'
+      title: 'High-Fidelity UI',
+      content: 'Create stunning visual hierarchies that enhance task visibility and organization.'
     },
     {
       icon: 'tabler-help',
-      title: 'Detailed Documentation',
-      content: 'Access comprehensive documentation for easy guidance on platform usage.'
+      title: 'Extensive Docs',
+      content: 'Get started quickly with detailed documentation and implementation guides.'
     },
     {
       icon: 'tabler-refresh',
-      title: 'Regular Updates',
-      content: 'Receive consistent updates to keep the platform secure and up-to-date with the latest features.'
+      title: 'Continuous Updates',
+      content: 'Stay ahead with regular updates featuring new components and improvements.'
     }
   ]
 };
 
 export const feature21 = {
-  heading: `Design Faster, Smarter with ${branding.brandName} Figma`,
-  caption: 'Unlock Figma’s advanced tools for streamlined, scalable, and responsive SaaS UI design.',
+  heading: `Prototype Powerful Kanban Boards with ${branding.brandName} Figma`,
+  caption: 'Access a complete library of task cards, fluid columns, and swimlanes to design the ultimate agile workflow interface.',
   image: '/assets/images/graphics/ai/desktop1-light.svg',
-  primaryBtn: { children: 'Free Figma', href: 'https://www.figma.com/community/file/1425095061180549847', ...linkProps },
-  secondaryBtn: {
-    children: 'Preview Pro Figma',
-    href: 'https://www.figma.com/design/mlkXfeqxUKqIo0GQhPBqPb/SaasAble---UI-Kit---Preview-only?node-id=11-1833&t=JBHOIIEuYZpmN6v8-1',
-    ...linkProps
-  },
+  // primaryBtn: { children: 'Get Board Kit', href: 'https://www.figma.com/community/file/1425095061180549847', ...linkProps },
+  // secondaryBtn: {
+  //   children: 'View Prototype',
+  //   href: 'https://www.figma.com/design/mlkXfeqxUKqIo0GQhPBqPb/SaasAble---UI-Kit---Preview-only?node-id=11-1833&t=JBHOIIEuYZpmN6v8-1',
+  //   ...linkProps
+  // },
   features: [
     {
       animationDelay: 0.1,
-      icon: 'tabler-components',
-      title: 'Component Architecture'
+      icon: 'tabler-cards',
+      title: 'Draggable Tasks'
     },
     {
       animationDelay: 0.2,
-      icon: 'tabler-moon',
-      title: 'Dark Mode'
+      icon: 'tabler-layout-columns',
+      title: 'Dynamic Columns'
     },
     {
       animationDelay: 0.3,
-      icon: 'tabler-brightness-auto',
-      title: 'Auto Layout'
+      icon: 'tabler-users',
+      title: 'Assignee Avatars'
     },
     {
       animationDelay: 0.4,
-      icon: 'tabler-accessible',
-      title: 'WCAG Compliant'
+      icon: 'tabler-tag',
+      title: 'Status Labels'
     },
     {
       animationDelay: 0.1,
-      icon: 'tabler-icons',
-      title: 'Custom Icons'
+      icon: 'tabler-layout-rows',
+      title: 'Swimlane Views'
     },
     {
       animationDelay: 0.2,
-      icon: 'tabler-file-stack',
-      title: 'Page Demos'
+      icon: 'tabler-adjustments-horizontal',
+      title: 'Filter & Sort UI'
     },
     {
       animationDelay: 0.3,
-      icon: 'tabler-brand-matrix',
-      title: 'Material 3 Guideline'
+      icon: 'tabler-palette',
+      title: 'Priority Styling'
     },
     {
       animationDelay: 0.4,
       icon: 'tabler-click',
-      title: 'Quick Customization'
+      title: 'Interaction States'
     }
   ]
 };
 
 export const feature = {
-  heading: `What’s Inside of ${branding.brandName} Plus Version`,
+  heading: `What’s Included in ${branding.brandName} Plus`,
   features: [
     {
       image: '/assets/images/shared/react.svg',
-      title: 'CRA JavaScript',
-      content: 'Ensure accessibility with WCAG compliant design for browsing.'
+      title: 'React Kanban',
+      content: 'Fully functional React components for building interactive boards.'
     },
     {
       image: '/assets/images/shared/next-js.svg',
-      title: 'Next.js JavaScript',
-      content: 'Tailor typography for optimal readability across all screen sizes.'
+      title: 'Next.js Support',
+      content: 'Seamless integration with Next.js for server-side rendering and performance.'
     },
     {
       image: '/assets/images/shared/react.svg',
-      title: 'CRA TypeScript',
-      content: 'Customize Material 3 design MUI components for enhanced aesthetics.'
+      title: 'TypeScript Ready',
+      content: 'Robust TypeScript definitions for type-safe development.'
     },
     {
       image: '/assets/images/shared/next-js.svg',
-      title: 'Next.js TypeScript',
-      content: 'Adjust content layout for visual coherence on various screen sizes.'
+      title: 'Responsive Layouts',
+      content: 'Fluid grid systems that adapt to any screen size or device.'
     },
     {
       image: '/assets/images/shared/figma.svg',
-      title: 'Figma ',
-      content: 'Boost visibility with SEO-friendly features for better search rankings.'
+      title: 'Figma Design System',
+      content: 'Complete design system to streamline your UI/UX workflow.'
     },
     {
-      title: 'Check Out Our Pricing Plan',
-      content: 'Choose the plan that aligns with your SaaS product requirements.',
-      actionBtn: { children: 'Pricing Plan', href: BUY_NOW_URL, ...linkProps }
+      title: 'Explore Pricing',
+      content: 'Find the perfect plan to scale your project management capabilities.',
+      actionBtn: { children: 'View Pricing', href: BUY_NOW_URL, ...linkProps }
     }
   ]
 };
 
 export const feature7 = {
-  heading: 'Real-Time Performance Insights',
-  caption: 'Gain a competitive edge with real-time performance monitoring.',
+  heading: 'Actionable Workflow Insights',
+  caption: 'Drive efficiency with data-driven insights into team performance and task progress.',
   testimonials: [
     {
       image: '/assets/images/graphics/ai/graphics6-light.svg',
       features: [
         {
           icon: 'tabler-star',
-          title: 'Core Value',
-          content: 'Unlock growth potential through continuous monitoring, enabling proactive strategies in a competitive landscape.'
+          title: 'Strategic Value',
+          content: 'Leverage analytics to refine processes and achieve strategic goals faster.'
         }
       ]
     },
@@ -219,8 +219,8 @@ export const feature7 = {
       features: [
         {
           icon: 'tabler-route',
-          title: 'Multi-Cloud Orchestration',
-          content: 'Enhances flexibility and resilience in a multi-cloud environment.'
+          title: 'Workflow Orchestration',
+          content: 'Seamlessly coordinate complex workflows across multiple teams and projects.'
         }
       ]
     },
@@ -229,101 +229,100 @@ export const feature7 = {
       features: [
         {
           icon: 'tabler-history',
-          title: 'Story',
-          content: 'Real-time performance insights empower teams to respond swiftly, optimizing operations and driving growth.'
+          title: 'Success Stories',
+          content: 'See how real-time insights have empowered teams to deliver exceptional results.'
         }
       ]
-    }
+    },
   ],
-  breadcrumbs: [{ title: 'Core Value' }, { title: 'Culture' }, { title: 'Story' }]
+  breadcrumbs: [{ title: 'Insights' }, { title: 'Strategy' }, { title: 'Success' }]
 };
 
 export const feature23 = {
-  heading: 'Culture of Innovation',
+  heading: 'Streamline Your Operations',
   caption:
-    'Join a team that embraces forward-thinking ideas, fosters innovation, and cultivates an environment where your creativity can flourish.',
-  heading2: 'Growth',
-  caption2: 'Our culture prioritizes continuous learning, encouraging personal and professional development. ',
+    'Empower your team with tools that foster collaboration, enhance visibility, and drive productivity.',
+  heading2: 'Continuous Improvement',
+  caption2: 'Our platform supports iterative development, helping you refine and perfect your workflows.',
   image: '/assets/images/graphics/default/feature23-light.png',
-  primaryBtn: { children: 'Join  Our Team', href: '#' },
+  primaryBtn: { children: 'Start Collaborating', href: '#' },
 
   features: [
     {
       icon: 'tabler-users',
-      title: 'Teamwork',
-      content: 'We embrace varied perspectives and backgrounds, creating an inclusive environment.'
+      title: 'Team Alignment',
+      content: 'Keep everyone on the same page with centralized task management.'
     },
     {
       icon: 'tabler-star',
-      title: 'Inclusivity',
-      content: 'We embrace varied perspectives and backgrounds, creating an inclusive environment.'
+      title: 'Efficiency',
+      content: 'Reduce wasted time and effort with optimized task flows.'
     }
   ]
 };
-
 export const feature18 = {
-  heading: 'Powerful Admin Interface',
-  caption: 'Manage data, users, and workflows effortlessly with intuitive, customizable admin controls and features.',
+  heading: 'Centralized Project Control',
+  caption: 'Manage teams, configure boards, and oversee timelines from a single, intuitive control center.',
   topics: [
     {
       icon: 'tabler-sparkles',
-      title: 'Material UI Powered',
-      title2: 'Leverage Power of Material UI Components',
-      description: 'The power and flexibility of Material UI components in admin template',
+      title: 'Interactive Board UI',
+      title2: 'Fluid Task Management',
+      description: 'Experience a responsive, drag-and-drop interface designed for modern project management.',
       image: '/assets/images/graphics/default/admin-dashboard.png',
       list: [
-        { primary: 'Next.js JavaScript/TypeScript' },
-        { primary: 'Customizable Themes' },
-        { primary: 'Rich Form and Table Components' },
-        { primary: 'Responsive Grid System' }
+        { primary: 'Smooth Drag & Drop' },
+        { primary: 'Swimlane Views' },
+        { primary: 'Inline Task Editing' },
+        { primary: 'Rich Card Previews' }
       ],
-      actionBtn: { children: 'View Dashboard', href: ADMIN_PATH, ...linkProps },
-      actionBtn2: { children: 'Docs', href: DOCS_URL, ...linkProps }
+      actionBtn: { children: 'View Board', href: ADMIN_PATH, ...linkProps },
+      actionBtn2: { children: 'Documentation', href: DOCS_URL, ...linkProps }
     },
     {
       icon: 'tabler-palette',
-      title: 'Customizable Themes',
-      title2: 'Flexible Theming Options',
-      description: 'Tailor themes effortlessly with MUI 7 robust theming system.',
+      title: 'Workflow Customization',
+      title2: 'Define Your Process',
+      description: 'Tailor columns, statuses, and card layouts to fit your team\'s specific methodology.',
       image: '/assets/images/graphics/default/admin-dashboard-2.png',
       list: [
-        { primary: 'Easy options for Theming' },
-        { primary: 'Layout Options' },
-        { primary: 'Color Presets tailored to your Web Apps' },
-        { primary: 'Consistency in Design' }
+        { primary: 'Custom Columns & States' },
+        { primary: 'Label & Tag Management' },
+        { primary: 'Conditional Formatting' },
+        { primary: 'Adjustable Card Density' }
       ],
-      actionBtn: { children: 'View Dashboard', href: ADMIN_PATH, ...linkProps },
-      actionBtn2: { children: 'Docs', href: DOCS_URL, ...linkProps }
+      actionBtn: { children: 'View Board', href: ADMIN_PATH, ...linkProps },
+      actionBtn2: { children: 'Documentation', href: DOCS_URL, ...linkProps }
     },
     {
       icon: 'tabler-rocket',
-      title: 'Faster Development',
-      title2: 'Rapid Development',
-      description: 'Launch projects quicker with pre-built layouts and components.',
+      title: 'Efficiency Tools',
+      title2: 'Streamline Operations',
+      description: 'Boost team productivity with integrated tools for planning, tracking, and execution.',
       image: '/assets/images/graphics/default/admin-dashboard-3.png',
       list: [
-        { primary: 'Time Saving' },
-        { primary: 'Tested and Reliable' },
-        { primary: 'Customization Ready' },
-        { primary: 'Enhanced User Experience' }
+        { primary: 'WIP Limits' },
+        { primary: 'Task Aging Indicators' },
+        { primary: 'Bulk Actions' },
+        { primary: 'Automated Triggers' }
       ],
-      actionBtn: { children: 'View Dashboard', href: ADMIN_PATH, ...linkProps },
-      actionBtn2: { children: 'Docs', href: DOCS_URL, ...linkProps }
+      actionBtn: { children: 'View Board', href: ADMIN_PATH, ...linkProps },
+      actionBtn2: { children: 'Documentation', href: DOCS_URL, ...linkProps }
     },
     {
       icon: 'tabler-scale',
-      title: 'Scalability',
-      title2: 'Build to Scale',
-      description: 'Easily scale your app with flexible, modular, and extensible templates.',
+      title: 'Scalable Architecture',
+      title2: 'Built for Growth',
+      description: 'A robust system ready to handle thousands of tasks and multiple collaborative teams.',
       image: '/assets/images/graphics/default/admin-dashboard.png',
       list: [
-        { primary: 'Modular Architecture' },
-        { primary: 'Performance Optimized' },
-        { primary: 'Extensible Codebase' },
-        { primary: 'Future Proof Design' }
+        { primary: 'Multi-Project Support' },
+        { primary: 'High-Performance Rendering' },
+        { primary: 'Real-Time Sync' },
+        { primary: 'Granular Permissions' }
       ],
-      actionBtn: { children: 'View Dashboard', href: ADMIN_PATH, ...linkProps },
-      actionBtn2: { children: 'Docs', href: DOCS_URL, ...linkProps }
+      actionBtn: { children: 'View Board', href: ADMIN_PATH, ...linkProps },
+      actionBtn2: { children: 'Documentation', href: DOCS_URL, ...linkProps }
     }
   ]
 };

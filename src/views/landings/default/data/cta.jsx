@@ -7,10 +7,10 @@ import Typography from '@mui/material/Typography';
 import { NextLink } from '@/components/routes';
 
 export const cta4 = {
-  headLine: 'Why Trust Phoenixcoded for Your Dashboard Template Needs?',
+  headLine: `Why Trust ${branding.brandName} with Your Project Management?`,
   primaryBtn: {
-    children: 'Read Our story',
-    href: 'https://blog.saasable.io/a-decade-of-expertise-the-phoenixcoded-story-and-why-you-should-trust-us',
+    children: 'Read Our Story',
+    href: 'https://blog.saasable.io/a-decade-of-expertise-the-phoenixcoded-story-and-why-you-should-trust-us', // Update to your actual blog link
     target: '_blank',
     rel: 'noopener noreferrer'
   },
@@ -22,15 +22,15 @@ export const cta4 = {
       { avatar: '/assets/images/user/avatar4.png' },
       { avatar: '/assets/images/user/avatar5.png' }
     ],
-    review: '250+ Author Reviews (4.65 out of 5)'
+    review: '10k+ Teams (4.8 out of 5)'
   },
   list: [
-    { primary: '10+ Years Expertise' },
-    { primary: '8k+ Satisfied Customers' },
-    { primary: 'Elite Envato Author' },
-    { primary: 'Timely Support, Guaranteed' },
-    { primary: 'Regular Updates Provided' },
-    { primary: 'Proven Industry Leader' }
+    { primary: '99.9% Uptime SLA' },
+    { primary: 'Enterprise-Grade Security' },
+    { primary: 'Seamless Integrations' },
+    { primary: '24/7 Priority Support' },
+    { primary: 'Agile Certified Tools' },
+    { primary: 'Scalable Infrastructure' }
   ],
   clientContent: 'Learn More'
 };
@@ -38,7 +38,7 @@ export const cta4 = {
 function DescriptionLine() {
   return (
     <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-      Have questions? Our community is here to help. Learn more about{' '}
+      Have questions? Our experts are here to help. Join{' '}
       <Link component={NextLink} variant="caption2" color="primary" href={branding.company.socialLink.discord} underline="hover">
         our community
       </Link>
@@ -47,17 +47,17 @@ function DescriptionLine() {
 }
 
 export const cta5 = {
-  label: 'Join the Community',
-  heading: 'Connect with us on Discord',
-  caption: 'Get support, share insights, and grow together.',
+  label: 'Join the Ecosystem',
+  heading: 'Connect with Agile Experts',
+  caption: 'Share workflow templates, get productivity hacks, and grow with other project managers.',
   primaryBtn: {
-    children: 'Join Discord Community',
+    children: 'Join Community',
     href: branding.company.socialLink.discord,
     target: '_blank',
     rel: 'noopener noreferrer'
   },
   description: <DescriptionLine />,
-  saleData: { count: 8, defaultUnit: 'k+', caption: 'Trusted by professionals worldwide' },
+  saleData: { count: 15, defaultUnit: 'k+', caption: 'Active community members' },
   profileGroups: {
     avatarGroups: [
       { avatar: '/assets/images/user/avatar1.png' },
@@ -66,15 +66,15 @@ export const cta5 = {
       { avatar: '/assets/images/user/avatar4.png' },
       { avatar: '/assets/images/user/avatar5.png' }
     ],
-    review: '250k+ Reviews (4.65 out of 5)'
+    review: '250k+ Messages (4.9 out of 5)'
   }
 };
 
 export const cta10 = {
-  heading: "Couldn't find the perfect role for you?",
-  caption: 'No worries – we encourage you to apply anyway! Your unique skills and talents might be just what we need.',
+  heading: 'Help Us Redefine Productivity',
+  caption: 'Don’t see your perfect role? We are always looking for visionaries to help us build the future of work. Send us your details!',
   primaryBtn: { children: 'Send Your Resume', href: '#' },
-  secondaryBtn: { children: 'Contact Us', href: '#' },
+  secondaryBtn: { children: 'Contact HR', href: '#' },
   image: '/assets/images/graphics/ai/graphics15-light.svg',
   profileGroups: {
     avatarGroups: [
@@ -84,6 +84,6 @@ export const cta10 = {
       { avatar: '/assets/images/user/avatar4.png' },
       { avatar: '/assets/images/user/avatar5.png' }
     ],
-    review: '10k+ Reviews (4.5 out of 5)'
+    review: 'Employee Choice Award (4.9/5)'
   }
 };
