@@ -18,6 +18,8 @@ const options = { root: null, rootMargin: '0px', threshold: 0.6 };
 
 export default function Hero17({ chip, headLine, captionLine, videoSrc, videoThumbnail, featureButtons }) {
   const theme = useTheme();
+  // Determine if dark mode is active
+  const isDark = theme.palette.mode === 'dark';
   const boxRadius = { xs: 24, sm: 32, md: 40 };
 
   const containerRef = useRef(null);
@@ -83,8 +85,8 @@ export default function Hero17({ chip, headLine, captionLine, videoSrc, videoThu
           zIndex: -1,
           borderBottomLeftRadius: boxRadius,
           borderBottomRightRadius: boxRadius,
-          ...getBackgroundDots(theme.vars.palette.grey[300], 2, 35),
-          bgcolor: 'grey.100'
+          ...getBackgroundDots(isDark ? theme.vars.palette.grey[900] : theme.vars.palette.grey[300], 2, 35),
+          bgcolor: isDark ? 'grey.900' : 'grey.100'
         }}
       />
       <ContainerWrapper sx={{ py: SECTION_COMMON_PY }}>
@@ -113,7 +115,7 @@ export default function Hero17({ chip, headLine, captionLine, videoSrc, videoThu
                       sx: { py: 0.5, px: 1.5, ...(typeof chip.label === 'string' && { typography: 'caption', color: 'text.secondary' }) }
                     }
                   }}
-                  sx={{ bgcolor: 'grey.100' }}
+                  sx={{ bgcolor: isDark ? 'grey.900' : 'grey.100', borderColor: isDark ? theme.palette.divider : 'grey.200' }}
                 />
               </motion.div>
 
@@ -167,8 +169,9 @@ export default function Hero17({ chip, headLine, captionLine, videoSrc, videoThu
                     px: { xs: 1, sm: 2 },
                     py: { xs: 0.5, sm: 1 },
                     borderRadius: 3,
-                    background: theme.palette.background.paper,
-                    boxShadow: '0 2px 16px 0 rgba(60,60,60,0.08)',
+                    background: isDark ? theme.palette.background.paper : theme.palette.background.paper,
+                    color: isDark ? theme.palette.text.primary : theme.palette.text.primary,
+                    boxShadow: isDark ? '0 2px 16px 0 rgba(0,0,0,0.18)' : '0 2px 16px 0 rgba(60,60,60,0.08)',
                     border: `1.5px solid ${theme.palette.divider}`,
                     alignItems: 'center',
                     minHeight: 56,
@@ -182,54 +185,59 @@ export default function Hero17({ chip, headLine, captionLine, videoSrc, videoThu
                       viewport={{ once: true }}
                       transition={{ duration: 0.3, delay: index * 0.05 }}
                     >
-                      <Button
-                        onClick={() => setSelectedFeatureIndex(index)}
-                        disableElevation
-                        sx={{
-                          minWidth: 120,
-                          px: 2.5,
-                          py: 1.2,
-                          borderRadius: 2.5,
-                          boxShadow: selectedFeatureIndex === index ? '0 2px 8px 0 rgba(60,60,60,0.10)' : 'none',
-                          background: selectedFeatureIndex === index ? '#fff' : 'transparent',
-                          color: selectedFeatureIndex === index ? theme.palette.text.primary : theme.palette.text.secondary,
-                          fontWeight: 600,
-                          fontSize: '1.05rem',
-                          textTransform: 'none',
-                          border: 'none',
-                          outline: selectedFeatureIndex === index ? `2px solid ${theme.palette.primary.main}` : 'none',
-                          outlineOffset: selectedFeatureIndex === index ? '2px' : '0',
-                          transition: 'all 0.18s cubic-bezier(.4,2,.6,1)',
-                          display: 'flex',
-                          alignItems: 'center',
-                          gap: 1,
-                          position: 'relative',
-                          '&:hover': {
-                            background: selectedFeatureIndex === index ? '#fff' : theme.palette.action.hover,
-                            color: theme.palette.text.primary,
-                          },
-                        }}
-                      >
-                        {/* Optional icon support for the future: {feature.icon && <Box sx={{mr:1}}>{feature.icon}</Box>} */}
-                        {feature.name}
+                      <Box sx={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
+                        <Button
+                          onClick={() => setSelectedFeatureIndex(index)}
+                          disableElevation
+                          sx={{
+                            minWidth: 120,
+                            px: 2.5,
+                            py: 1.2,
+                            borderRadius: 2.5,
+                            boxShadow: selectedFeatureIndex === index ? (isDark ? '0 2px 8px 0 rgba(0,0,0,0.18)' : '0 2px 8px 0 rgba(60,60,60,0.10)') : 'none',
+                            background: 'transparent',
+                            color: selectedFeatureIndex === index ? theme.palette.primary.main : theme.palette.text.secondary,
+                            fontWeight: 600,
+                            fontSize: '1.05rem',
+                            textTransform: 'none',
+                            border: '2px solid transparent',
+                            outline: 'none',
+                            outlineOffset: 0,
+                            transition: 'all 0.18s cubic-bezier(.4,2,.6,1)',
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: 1,
+                            position: 'relative',
+                            zIndex: selectedFeatureIndex === index ? 2 : 1,
+                            '&:hover': {
+                              border: '2px solid transparent',
+                              color: theme.palette.primary.dark,
+                              background: isDark ? theme.palette.action.selected : theme.palette.action.hover,
+                            },
+                          }}
+                        >
+                          {/* Optional icon support for the future: {feature.icon && <Box sx={{mr:1}}>{feature.icon}</Box>} */}
+                          {feature.name}
+                        </Button>
                         {selectedFeatureIndex === index && (
                           <Box
                             component={motion.div}
-                            layoutId="active-feature-underline"
+                            layoutId="active-feature-tab-border"
                             sx={{
                               position: 'absolute',
-                              left: 16,
-                              right: 16,
-                              bottom: 6,
-                              height: 4,
-                              borderRadius: 2,
-                              bgcolor: 'primary.main',
-                              boxShadow: '0 2px 8px 0 rgba(60,60,60,0.10)',
+                              top: 0,
+                              left: 0,
+                              right: 0,
+                              bottom: 0,
+                              borderRadius: 2.5,
+                              border: `2px solid ${theme.palette.primary.main}`,
+                              pointerEvents: 'none',
+                              zIndex: 3,
                             }}
-                            transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+                            transition={{ type: 'spring', stiffness: 260, damping: 32 }}
                           />
                         )}
-                      </Button>
+                      </Box>
                     </motion.div>
                   ))}
                 </Box>
@@ -252,7 +260,8 @@ export default function Hero17({ chip, headLine, captionLine, videoSrc, videoThu
                       height: '100%',
                       display: 'flex',
                       objectFit: 'cover',
-                      borderRadius: 1
+                      borderRadius: 1,
+                      backgroundColor: isDark ? theme.palette.grey[900] : theme.palette.grey[100]
                     }}
                   />
                 </GraphicsCard>

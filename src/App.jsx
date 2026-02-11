@@ -1,19 +1,16 @@
 import { lazy, Suspense } from 'react';
 import { Outlet, Route, Routes } from 'react-router-dom';
-
-// @project
 import Loader from '@/components/Loader';
 import ThemeProvider from '@/components/ThemeProvider';
 import { ConfigProvider } from '@/contexts/ConfigContext';
 import MainLayout from '@/views/landings/default/layout';
 
-// Lazy load pages - Default routes
+
+
 const HomePage = lazy(() => import('@/views/landings/default'));
 const ContactPage = lazy(() => import('@/views/landings/default/contact'));
 const PrivacyPolicyPage = lazy(() => import('@/views/landings/default/privacy-policy'));
 const TermsConditionPage = lazy(() => import('@/views/landings/default/terms-condition'));
-
-// Lazy load pages - Sections
 const SectionsIndex = lazy(() => import('@/views/sections'));
 const AboutSection = lazy(() => import('@/views/sections/About'));
 const BlogSection = lazy(() => import('@/views/sections/Blog'));
@@ -50,15 +47,11 @@ const TestimonialSection = lazy(() => import('@/views/sections/Testimonial'));
 const TopOfferSection = lazy(() => import('@/views/sections/TopOffer'));
 const TypographySection = lazy(() => import('@/views/sections/Typography'));
 const UnderMaintenanceSection = lazy(() => import('@/views/sections/UnderMaintenance'));
-
-// Auth sections
 const LoginSection = lazy(() => import('@/views/sections/Login'));
 const RegisterSection = lazy(() => import('@/views/sections/Register'));
 const ForgotPasswordSection = lazy(() => import('@/views/sections/ForgotPassword'));
 const NewPasswordSection = lazy(() => import('@/views/sections/NewPassword'));
 const OtpVerificationSection = lazy(() => import('@/views/sections/OtpVerification'));
-
-// Blocks
 const Clientele3Block = lazy(() => import('@/blocks/clientele/Clientele3'));
 const ContactUs4Block = lazy(() => import('@/blocks/contact-us/ContactUs4'));
 const Cta4Block = lazy(() => import('@/blocks/cta/Cta4'));
@@ -83,14 +76,10 @@ const PrivacyPolicy1Block = lazy(() => import('@/blocks/privacy-policy/PrivacyPo
 const ProPageBlock = lazy(() => import('@/blocks/pro-page/ProPage'));
 const SmallHero3Block = lazy(() => import('@/blocks/small-hero/SmallHero3'));
 const Testimonial10Block = lazy(() => import('@/blocks/testimonial/Testimonial10'));
-
-// Components
 const ScrollFab = lazy(() => import('@/components/ScrollFab'));
-
-// Not Found
 const NotFound = lazy(() => import('@/views/sections/Error404'));
 
-/***************************  LAYOUT WRAPPER  ***************************/
+
 
 function SectionsLayout() {
   return (
@@ -101,7 +90,6 @@ function SectionsLayout() {
     </MainLayout>
   );
 }
-
 function BlocksLayout() {
   return (
     <MainLayout>
@@ -111,9 +99,6 @@ function BlocksLayout() {
     </MainLayout>
   );
 }
-
-/***************************  APP  ***************************/
-
 const App = () => (
   <ConfigProvider>
     <ThemeProvider>
@@ -153,8 +138,6 @@ const App = () => (
               </MainLayout>
             }
           />
-
-          {/* Sections Routes */}
           <Route path="/sections" element={<SectionsLayout />}>
             <Route index element={<SectionsIndex />} />
             <Route path="about" element={<AboutSection />} />
@@ -192,15 +175,12 @@ const App = () => (
             <Route path="top-offer" element={<TopOfferSection />} />
             <Route path="typography" element={<TypographySection />} />
             <Route path="under-maintenance" element={<UnderMaintenanceSection />} />
-            {/* Auth */}
             <Route path="auth/login" element={<LoginSection />} />
             <Route path="auth/register" element={<RegisterSection />} />
             <Route path="auth/forgot-password" element={<ForgotPasswordSection />} />
             <Route path="auth/new-password" element={<NewPasswordSection />} />
             <Route path="auth/otp-verification" element={<OtpVerificationSection />} />
           </Route>
-
-          {/* Blocks Routes */}
           <Route path="/blocks" element={<BlocksLayout />}>
             <Route path="clientele/clientele3" element={<Clientele3Block />} />
             <Route path="contact-us/contact-us4" element={<ContactUs4Block />} />
@@ -227,12 +207,10 @@ const App = () => (
             <Route path="small-hero/small-hero3" element={<SmallHero3Block />} />
             <Route path="testimonial/testimonial10" element={<Testimonial10Block />} />
           </Route>
-          {/* Catch-all 404 */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
     </ThemeProvider>
   </ConfigProvider>
 );
-
 export default App;

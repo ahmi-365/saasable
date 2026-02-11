@@ -1,5 +1,3 @@
-// @mui
-
 export const hero = {
   chip: {
     label: null
