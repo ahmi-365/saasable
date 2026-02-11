@@ -9,21 +9,33 @@ export const feature2 = {
   heading: 'Master your workflow and move from "To-Do" to "Done" in one place.',
   caption:
     'Visualize progress, track team tasks, and eliminate bottlenecks with a high-performance Kanban interface built on modern design guidelines.',
+  cardLayout: {
+    type: 'horizontal',
+    style: {
+      gap: '2rem',
+      background: '#f8fafc',
+      borderRadius: '1.5rem',
+      boxShadow: '0 4px 24px rgba(0,0,0,0.06)'
+    }
+  },
   features: [
     {
       icon: { name: 'tabler-users', type: IconType.STROKE, color: 'grey.900', stroke: 1 },
       title: 'Collaborative Workflows',
-      content: 'Enable seamless team collaboration with real-time updates and shared boards.'
+      content: 'Enable seamless team collaboration with real-time updates and shared boards.',
+      cardStyle: { background: '#fff', border: '1px solid #e0e7ef', borderRadius: '1rem', padding: '2rem', minWidth: '260px' }
     },
     {
       icon: { name: 'tabler-star', type: IconType.STROKE, color: 'grey.900', stroke: 1 },
       title: 'Visual Clarity',
-      content: 'Gain instant insight into project status with intuitive, customizable Kanban boards.'
+      content: 'Gain instant insight into project status with intuitive, customizable Kanban boards.',
+      cardStyle: { background: '#f1f5f9', border: '1px solid #e0e7ef', borderRadius: '1rem', padding: '2rem', minWidth: '260px' }
     },
     {
       icon: { name: 'tabler-chart-histogram', type: IconType.STROKE, color: 'grey.900', stroke: 1 },
       title: 'Process Optimization',
-      content: 'Identify and resolve bottlenecks to streamline your delivery pipeline.'
+      content: 'Identify and resolve bottlenecks to streamline your delivery pipeline.',
+      cardStyle: { background: '#fff', border: '1px solid #e0e7ef', borderRadius: '1rem', padding: '2rem', minWidth: '260px' }
     }
   ]
 };
@@ -33,28 +45,42 @@ export const feature5 = {
   caption: 'From planning to execution, our tools ensure your project management is efficient and effective.',
   image1: '/assets/images/graphics/ai/graphics3-light.svg',
   image2: '/assets/images/graphics/ai/graphics2-light.svg',
+  cardLayout: {
+    type: 'grid',
+    columns: 2,
+    style: {
+      gap: '1.5rem',
+      background: '#f8fafc',
+      borderRadius: '1.5rem',
+      boxShadow: '0 2px 16px rgba(0,0,0,0.04)'
+    }
+  },
   features: [
     {
       icon: 'tabler-coin',
       title: 'Resource Management',
-      content: 'Maximize efficiency by effectively allocating and tracking team resources.'
+      content: 'Maximize efficiency by effectively allocating and tracking team resources.',
+      cardStyle: { background: '#fff', border: '1px solid #e0e7ef', borderRadius: '1rem', padding: '1.5rem', minWidth: '220px' }
     },
     {
       icon: 'tabler-health-recognition',
       title: 'Project Health',
-      content: "Monitor key metrics to ensure projects stay on track and within scope."
+      content: "Monitor key metrics to ensure projects stay on track and within scope.",
+      cardStyle: { background: '#f1f5f9', border: '1px solid #e0e7ef', borderRadius: '1rem', padding: '1.5rem', minWidth: '220px' }
     }
   ],
   features2: [
     {
       icon: 'tabler-briefcase',
       title: 'Flexible Boards',
-      content: 'Adapt Kanban boards to fit any project methodology or team structure.'
+      content: 'Adapt Kanban boards to fit any project methodology or team structure.',
+      cardStyle: { background: '#fff', border: '1px solid #e0e7ef', borderRadius: '1rem', padding: '1.5rem', minWidth: '220px' }
     },
     {
       icon: 'tabler-users',
       title: 'Real-Time Sync',
-      content: 'Keep everyone aligned with instant updates across all devices and platforms.'
+      content: 'Keep everyone aligned with instant updates across all devices and platforms.',
+      cardStyle: { background: '#f1f5f9', border: '1px solid #e0e7ef', borderRadius: '1rem', padding: '1.5rem', minWidth: '220px' }
     }
   ],
   profileGroups: {

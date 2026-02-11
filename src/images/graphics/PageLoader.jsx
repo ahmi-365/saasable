@@ -18,11 +18,33 @@ const dotAnimation = keyframes`
 
 /***************************  PAGE LOADER  ***************************/
 
-export default function PageLoader() {
-  const commonProps = { disableShrink: true, size: 100, variant: 'determinate', thickness: 4, color: 'primary' };
+import { useTheme } from '@mui/material/styles';
 
+export default function PageLoader({ mode: modeProp }) {
+  const theme = useTheme();
+  const mode = modeProp || theme.palette.mode || 'light';
+  const isDark = mode === 'dark';
+  const commonProps = {
+    disableShrink: true,
+    size: 100,
+    variant: 'determinate',
+    thickness: 4,
+    color: isDark ? 'inherit' : 'primary',
+  };
   return (
-    <Stack direction="row" sx={{ position: 'relative', justifyContent: 'center', alignItems: 'center' }}>
+    <Stack
+      direction="row"
+      sx={{
+        position: 'relative',
+        justifyContent: 'center',
+        alignItems: 'center',
+        bgcolor: isDark ? '#181c23' : 'transparent',
+        borderRadius: '50%',
+        p: isDark ? 2 : 0,
+        boxShadow: isDark ? '0 0 0 2px #111, 0 2px 16px #0008' : 'none',
+        transition: 'background 0.3s',
+      }}
+    >
       <Avatar
         src={faviconSrc}
         alt="App favicon"
@@ -30,7 +52,10 @@ export default function PageLoader() {
         sx={{
           width: 56,
           height: 56,
-          bgcolor: 'primary.lighter'
+          bgcolor: isDark ? '#11141a' : 'primary.lighter',
+          border: isDark ? '1px solid #222' : 'none',
+          boxShadow: isDark ? '0 0 0 2px #222' : 'none',
+          transition: 'background 0.3s',
         }}
       />
       <CircularProgress
@@ -41,8 +66,9 @@ export default function PageLoader() {
         sx={{
           position: 'absolute',
           zIndex: 1,
+          color: isDark ? (theme.palette.grey[800] || '#333') : theme.palette.primary.light,
           '& .MuiCircularProgress-circle': { strokeLinecap: 'round', strokeDasharray: '6 9.5 !important' },
-          animation: `${dotAnimation} 6s linear infinite`
+          animation: `${dotAnimation} 6s linear infinite`,
         }}
       />
       <CircularProgress
@@ -53,8 +79,9 @@ export default function PageLoader() {
         sx={{
           position: 'absolute',
           zIndex: 1,
+          color: isDark ? (theme.palette.primary.main || '#fff') : theme.palette.primary.dark,
           '& .MuiCircularProgress-circle': { strokeLinecap: 'round' },
-          animation: `${rotateAnimation} 35s linear infinite`
+          animation: `${rotateAnimation} 35s linear infinite`,
         }}
       />
     </Stack>
