@@ -72,42 +72,43 @@ export const feature5 = {
 };
 
 export const feature20 = {
-  heading: 'Comprehensive Kanban UI Kit',
+  heading: 'Modern Kanban Board UI',
   caption: 'Ready to build powerful project management tools with one robust UI Kit?',
   // actionBtn: { children: 'Buy Now', href: BUY_NOW_URL, ...linkProps },
   secondaryBtn: { children: 'Explore Components', href: SECTION_PATH },
   features: [
-    {
-      icon: 'tabler-accessible',
-      title: 'Accessibility First',
-      content: 'Ensure your Kanban boards are usable by everyone with WCAG compliant designs.'
-    },
-    {
-      icon: 'tabler-brand-google',
-      title: 'Performance Optimized',
-      content: 'Built for speed, ensuring smooth interactions even with complex boards.'
-    },
-    {
-      icon: 'tabler-stack-2',
-      title: 'Modern Design System',
-      content: 'Leverage the latest design standards for a modern, intuitive interface.'
-    },
-    {
-      icon: 'tabler-rocket',
-      title: 'High-Fidelity UI',
-      content: 'Create stunning visual hierarchies that enhance task visibility and organization.'
-    },
-    {
-      icon: 'tabler-help',
-      title: 'Extensive Docs',
-      content: 'Get started quickly with detailed documentation and implementation guides.'
-    },
-    {
-      icon: 'tabler-refresh',
-      title: 'Continuous Updates',
-      content: 'Stay ahead with regular updates featuring new components and improvements.'
-    }
-  ]
+  {
+    icon: 'tabler-accessible',
+    title: 'Accessibility Focused',
+    content: 'Designed with accessibility best practices in mind to make your Kanban boards usable for everyone.'
+  },
+  {
+    icon: 'tabler-brand-google',
+    title: 'Optimized Performance',
+    content: 'Built to handle large and complex boards smoothly without slowing down the user experience.'
+  },
+  {
+    icon: 'tabler-stack-2',
+    title: 'Clean & Modern Design',
+    content: 'A simple and intuitive design system that keeps your workflow organized and easy to navigate.'
+  },
+  {
+    icon: 'tabler-rocket',
+    title: 'Polished UI Components',
+    content: 'Well-structured components that improve task visibility and overall board clarity.'
+  },
+  {
+    icon: 'tabler-help',
+    title: 'Clear Documentation',
+    content: 'Step-by-step guides and examples to help you set up and customize quickly.'
+  },
+  {
+    icon: 'tabler-refresh',
+    title: 'Ongoing Improvements',
+    content: 'Regular updates with refinements, fixes, and new features based on user feedback.'
+  }
+]
+
 };
 
 export const feature21 = {

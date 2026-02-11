@@ -3,31 +3,33 @@ import SvgIcon from '@/components/SvgIcon';
 import { DOCS_URL } from '@/path';
 
 export const integration = {
-  headLine: 'Tailored for Every Workflow',
+  headLine: 'Built for Teams. Loved by Everyone.',
   captionLine:
-    'From Agile development to marketing calendars, see how our Kanban Kit helps you build task management solutions tailored for any process.',
+    "Whether you're shipping code, closing deals, or planning campaigns, your board moves at the speed of your team. Simple enough for anyone, powerful enough for everything.",
+
   primaryBtn: {
-    children: 'Documentation',
-    startIcon: <SvgIcon name="tabler-help" color="background.default" />,
+    children: 'Explore Features',
+    startIcon: <SvgIcon name="tabler-rocket" color="background.default" />,
     href: DOCS_URL,
     target: '_blank',
     rel: 'noopener noreferrer'
   },
+
   tagList: [
-    { label: 'Agile & Scrum Boards' },
-    { label: 'Software Development' },
-    { label: 'Bug & Issue Tracking' },
-    { label: 'Product Roadmaps' },
-    { label: 'Content Calendars' },
-    { label: 'Sales Pipelines' },
-    { label: 'Recruitment Tracking' },
-    { label: 'Sprint Planning' },
-    { label: 'DevOps Workflows' },
-    { label: 'Design Requests' },
-    { label: 'User Feedback Loops' },
-    { label: 'Event Planning' },
-    { label: 'Release Management' },
-    { label: 'Backlog Refinement' },
-    { label: 'Personal To-Do Lists' }
+    { label: 'Engineering Teams', description: 'Ship features faster with visual workflows' },
+    { label: 'Marketing Campaigns', description: 'Launch coordination from idea to execution' },
+    { label: 'Customer Support', description: 'Ticket triage and resolution tracking' },
+    { label: 'Product Development', description: 'From concept to launch in one view' },
+    { label: 'Creative Projects', description: 'Design reviews and creative asset management' },
+    { label: 'Revenue Operations', description: 'Deal flow visibility and pipeline health' },
+    { label: 'Recruitment', description: 'Streamline hiring from sourcing to offer' },
+    { label: 'Quarterly Planning', description: 'OKRs and strategic initiatives' },
+    { label: 'IT Operations', description: 'Incident response and change management' },
+    { label: 'Content Studio', description: 'From draft to publish in perfect sync' },
+    { label: 'Customer Success', description: 'Onboarding journeys and renewals' },
+    { label: 'Event Production', description: 'Multi-stakeholder coordination made easy' },
+    { label: 'Feature Launches', description: 'Cross-functional rollout orchestration' },
+    { label: 'Research Projects', description: 'Track experiments and findings' },
+    { label: 'Personal Goals', description: 'Your life, organized your way' }
   ]
 };

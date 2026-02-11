@@ -151,50 +151,89 @@ export default function Hero17({ chip, headLine, captionLine, videoSrc, videoThu
           </Box>
           {/* Feature Buttons Section */}
           {featureButtons && featureButtons.length > 0 && (
-            <Box sx={{ width: '100%' }}>
-              <Stack
-                direction="row"
+            <>
+              <Box
                 sx={{
-                  gap: 0.75,
+                  width: '100%',
+                  display: 'flex',
+                  justifyContent: 'center',
                   mb: 3,
-                  flexWrap: 'wrap',
-                  justifyContent: 'center'
                 }}
               >
-                {featureButtons.map((feature, index) => (
-                  <motion.div
-                    key={index}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.3, delay: index * 0.05 }}
-                  >
-                    <Button
-                      onClick={() => setSelectedFeatureIndex(index)}
-                      variant={selectedFeatureIndex === index ? 'contained' : 'outlined'}
-                      // color="primary"
-                      size="small"
-                      sx={{
-                        textTransform: 'capitalize',
-                        fontSize: '0.875rem',
-                        py: 0.75,
-                        px: 1.75,
-                        transition: 'all 0.3s ease',
-                        border: selectedFeatureIndex === index ? 'none' : '1.5px solid',
-                        borderColor: selectedFeatureIndex === index ? 'transparent' : 'primary.main',
-                        ...(selectedFeatureIndex === index && {
-                          boxShadow: `0 4px 12px ${withAlpha(theme.vars.palette.primary.main, 0.3)}`
-                        })
-                      }}
+                <Box
+                  sx={{
+                    display: 'flex',
+                    gap: { xs: 1, sm: 2 },
+                    px: { xs: 1, sm: 2 },
+                    py: { xs: 0.5, sm: 1 },
+                    borderRadius: 3,
+                    background: theme.palette.background.paper,
+                    boxShadow: '0 2px 16px 0 rgba(60,60,60,0.08)',
+                    border: `1.5px solid ${theme.palette.divider}`,
+                    alignItems: 'center',
+                    minHeight: 56,
+                  }}
+                >
+                  {featureButtons.map((feature, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.3, delay: index * 0.05 }}
                     >
-                      {feature.name}
-                    </Button>
-                  </motion.div>
-                ))}
-              </Stack>
-
+                      <Button
+                        onClick={() => setSelectedFeatureIndex(index)}
+                        disableElevation
+                        sx={{
+                          minWidth: 120,
+                          px: 2.5,
+                          py: 1.2,
+                          borderRadius: 2.5,
+                          boxShadow: selectedFeatureIndex === index ? '0 2px 8px 0 rgba(60,60,60,0.10)' : 'none',
+                          background: selectedFeatureIndex === index ? '#fff' : 'transparent',
+                          color: selectedFeatureIndex === index ? theme.palette.text.primary : theme.palette.text.secondary,
+                          fontWeight: 600,
+                          fontSize: '1.05rem',
+                          textTransform: 'none',
+                          border: 'none',
+                          outline: selectedFeatureIndex === index ? `2px solid ${theme.palette.primary.main}` : 'none',
+                          outlineOffset: selectedFeatureIndex === index ? '2px' : '0',
+                          transition: 'all 0.18s cubic-bezier(.4,2,.6,1)',
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: 1,
+                          position: 'relative',
+                          '&:hover': {
+                            background: selectedFeatureIndex === index ? '#fff' : theme.palette.action.hover,
+                            color: theme.palette.text.primary,
+                          },
+                        }}
+                      >
+                        {/* Optional icon support for the future: {feature.icon && <Box sx={{mr:1}}>{feature.icon}</Box>} */}
+                        {feature.name}
+                        {selectedFeatureIndex === index && (
+                          <Box
+                            component={motion.div}
+                            layoutId="active-feature-underline"
+                            sx={{
+                              position: 'absolute',
+                              left: 16,
+                              right: 16,
+                              bottom: 6,
+                              height: 4,
+                              borderRadius: 2,
+                              bgcolor: 'primary.main',
+                              boxShadow: '0 2px 8px 0 rgba(60,60,60,0.10)',
+                            }}
+                            transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+                          />
+                        )}
+                      </Button>
+                    </motion.div>
+                  ))}
+                </Box>
+              </Box>
               {/* Display Selected Feature Image */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.6 }}
@@ -218,7 +257,7 @@ export default function Hero17({ chip, headLine, captionLine, videoSrc, videoThu
                   />
                 </GraphicsCard>
               </motion.div>
-            </Box>
+            </>
           )}
           {/* Fallback to Video if no Feature Buttons */}
           {(!featureButtons || featureButtons.length === 0) && videoSrc && (
@@ -237,9 +276,9 @@ export default function Hero17({ chip, headLine, captionLine, videoSrc, videoThu
                   height="100%"
                   style={{ display: 'flex', objectFit: 'cover' }}
                   preload="metadata"
-                  autoPlay={false}
-                  loop={true}
-                  muted={true}
+                  autoPlay
+                  loop
+                  muted
                   poster={videoThumbnail}
                 >
                   <source src={videoSrc} type="video/mp4" />

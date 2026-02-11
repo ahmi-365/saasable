@@ -16,6 +16,8 @@ import ContainerWrapper from '@/components/ContainerWrapper';
 import { GraphicsCard } from '@/components/cards';
 import { ProfileGroup } from '@/components/cards/profile-card';
 import SvgIcon from '@/components/SvgIcon';
+import { useRef } from 'react';
+import { useTheme } from '@mui/material/styles';
 
 import { SECTION_COMMON_PY } from '@/utils/constant';
 
@@ -36,9 +38,40 @@ import Arrow from '@/images/graphics/Arrow';
 export default function Cta4({ headLine, primaryBtn, profileGroups, list, clientContent }) {
   const transformValues = { xs: 'rotate(45deg)', sm: 'rotate(320deg)', md: 'unset' };
 
+  const theme = useTheme();
+  const gradientRef = useRef(null);
+  // Use theme palette for gradient
+  const grad = `linear-gradient(120deg, ${theme.palette.primary.main} 0%, ${theme.palette.secondary.main} 40%, ${theme.palette.info.main} 70%, ${theme.palette.primary.light} 100%)`;
   return (
-    <ContainerWrapper sx={{ py: SECTION_COMMON_PY }}>
-      <GraphicsCard>
+    <ContainerWrapper sx={{ py: SECTION_COMMON_PY, position: 'relative', overflow: 'hidden' }}>
+      {/* Animated Gradient Background using theme colors */}
+      <motion.div
+        ref={gradientRef}
+        aria-hidden="true"
+        style={{
+          position: 'absolute',
+          zIndex: 0,
+          top: '-30%',
+          left: '-30%',
+          width: '160%',
+          height: '160%',
+          background: grad,
+          filter: 'blur(60px)',
+          opacity: 0.45,
+          pointerEvents: 'none',
+        }}
+        initial={{ backgroundPosition: '0% 50%' }}
+        animate={{ backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'] }}
+        transition={{ duration: 16, repeat: Infinity, ease: 'linear' }}
+      />
+      <GraphicsCard sx={{
+        position: 'relative',
+        zIndex: 1,
+        borderWidth: 1.5,
+        borderStyle: 'dashed',
+        borderColor: 'grey.400',
+        borderRadius: 3
+      }}>
         <Box sx={{ p: { xs: 3, sm: 4, md: 5 } }}>
           <Grid container spacing={{ xs: 5, sm: 0, md: 3 }} sx={{ alignItems: 'flex-end' }}>
             <Grid size={{ xs: 12, sm: 9, md: 8 }}>

@@ -32,33 +32,8 @@ export const hero = {
       name: 'Resource Management',
       image: '/assets/images/shared/resource-management.png'
     },
-    {
-      name: 'Task Management',
-      image: '/assets/images/shared/task-management.png'
-    },
-    {
-      name: 'Task Templates',
-      image: '/assets/images/shared/task-templates.png'
-    },
-    {
-      name: 'Projects Templates',
-      image: '/assets/images/shared/project-templates.png'
-    },
-    {
-      name: 'TimeSheets',
-      image: '/assets/images/shared/time-sheet.png'
-    },
-    {
-      name: 'Projects Finance',
-      image: '/assets/images/shared/project-finance.png'
-    },
-    {
-      name: 'Client Portal',
-      image: '/assets/images/shared/client-portal.png'
-    },
-    {
-      name: 'Team Utilization',
-      image: '/assets/images/shared/team-utilization.png'
-    }
+
+
+
   ]
 };
