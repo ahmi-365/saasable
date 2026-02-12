@@ -20,7 +20,7 @@ const dotAnimation = keyframes`
 
 import { useTheme } from '@mui/material/styles';
 
-export default function PageLoader({ mode: modeProp }) {
+export default function PageLoader({ mode: modeProp, forceBg }) {
   const theme = useTheme();
   const mode = modeProp || theme.palette.mode || 'light';
   const isDark = mode === 'dark';
@@ -34,42 +34,42 @@ export default function PageLoader({ mode: modeProp }) {
   return (
     <Stack
       direction="row"
-      sx={{
+      sx={theme => ({
         position: 'relative',
         justifyContent: 'center',
         alignItems: 'center',
-        bgcolor: isDark ? '#181c23' : 'transparent',
+        bgcolor: forceBg === 'dark' ? theme.palette.grey[900] : (isDark ? theme.palette.grey[900] : 'transparent'),
         borderRadius: '50%',
         p: isDark ? 2 : 0,
         boxShadow: isDark ? '0 0 0 2px #111, 0 2px 16px #0008' : 'none',
         transition: 'background 0.3s',
-      }}
+      })}
     >
       <Avatar
         src={faviconSrc}
         alt="App favicon"
         imgProps={{ loading: 'eager', decoding: 'async', fetchPriority: 'high' }}
-        sx={{
+        sx={theme => ({
           width: 56,
           height: 56,
-          bgcolor: isDark ? '#11141a' : 'primary.lighter',
+          bgcolor: isDark ? theme.palette.grey[900] : 'primary.lighter',
           border: isDark ? '1px solid #222' : 'none',
           boxShadow: isDark ? '0 0 0 2px #222' : 'none',
           transition: 'background 0.3s',
-        }}
+        })}
       />
       <CircularProgress
         {...commonProps}
         value={100}
         rel="noopener noreferrer"
         aria-label="loading"
-        sx={{
+        sx={theme => ({
           position: 'absolute',
           zIndex: 1,
-          color: isDark ? (theme.palette.grey[800] || '#333') : theme.palette.primary.light,
+          color: isDark ? theme.palette.grey[100] : theme.palette.primary.light,
           '& .MuiCircularProgress-circle': { strokeLinecap: 'round', strokeDasharray: '6 9.5 !important' },
           animation: `${dotAnimation} 6s linear infinite`,
-        }}
+        })}
       />
       <CircularProgress
         {...commonProps}

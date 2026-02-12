@@ -1,16 +1,10 @@
 import PropTypes from 'prop-types';
-
-// @mui
 import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-
-// @third-party
 import { motion } from 'motion/react';
-
-// @project
 import ButtonAnimationWrapper from '@/components/ButtonAnimationWrapper';
 import ContainerWrapper from '@/components/ContainerWrapper';
 import { GraphicsCard } from '@/components/cards';
@@ -18,33 +12,17 @@ import { ProfileGroup } from '@/components/cards/profile-card';
 import SvgIcon from '@/components/SvgIcon';
 import { useRef } from 'react';
 import { useTheme } from '@mui/material/styles';
-
 import { SECTION_COMMON_PY } from '@/utils/constant';
-
-// @assets
 import Arrow from '@/images/graphics/Arrow';
 
-/***************************  CALL TO ACTION - 4  ***************************/
-
-/**
- *
- * Demos:
- * - [CTA4](https://www.saasable.io/blocks/cta/cta4)
- *
- * API:
- * - [CTA4 API](https://phoenixcoded.gitbook.io/saasable/ui-kit/development/components/cta/cta4#props-details)
- */
 
 export default function Cta4({ headLine, primaryBtn, profileGroups, list, clientContent }) {
   const transformValues = { xs: 'rotate(45deg)', sm: 'rotate(320deg)', md: 'unset' };
-
   const theme = useTheme();
   const gradientRef = useRef(null);
-  // Use theme palette for gradient
   const grad = `linear-gradient(120deg, ${theme.palette.primary.main} 0%, ${theme.palette.secondary.main} 40%, ${theme.palette.info.main} 70%, ${theme.palette.primary.light} 100%)`;
   return (
     <ContainerWrapper sx={{ py: SECTION_COMMON_PY, position: 'relative', overflow: 'hidden' }}>
-      {/* Animated Gradient Background using theme colors */}
       <motion.div
         ref={gradientRef}
         aria-hidden="true"
