@@ -1,4 +1,3 @@
-// @project
 import branding from '@/branding.json';
 import { IconType } from '@/enum';
 import { ADMIN_PATH, BUY_NOW_URL, DOCS_URL, SECTION_PATH } from '@/path';
@@ -141,12 +140,7 @@ export const feature21 = {
   heading: `Prototype Powerful Kanban Boards with ${branding.brandName} Figma`,
   caption: 'Access a complete library of task cards, fluid columns, and swimlanes to design the ultimate agile workflow interface.',
   image: '/assets/images/graphics/ai/desktop1-light.svg',
-  // primaryBtn: { children: 'Get Board Kit', href: 'https://www.figma.com/community/file/1425095061180549847', ...linkProps },
-  // secondaryBtn: {
-  //   children: 'View Prototype',
-  //   href: 'https://www.figma.com/design/mlkXfeqxUKqIo0GQhPBqPb/Planify---UI-Kit---Preview-only?node-id=11-1833&t=JBHOIIEuYZpmN6v8-1',
-  //   ...linkProps
-  // },
+ 
   features: [
     {
       animationDelay: 0.1,

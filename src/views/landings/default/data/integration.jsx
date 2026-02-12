@@ -30,6 +30,8 @@ export const integration = {
     { label: 'Event Production', description: 'Multi-stakeholder coordination made easy' },
     { label: 'Feature Launches', description: 'Cross-functional rollout orchestration' },
     { label: 'Research Projects', description: 'Track experiments and findings' },
-    { label: 'Personal Goals', description: 'Your life, organized your way' }
+    { label: 'Personal Goals', description: 'Your life, organized your way' },
+    { label: 'Creative Projects', description: 'Design reviews and creative asset management' },
+    
   ]
 };

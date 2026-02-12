@@ -1,17 +1,12 @@
 import PropTypes from 'prop-types';
-
-// @mui
 import AppBar from '@mui/material/AppBar';
 import { styled } from '@mui/material/styles';
 import Toolbar from '@mui/material/Toolbar';
-
-// @project
 import ContainerWrapper from '@/components/ContainerWrapper';
 import ElevationScroll from './ElevationScroll';
 
 export const navbar10Height = { xs: 64, sm: 72, md: 84 };
 
-// override media queries injected by theme.mixins.toolbar
 const StyledToolbar = styled(Toolbar)(({ theme }) => ({
   '@media all': {
     minHeight: navbar10Height.md,
@@ -30,16 +25,7 @@ const StyledToolbar = styled(Toolbar)(({ theme }) => ({
   }
 }));
 
-/***************************  NAVBAR - 10  ***************************/
 
-/**
- *
- * Demos:
- * - [Navbar10](https://www.Planify.io/blocks/navbar/navbar10)
- *
- * API:
- * - [Navbar10 API](https://phoenixcoded.gitbook.io/Planify/ui-kit/development/components/navbar/navbar10#props-details)
- */
 
 export default function Navbar10({ children, isFixed = true, ...props }) {
   return (

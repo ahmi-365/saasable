@@ -19,18 +19,19 @@ import { SECTION_COMMON_PY } from '@/utils/constant';
 /***************************  INTEGRATION - TAG  ***************************/
 
 function IntegrationTag({ label, icon }) {
-  const iconSize = { xs: 32, md: 40 };
+  const iconSize = { xs: 20, md: 24 };
 
   return (
     <Chip
       label={label}
       {...(icon && { icon: <SvgIcon {...(typeof icon === 'string' ? { name: icon } : { ...icon })} stroke={1} color="inherit" /> })}
-      slotProps={{ label: { sx: { p: 0, ...(icon && { pl: 1.25 }), typography: 'h5' } } }}
+      slotProps={{ label: { sx: { p: 0, ...(icon && { pl: 0.75 }), typography: 'body2' } } }}
       sx={{
-        px: { xs: 2.25, md: 3 },
-        py: icon ? { xs: 1.25, md: 1.75 } : { xs: 1.875, md: 2.5 },
+        px: { xs: 1.25, md: 1.75 },
+        py: icon ? { xs: 0.5, md: 0.75 } : { xs: 0.75, md: 1 },
         m: 0.5,
         bgcolor: 'background.default',
+        fontSize: { xs: '0.85rem', md: '0.95rem' },
         '& svg': { width: iconSize, height: iconSize }
       }}
     />
@@ -61,8 +62,8 @@ export default function Integration2({ headLine, captionLine, primaryBtn, tagLis
         }}
       >
         <GraphicsCard>
-          <Stack sx={{ alignItems: 'center', p: { xs: 3, sm: 4, md: 5 } }}>
-            <Stack sx={{ alignItems: 'center', gap: { xs: 1, sm: 1.5 } }}>
+          <Stack sx={{ alignItems: 'center', p: { xs: 1.5, sm: 2, md: 2.5 } }}>
+            <Stack sx={{ alignItems: 'center', gap: { xs: 0.5, sm: 1 } }}>
               <motion.div
                 initial={{ opacity: 0, y: 25 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -70,12 +71,12 @@ export default function Integration2({ headLine, captionLine, primaryBtn, tagLis
                 transition={{ duration: 0.5, delay: 0.4, ease: [0.215, 0.61, 0.355, 1] }}
               >
                 {headLine && (
-                  <Typography align="center" variant="h2">
+                  <Typography align="center" variant="h4">
                     {headLine}
                   </Typography>
                 )}
                 {captionLine && (
-                  <Typography align="center" variant="h6" sx={{ color: 'text.secondary' }}>
+                  <Typography align="center" variant="body1" sx={{ color: 'text.secondary', fontSize: { xs: '0.95rem', sm: '1.05rem' } }}>
                     {captionLine}
                   </Typography>
                 )}

@@ -151,7 +151,6 @@ export default function Hero17({ chip, headLine, captionLine, videoSrc, videoThu
               </motion.div>
             </Stack>
           </Box>
-          {/* Feature Buttons Section */}
           {featureButtons && featureButtons.length > 0 && (
             <>
               <Box
@@ -169,9 +168,9 @@ export default function Hero17({ chip, headLine, captionLine, videoSrc, videoThu
                     px: { xs: 1, sm: 2 },
                     py: { xs: 0.5, sm: 1 },
                     borderRadius: 3,
-                    background: isDark ? theme.palette.background.paper : theme.palette.background.paper,
-                    color: isDark ? theme.palette.text.primary : theme.palette.text.primary,
-                    boxShadow: isDark ? '0 2px 16px 0 rgba(0,0,0,0.18)' : '0 2px 16px 0 rgba(60,60,60,0.08)',
+                    background: isDark ? theme.palette.grey[900] : theme.palette.background.paper,
+                    color: isDark ? theme.palette.grey[100] : theme.palette.text.primary,
+                    boxShadow: isDark ? '0 2px 16px 0 rgba(0,0,0,0.38)' : '0 2px 16px 0 rgba(60,60,60,0.08)',
                     border: `1.5px solid ${theme.palette.divider}`,
                     alignItems: 'center',
                     minHeight: 56,
@@ -195,8 +194,12 @@ export default function Hero17({ chip, headLine, captionLine, videoSrc, videoThu
                             py: 1.2,
                             borderRadius: 2.5,
                             boxShadow: selectedFeatureIndex === index ? (isDark ? '0 2px 8px 0 rgba(0,0,0,0.18)' : '0 2px 8px 0 rgba(60,60,60,0.10)') : 'none',
-                            background: 'transparent',
-                            color: selectedFeatureIndex === index ? theme.palette.primary.main : theme.palette.text.secondary,
+                              background: selectedFeatureIndex === index
+                                ? (isDark ? theme.palette.grey[800] : theme.palette.action.selected)
+                                : 'transparent',
+                              color: selectedFeatureIndex === index
+                                ? (isDark ? theme.palette.primary.light : theme.palette.primary.main)
+                                : (isDark ? theme.palette.grey[300] : theme.palette.text.secondary),
                             fontWeight: 600,
                             fontSize: '1.05rem',
                             textTransform: 'none',
@@ -211,12 +214,11 @@ export default function Hero17({ chip, headLine, captionLine, videoSrc, videoThu
                             zIndex: selectedFeatureIndex === index ? 2 : 1,
                             '&:hover': {
                               border: '2px solid transparent',
-                              color: theme.palette.primary.dark,
-                              background: isDark ? theme.palette.action.selected : theme.palette.action.hover,
+                                color: isDark ? theme.palette.primary.light : theme.palette.primary.dark,
+                                background: isDark ? theme.palette.grey[700] : theme.palette.action.hover,
                             },
                           }}
                         >
-                          {/* Optional icon support for the future: {feature.icon && <Box sx={{mr:1}}>{feature.icon}</Box>} */}
                           {feature.name}
                         </Button>
                         {selectedFeatureIndex === index && (
@@ -230,7 +232,7 @@ export default function Hero17({ chip, headLine, captionLine, videoSrc, videoThu
                               right: 0,
                               bottom: 0,
                               borderRadius: 2.5,
-                              border: `2px solid ${theme.palette.primary.main}`,
+                                border: `2px solid ${isDark ? theme.palette.primary.light : theme.palette.primary.main}`,
                               pointerEvents: 'none',
                               zIndex: 3,
                             }}
@@ -242,7 +244,6 @@ export default function Hero17({ chip, headLine, captionLine, videoSrc, videoThu
                   ))}
                 </Box>
               </Box>
-              {/* Display Selected Feature Image */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.6 }}
                 animate={{ opacity: 1, scale: 0.9 }}
@@ -268,7 +269,6 @@ export default function Hero17({ chip, headLine, captionLine, videoSrc, videoThu
               </motion.div>
             </>
           )}
-          {/* Fallback to Video if no Feature Buttons */}
           {(!featureButtons || featureButtons.length === 0) && videoSrc && (
             <motion.div
               initial={{ opacity: 0, scale: 0.6 }}

@@ -1,16 +1,9 @@
 import PropTypes from 'prop-types';
-
 import { useEffect } from 'react';
-
-// @mui
 import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-
-// @third-party
 import { animate, motion, useMotionValue, useTransform } from 'motion/react';
-
-// @project
 import { GraphicsCard } from '@/components/cards';
 import ContainerWrapper from '@/components/ContainerWrapper';
 import Typeset from '@/components/Typeset';
@@ -29,21 +22,10 @@ function AnimatedCounter({ startCount, endCount }) {
   return <motion.pre style={{ margin: 0 }}>{rounded}</motion.pre>;
 }
 
-/***************************  METRICS - 5  ***************************/
-
-/**
- *
- * Demos:
- * - [Metrics5](https://www.Planify.io/blocks/metrics/metrics5)
- *
- * API:
- * - [Metrics5 API](https://phoenixcoded.gitbook.io/Planify/ui-kit/development/components/metrics/metrics5#props-details)
- */
-
 export default function Metrics5({ heading, caption, blockDetail }) {
   return (
     <ContainerWrapper sx={{ py: SECTION_COMMON_PY }}>
-      <Stack sx={{ gap: { xs: 3, sm: 4 } }}>
+      <Stack sx={{ gap: { xs: 3, sm: 4 }, alignItems: 'center', textAlign: 'center' }}>
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -59,9 +41,9 @@ export default function Metrics5({ heading, caption, blockDetail }) {
             }}
           />
         </motion.div>
-        <Grid container spacing={1.5}>
+        <Grid container spacing={1.5} justifyContent="center" alignItems="center">
           {blockDetail.map((item, index) => (
-            <Grid key={index} size={{ xs: 6, md: 3 }}>
+            <Grid key={index} item xs={6} md={3} display="flex" justifyContent="center">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -69,9 +51,9 @@ export default function Metrics5({ heading, caption, blockDetail }) {
                 transition={{ duration: 0.9, delay: index * 0.4, ease: [0.215, 0.61, 0.355, 1] }}
                 style={{ height: '100%' }}
               >
-                <GraphicsCard sx={{ p: { xs: 2, sm: 2.25, md: 3 }, height: 1 }}>
+                <GraphicsCard sx={{ p: { xs: 2, sm: 2.25, md: 3 }, height: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
                   <Stack sx={{ gap: 0.5, alignItems: 'center' }}>
-                    <Stack direction="row" sx={{ alignItems: 'flex-end' }}>
+                    <Stack direction="row" sx={{ alignItems: 'flex-end', justifyContent: 'center' }}>
                       <Typography component="div" variant="h1">
                         <AnimatedCounter startCount={0} endCount={item.counter} />
                       </Typography>
