@@ -27,9 +27,6 @@ const config = {
 };
 
 export default config;
-
-/***************************  THEME - FONT FAMILY  ***************************/
-
 export const FONT_ROBOTO = '"Roboto", sans-serif';
 export const FONT_ARCHIVO = '"Archivo", sans-serif';
 export const FONT_FIGTREE = '"Figtree", sans-serif';

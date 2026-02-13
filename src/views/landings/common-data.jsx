@@ -66,61 +66,61 @@ export const landingMegamenu = {
     toggleBtn: { children: 'Landings' },
     menuItems: [
       {
-        title: 'CRM',
+        title: 'Dashboard',
         theme: Themes.THEME_CRM,
-        image: '/assets/images/mega-menu/crm-light.svg',
-        status: 'Pro',
-        link: { href: '/?theme=crm' }
+        image: '/assets/images/LandingPageImages/Dashboard.png',
+        // status: 'Pro',
+        link: { href: '/?theme=Dashboard' }
       },
       {
-        title: 'AI',
+        title: 'Weekly Planner',
         theme: Themes.THEME_AI,
-        image: '/assets/images/mega-menu/ai-light.svg',
+        image: '/assets/images/LandingPageImages/Weekly-Planner.png',
         status: 'Pro',
-        link: { href: '/?theme=ai' }
+        link: { href: '/?theme=Weekly-Planner' }
       },
       {
-        title: 'Crypto',
+        title: 'Goals',
         theme: Themes.THEME_CRYPTO,
-        image: '/assets/images/mega-menu/crypto-light.svg',
+        image: '/assets/images/LandingPageImages/Goals.png',
         status: 'Pro',
-        link: { href: '/?theme=crypto' }
+        link: { href: '/?theme=Goals' }
       },
       {
-        title: 'Hosting',
+        title: 'Time Tracking',
         theme: Themes.THEME_HOSTING,
-        image: '/assets/images/mega-menu/hosting-light.svg',
+        image: '/assets/images/LandingPageImages/Time-Tracking.png',
         status: 'Pro',
-        link: { href: '/?theme=hosting' }
+        link: { href: '/?theme=Time-Tracking' }
       },
       {
-        title: 'PMS',
+        title: 'Team',
         theme: Themes.THEME_PMS,
-        image: '/assets/images/mega-menu/pms-light.svg',
+        image: '/assets/images/LandingPageImages/Team.png',
         status: 'Pro',
-        link: { href: '/?theme=pms' }
+        link: { href: '/?theme=Team' }
       },
-      {
-        title: 'HRM',
-        theme: Themes.THEME_HRM,
-        image: '/assets/images/mega-menu/hrm-light.svg',
-        status: 'Pro',
-        link: { href: '/?theme=hrm' }
-      },
-      {
-        title: 'Plugin',
-        theme: Themes.THEME_PLUGIN,
-        image: '/assets/images/mega-menu/plugin-light.svg',
-        status: 'Pro',
-        link: { href: '/?theme=plugin' }
-      },
-      {
-        title: 'LMS',
-        theme: Themes.THEME_LMS,
-        image: '/assets/images/mega-menu/lms-light.svg',
-        status: 'Pro',
-        link: { href: '/?theme=lms' }
-      }
+      // {
+      //   title: 'HRM',
+      //   theme: Themes.THEME_HRM,
+      //   image: '/assets/images/mega-menu/hrm-light.svg',
+      //   status: 'Pro',
+      //   link: { href: '/?theme=hrm' }
+      // },
+      // {
+      //   title: 'Plugin',
+      //   theme: Themes.THEME_PLUGIN,
+      //   image: '/assets/images/mega-menu/plugin-light.svg',
+      //   status: 'Pro',
+      //   link: { href: '/?theme=plugin' }
+      // },
+      // {
+      //   title: 'LMS',
+      //   theme: Themes.THEME_LMS,
+      //   image: '/assets/images/mega-menu/lms-light.svg',
+      //   status: 'Pro',
+      //   link: { href: '/?theme=lms' }
+      // }
     ],
     footerData: FooterData()
   }
