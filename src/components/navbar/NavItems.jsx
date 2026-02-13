@@ -109,6 +109,10 @@ function NavList({ item, menuTextColor }) {
     ...(item.link && { component: NextLink, href: item.link, ...(item?.target && { target: item.target }) })
   };
 
+  // ...existing code...
+  const [closeDropdownFlag, setCloseDropdownFlag] = useState(false);
+  const handleMenuItemClick = () => setCloseDropdownFlag(true);
+  // ...existing code...
   return (
     <>
       {!item.megaMenu ? (
@@ -127,10 +131,12 @@ function NavList({ item, menuTextColor }) {
           toggleProps={{ ...item.megaMenu.toggleBtn, sx: toggleProps, endIcon: true }}
           {...(item.megaMenu.type === MegaMenuType.MEGAMENU4 && { popperWidth: item.megaMenu.popperWidth || 936 })}
           {...(item.megaMenu.type === MegaMenuType.MEGAMENU5 && { popperWidth: item.megaMenu.popperWidth || 750 })}
+          closeDropdownFlag={closeDropdownFlag}
+          setCloseDropdownFlag={setCloseDropdownFlag}
         >
           <>
             {item.megaMenu.type === MegaMenuType.MEGAMENU4 && (
-              <MegaMenu4 {...{ ...item.megaMenu, footerData: item.megaMenu.footerData }} popperWidth={item.megaMenu.popperWidth || 936} />
+              <MegaMenu4 {...{ ...item.megaMenu, footerData: item.megaMenu.footerData }} popperWidth={item.megaMenu.popperWidth || 936} onMenuItemClick={handleMenuItemClick} />
             )}
             {item.megaMenu.type === MegaMenuType.MEGAMENU5 && (
               <MegaMenu5 {...{ ...item.megaMenu, bannerData: item.megaMenu.bannerData }} popperWidth={item.megaMenu.popperWidth || 750} />

@@ -70,35 +70,35 @@ export const landingMegamenu = {
         theme: Themes.THEME_CRM,
         image: '/assets/images/LandingPageImages/Dashboard.png',
         // status: 'Pro',
-        link: { href: '/?theme=Dashboard' }
+        link: { href: '/dashboard' }
       },
       {
         title: 'Weekly Planner',
         theme: Themes.THEME_AI,
         image: '/assets/images/LandingPageImages/Weekly-Planner.png',
         status: 'Pro',
-        link: { href: '/?theme=Weekly-Planner' }
+          link: { href: '/weekly-planner' }
       },
       {
         title: 'Goals',
         theme: Themes.THEME_CRYPTO,
         image: '/assets/images/LandingPageImages/Goals.png',
         status: 'Pro',
-        link: { href: '/?theme=Goals' }
+          link: { href: '/goals' }
       },
       {
         title: 'Time Tracking',
         theme: Themes.THEME_HOSTING,
         image: '/assets/images/LandingPageImages/Time-Tracking.png',
         status: 'Pro',
-        link: { href: '/?theme=Time-Tracking' }
+          link: { href: '/time-tracking' }
       },
       {
         title: 'Team',
         theme: Themes.THEME_PMS,
         image: '/assets/images/LandingPageImages/Team.png',
         status: 'Pro',
-        link: { href: '/?theme=Team' }
+          link: { href: '/team' }
       },
       // {
       //   title: 'HRM',

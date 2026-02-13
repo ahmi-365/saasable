@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
 import { styled } from '@mui/material/styles';
 import Toolbar from '@mui/material/Toolbar';
 import ContainerWrapper from '@/components/ContainerWrapper';
@@ -31,13 +32,18 @@ export default function Navbar10({ children, isFixed = true, ...props }) {
   return (
     <>
       <ElevationScroll isFixed={isFixed} {...props}>
-        <AppBar {...(!isFixed && { position: 'static', elevation: 0 })} component="nav" color="inherit" sx={{ background: 'transparent' }}>
+        <AppBar
+          position="fixed"
+          color="inherit"
+          sx={{ background: 'transparent', zIndex: 1300 }}
+        >
           <StyledToolbar>
             <ContainerWrapper>{children}</ContainerWrapper>
           </StyledToolbar>
         </AppBar>
       </ElevationScroll>
-      {isFixed && <StyledToolbar />}
+      {/* Spacer to prevent content from being hidden behind fixed navbar */}
+      {isFixed && <Box sx={{ height: { xs: navbar10Height.xs, sm: navbar10Height.sm, md: navbar10Height.md } }} />}
     </>
   );
 }

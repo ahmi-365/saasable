@@ -26,25 +26,52 @@ export default function MenuPopper({
   offset = 0,
   offsetX = 0,
   menuTextColor,
-  hoverToggler = false
+  hoverToggler = false,
+  closeDropdownFlag,
+  setCloseDropdownFlag
 }) {
   const theme = useTheme();
 
   const anchorRef = useRef(null);
   const [anchorEl, setAnchorEl] = useState(null);
-
+  const open = Boolean(anchorEl);
+  const id = open ? 'menu-popper' : undefined;
   const handleClick = (event) => {
     setAnchorEl(anchorEl ? null : event.currentTarget);
   };
-
   useEffect(() => {
     if (defaultOpen) {
       setAnchorEl(anchorRef.current);
     }
   }, [defaultOpen]);
-
-  const open = Boolean(anchorEl);
-  const id = open ? 'menu-popper' : undefined;
+  // Close dropdown on scroll (window or scrollable parent)
+  useEffect(() => {
+    if (!open) return;
+    const handleScroll = () => setAnchorEl(null);
+    window.addEventListener('scroll', handleScroll, true);
+    let scrollParent = anchorRef.current;
+    while (scrollParent && scrollParent !== document.body && scrollParent !== document.documentElement) {
+      const overflowY = window.getComputedStyle(scrollParent).overflowY;
+      if (overflowY === 'auto' || overflowY === 'scroll') break;
+      scrollParent = scrollParent.parentElement;
+    }
+    if (scrollParent && scrollParent !== window && scrollParent !== document.body && scrollParent !== document.documentElement) {
+      scrollParent.addEventListener('scroll', handleScroll, true);
+    }
+    return () => {
+      window.removeEventListener('scroll', handleScroll, true);
+      if (scrollParent && scrollParent !== window && scrollParent !== document.body && scrollParent !== document.documentElement) {
+        scrollParent.removeEventListener('scroll', handleScroll, true);
+      }
+    };
+  }, [open]);
+  // Close dropdown on navigation
+  useEffect(() => {
+    if (open && typeof closeDropdownFlag !== 'undefined' && closeDropdownFlag) {
+      setAnchorEl(null);
+      setCloseDropdownFlag && setCloseDropdownFlag(false);
+    }
+  }, [closeDropdownFlag, open, setCloseDropdownFlag]);
 
   return (
     <>
@@ -130,5 +157,7 @@ MenuPopper.propTypes = {
   offset: PropTypes.number,
   offsetX: PropTypes.number,
   menuTextColor: PropTypes.string,
-  hoverToggler: PropTypes.bool
+  hoverToggler: PropTypes.bool,
+  closeDropdownFlag: PropTypes.bool,
+  setCloseDropdownFlag: PropTypes.func
 };

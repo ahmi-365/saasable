@@ -6,9 +6,9 @@ import { ConfigProvider } from '@/contexts/ConfigContext';
 import MainLayout from '@/views/landings/default/layout';
 
 
-const HomePage = lazy(() =>  import('@/views/landings/default'));
-const ContactPage = lazy(() =>  import('@/views/landings/default/contact'));
-const PrivacyPolicyPage = lazy(() =>  import('@/views/landings/default/privacy-policy'));
+const HomePage = lazy(() => import('@/views/landings/default'));
+const ContactPage = lazy(() => import('@/views/landings/default/contact'));
+const PrivacyPolicyPage = lazy(() => import('@/views/landings/default/privacy-policy'));
 const TermsConditionPage = lazy(() => import('@/views/landings/default/terms-condition'));
 const SectionsIndex = lazy(() => import('@/views/sections'));
 const AboutSection = lazy(() => import('@/views/sections/About'));
@@ -30,7 +30,7 @@ const GallerySection = lazy(() => import('@/views/sections/Gallery'));
 const HeroSection = lazy(() => import('@/views/sections/Hero'));
 const IconSection = lazy(() => import('@/views/sections/Icon'));
 const IntegrationSection = lazy(() => import('@/views/sections/Integration'));
-const MegaMenuSection = lazy(() =>  import('@/views/sections/MegaMenu'));
+const MegaMenuSection = lazy(() => import('@/views/sections/MegaMenu'));
 const MetricsSection = lazy(() => import('@/views/sections/metrics'));
 const NavbarSection = lazy(() => import('@/views/sections/Navbar'));
 const OnBoardSection = lazy(() => import('@/views/sections/OnBoard'));
@@ -59,25 +59,29 @@ const Error404Block = lazy(() => import('@/blocks/maintenance/Error404'));
 const Error500Block = lazy(() => import('@/blocks/maintenance/Error500'));
 const Faq6Block = lazy(() => import('@/blocks/faq/Faq6'));
 const Feature18Block = lazy(() => import('@/blocks/feature/Feature18'));
-const Feature20Block = lazy(() =>  import('@/blocks/feature/Feature20'));
-const Feature21Block = lazy(() =>  import('@/blocks/feature/Feature21'));
-const Footer7Block = lazy(() =>  import('@/blocks/footer/Footer7'));
-const Hero17Block = lazy(() =>  import('@/blocks/hero/Hero17'));
-const Integration2Block = lazy(()  => import('@/blocks/integration/Integration2'));
-const MegaMenu4Block = lazy(() =>  import('@/blocks/mega-menu/MegaMenu4'));
-const MegaMenu5Block = lazy(() =>  import('@/blocks/mega-menu/MegaMenu5'));
-const Metrics5Block = lazy(() =>  import('@/blocks/metrics/Metrics5'));
-const Navbar10Block = lazy(() =>  import('@/blocks/navbar/Navbar10'));
-const Other1Block = lazy(() =>  import('@/blocks/other/Other1'));
-const Other2Block = lazy(() =>   import('@/blocks/other/Other2'));
-const Pricing9Block = lazy(()  => import('@/blocks/pricing/Pricing9'));
-const PrivacyPolicy1Block = lazy(() =>  import('@/blocks/privacy-policy/PrivacyPolicy1'));
-const ProPageBlock = lazy(() =>  import('@/blocks/pro-page/ProPage'));
-const SmallHero3Block = lazy(() =>  import('@/blocks/small-hero/SmallHero3'));
-const Testimonial10Block = lazy(() =>  import('@/blocks/testimonial/Testimonial10'));
-const ScrollFab = lazy(() =>  import('@/components/ScrollFab'));
-const NotFound = lazy(() =>  import('@/views/sections/Error404'));
-
+const Feature20Block = lazy(() => import('@/blocks/feature/Feature20'));
+const Feature21Block = lazy(() => import('@/blocks/feature/Feature21'));
+const Footer7Block = lazy(() => import('@/blocks/footer/Footer7'));
+const Hero17Block = lazy(() => import('@/blocks/hero/Hero17'));
+const Integration2Block = lazy(() => import('@/blocks/integration/Integration2'));
+const MegaMenu4Block = lazy(() => import('@/blocks/mega-menu/MegaMenu4'));
+const MegaMenu5Block = lazy(() => import('@/blocks/mega-menu/MegaMenu5'));
+const Metrics5Block = lazy(() => import('@/blocks/metrics/Metrics5'));
+const Navbar10Block = lazy(() => import('@/blocks/navbar/Navbar10'));
+const Other1Block = lazy(() => import('@/blocks/other/Other1'));
+const Other2Block = lazy(() => import('@/blocks/other/Other2'));
+const Pricing9Block = lazy(() => import('@/blocks/pricing/Pricing9'));
+const PrivacyPolicy1Block = lazy(() => import('@/blocks/privacy-policy/PrivacyPolicy1'));
+const ProPageBlock = lazy(() => import('@/blocks/pro-page/ProPage'));
+const SmallHero3Block = lazy(() => import('@/blocks/small-hero/SmallHero3'));
+const Testimonial10Block = lazy(() => import('@/blocks/testimonial/Testimonial10'));
+const ScrollFab = lazy(() => import('@/components/ScrollFab'));
+const NotFound = lazy(() => import('@/views/sections/Error404'));
+const DashboardPage = lazy(() => import('@/views/landings/DashboardPage'));
+const WeeklyPlannerPage = lazy(() => import('@/views/landings/WeeklyPlannerPage'));
+const GoalsPage = lazy(() => import('@/views/landings/GoalsPage'));
+const TimeTrackingPage = lazy(() => import('@/views/landings/TimeTrackingPage'));
+const TeamPage = lazy(() => import('@/views/landings/TeamPage'));
 
 
 function SectionsLayout() {
@@ -133,6 +137,46 @@ const App = () => (
             element={
               <MainLayout>
                 <TermsConditionPage />
+              </MainLayout>
+            }
+          />
+           <Route
+            path="/dashboard"
+            element={
+              <MainLayout>
+                <DashboardPage />
+              </MainLayout>
+            }
+          />
+          <Route
+            path="/weekly-planner"
+            element={
+              <MainLayout>
+                <WeeklyPlannerPage />
+              </MainLayout>
+            }
+          />
+          <Route
+            path="/goals"
+            element={
+              <MainLayout>
+                <GoalsPage />
+              </MainLayout>
+            }
+          />
+          <Route
+            path="/time-tracking"
+            element={
+              <MainLayout>
+                <TimeTrackingPage />
+              </MainLayout>
+            }
+          />
+          <Route
+            path="/team"
+            element={
+              <MainLayout>
+                <TeamPage />
               </MainLayout>
             }
           />
@@ -192,6 +236,7 @@ const App = () => (
             <Route path="feature/feature21" element={<Feature21Block />} />
             <Route path="footer/footer7" element={<Footer7Block />} />
             <Route path="hero/hero17" element={<Hero17Block />} />
+
             <Route path="integration/integration2" element={<Integration2Block />} />
             <Route path="megamenu/megamenu4" element={<MegaMenu4Block />} />
             <Route path="megamenu/megamenu5" element={<MegaMenu5Block />} />
@@ -206,6 +251,7 @@ const App = () => (
             <Route path="testimonial/testimonial10" element={<Testimonial10Block />} />
           </Route>
           <Route path="*" element={<NotFound />} />
+
         </Routes>
       </Suspense>
     </ThemeProvider>

@@ -40,7 +40,8 @@ export default function MegaMenu4({ menuItems, footerData, popperWidth = 936, fo
                   component: NextLink,
                   underline: 'none',
                   ...item.link,
-                  sx: { display: 'block', ...item.link?.sx }
+                  sx: { display: 'block', ...item.link?.sx },
+                  onClick: () => onMenuItemClick && onMenuItemClick()
                 })}
                 aria-label={item.title}
               >
@@ -55,4 +56,4 @@ export default function MegaMenu4({ menuItems, footerData, popperWidth = 936, fo
   );
 }
 
-MegaMenu4.propTypes = { menuItems: PropTypes.array, footerData: PropTypes.node, popperWidth: PropTypes.number, footerSX: PropTypes.any };
+MegaMenu4.propTypes = { menuItems: PropTypes.array, footerData: PropTypes.node, popperWidth: PropTypes.number, footerSX: PropTypes.any, onMenuItemClick: PropTypes.func };
