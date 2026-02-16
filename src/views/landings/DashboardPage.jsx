@@ -1,3 +1,4 @@
+import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Card from '@mui/material/Card';
@@ -41,7 +42,13 @@ const dashboardCards = [
 ];
 
 export default function DashboardPage() {
-  const coverImg = '/mnt/user-data/uploads/1771235218212_DashboardLight.png';
+  const theme = useTheme();
+  const isDarkMode = theme.palette.mode === 'dark';
+  
+  // Select image based on global theme mode
+  const coverImg = isDarkMode 
+    ? '/assets/images/LandingPageImages/DashboardDark.png'
+    : '/assets/images/LandingPageImages/DashboardLight.png';
 
   return (
     <Box sx={{ bgcolor: 'background.default', minHeight: '100vh', pb: 6 }}>
@@ -58,7 +65,9 @@ export default function DashboardPage() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+          background: isDarkMode 
+            ? 'linear-gradient(135deg, #1e293b 0%, #0f172a 100%)'
+            : 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
         }}
       >
         <img
@@ -159,59 +168,150 @@ export default function DashboardPage() {
           Quick Access
         </Typography>
         <Grid container spacing={3} sx={{ mb: 6 }}>
-          {dashboardCards.map((card, idx) => (
-            <Grid item xs={12} sm={6} md={4} key={card.title}>
-              <Card sx={{ 
-                height: '100%', 
-                display: 'flex', 
-                flexDirection: 'column', 
-                justifyContent: 'space-between',
-                bgcolor: 'background.paper',
-                border: 1,
-                borderColor: 'divider',
-                transition: 'all 0.3s ease',
-                '&:hover': {
-                  transform: 'translateY(-8px)',
-                  boxShadow: 8,
-                  borderColor: 'primary.main',
-                }
-              }}>
-                <CardContent sx={{ p: 3 }}>
-                  <Typography 
-                    variant="h6" 
-                    gutterBottom 
-                    sx={{ 
-                      fontWeight: 700,
-                      color: 'text.primary',
-                    }}
-                  >
-                    {card.title}
-                  </Typography>
-                  <Typography 
-                    variant="body2" 
-                    sx={{ 
-                      mb: 3,
-                      color: 'text.secondary',
-                      lineHeight: 1.6,
-                    }}
-                  >
-                    {card.description}
-                  </Typography>
-                  <Button 
-                    variant="contained" 
-                    fullWidth
-                    sx={{
-                      textTransform: 'none',
-                      fontWeight: 600,
-                      py: 1.25,
-                    }}
-                  >
-                    {card.action}
-                  </Button>
-                </CardContent>
-              </Card>
-            </Grid>
-          ))}
+          {dashboardCards.map((card, idx) => {
+            // Icon mapping for each card
+            const iconMap = {
+              'User Analytics': '👥',
+              'Revenue Overview': '💰',
+              'Tasks & Productivity': '✅',
+              'Integrations': '🔗',
+              'Notifications': '🔔',
+              'Settings': '⚙️',
+            };
+
+            return (
+              <Grid item xs={12} sm={6} md={4} key={card.title}>
+                <Card sx={{ 
+                  height: '100%', 
+                  display: 'flex', 
+                  flexDirection: 'column',
+                  bgcolor: 'background.paper',
+                  border: 1,
+                  borderColor: 'divider',
+                  borderRadius: 3,
+                  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                  cursor: 'pointer',
+                  position: 'relative',
+                  overflow: 'hidden',
+                  '&:hover': {
+                    transform: 'translateY(-8px)',
+                    boxShadow: isDarkMode 
+                      ? '0 12px 28px rgba(99, 102, 241, 0.3)' 
+                      : '0 12px 28px rgba(79, 70, 229, 0.2)',
+                    borderColor: 'primary.main',
+                    '& .card-icon': {
+                      transform: 'scale(1.2) rotate(10deg)',
+                    },
+                    '& .card-arrow': {
+                      transform: 'translateX(8px)',
+                      opacity: 1,
+                    }
+                  }
+                }}>
+                  {/* Decorative gradient overlay */}
+                  <Box sx={{
+                    position: 'absolute',
+                    top: 0,
+                    right: 0,
+                    width: '120px',
+                    height: '120px',
+                    background: `linear-gradient(135deg, ${isDarkMode ? 'rgba(99, 102, 241, 0.1)' : 'rgba(79, 70, 229, 0.05)'} 0%, transparent 100%)`,
+                    borderRadius: '0 0 0 100%',
+                    pointerEvents: 'none',
+                  }} />
+
+                  <CardContent sx={{ p: 3, display: 'flex', flexDirection: 'column', height: '100%' }}>
+                    {/* Icon and Title Row */}
+                    <Box sx={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', mb: 2 }}>
+                      <Box sx={{ 
+                        width: 56, 
+                        height: 56, 
+                        borderRadius: 2.5,
+                        bgcolor: isDarkMode ? 'rgba(99, 102, 241, 0.15)' : 'rgba(79, 70, 229, 0.1)',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        fontSize: '1.75rem',
+                        transition: 'transform 0.3s ease',
+                      }}
+                      className="card-icon"
+                      >
+                        {iconMap[card.title]}
+                      </Box>
+                      
+                      {/* Arrow indicator */}
+                      <Box 
+                        className="card-arrow"
+                        sx={{ 
+                          transition: 'all 0.3s ease',
+                          opacity: 0.6,
+                          color: 'primary.main',
+                          fontSize: '1.25rem',
+                        }}
+                      >
+                        →
+                      </Box>
+                    </Box>
+
+                    {/* Title */}
+                    <Typography 
+                      variant="h6" 
+                      sx={{ 
+                        fontWeight: 700,
+                        color: 'text.primary',
+                        mb: 1.5,
+                        fontSize: '1.1rem',
+                      }}
+                    >
+                      {card.title}
+                    </Typography>
+
+                    {/* Description */}
+                    <Typography 
+                      variant="body2" 
+                      sx={{ 
+                        color: 'text.secondary',
+                        lineHeight: 1.7,
+                        flex: 1,
+                        fontSize: '0.9rem',
+                      }}
+                    >
+                      {card.description}
+                    </Typography>
+
+                    {/* Action Link */}
+                    <Box sx={{ 
+                      display: 'flex', 
+                      alignItems: 'center', 
+                      gap: 1, 
+                      mt: 2.5,
+                      pt: 2,
+                      borderTop: 1,
+                      borderColor: 'divider',
+                    }}>
+                      <Typography 
+                        variant="body2" 
+                        sx={{ 
+                          color: 'primary.main',
+                          fontWeight: 600,
+                          fontSize: '0.875rem',
+                        }}
+                      >
+                        {card.action}
+                      </Typography>
+                      <Box sx={{ 
+                        fontSize: '0.875rem',
+                        color: 'primary.main',
+                        transition: 'transform 0.3s ease',
+                      }}>
+                        →
+                      </Box>
+                    </Box>
+                  </CardContent>
+                </Card>
+              </Grid>
+            );
+          })}
         </Grid>
 
         {/* Recent Activity */}

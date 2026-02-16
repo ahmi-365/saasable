@@ -76,28 +76,28 @@ export const landingMegamenu = {
         title: 'Weekly Planner',
         theme: Themes.THEME_AI,
         image: '/assets/images/LandingPageImages/Weekly-Planner.png',
-        status: 'Pro',
+        // status: 'Pro',
           link: { href: '/weekly-planner' }
       },
       {
         title: 'Goals',
         theme: Themes.THEME_CRYPTO,
         image: '/assets/images/LandingPageImages/Goals.png',
-        status: 'Pro',
+        // status: 'Pro',
           link: { href: '/goals' }
       },
       {
         title: 'Time Tracking',
         theme: Themes.THEME_HOSTING,
         image: '/assets/images/LandingPageImages/Time-Tracking.png',
-        status: 'Pro',
+        // status: 'Pro',
           link: { href: '/time-tracking' }
       },
       {
         title: 'Team',
         theme: Themes.THEME_PMS,
         image: '/assets/images/LandingPageImages/Team.png',
-        status: 'Pro',
+        // status: 'Pro',
           link: { href: '/team' }
       },
       // {
