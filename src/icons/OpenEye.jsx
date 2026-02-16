@@ -1,15 +1,11 @@
 import PropTypes from 'prop-types';
-
 import { useId } from 'react';
-
-// @mui
 import { useTheme } from '@mui/material/styles';
 
-/***************************  ICON - OPEN EYE  ***************************/
 
 export default function OpenEye({ size = 24, color, stroke = 1.5 }) {
   const theme = useTheme();
-  const uniqueId = useId(); // Generate a unique ID
+  const uniqueId = useId(); 
 
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

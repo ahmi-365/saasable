@@ -1,15 +1,10 @@
-import PropTypes from 'prop-types';
-
-import { useId } from 'react';
-
-// @mui
-import { useTheme } from '@mui/material/styles';
-
-/***************************  ICON - CIRCLE  ***************************/
+import PropTypes from 'prop-types' ;
+import { useId } from 'react' ;
+import { useTheme } from '@mui/material/styles' ;
 
 export default function Circle({ size = 24, color }) {
   const theme = useTheme();
-  const uniqueId = useId(); // Generate a unique ID
+  const uniqueId = useId(); 
 
   return (
     <svg width={size} height={size} viewBox="0 0 792 566" opacity="0.25" fill="none" xmlns="http://www.w3.org/2000/svg">

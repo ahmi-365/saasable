@@ -1,5 +1,3 @@
-/***************************  DATA - COUNTRIES  ***************************/
-
 const countries = [
   { countyCode: 'AD', name: 'Andorra', dialCode: '+376' },
   { countyCode: 'AE', name: 'United Arab Emirates', dialCode: '+971' },

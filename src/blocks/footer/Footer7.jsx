@@ -1,34 +1,20 @@
-// @next
 import { NextLink } from '@/components/routes';
-
-// @mui
 import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-
-// @third-party
 import { motion } from 'framer-motion';
-
-// @project
 import branding from '@/branding.json';
 import { GraphicsCard } from '@/components/cards';
 import ContainerWrapper from '@/components/ContainerWrapper';
 import { Copyright, FollowUS, Sitemap } from '@/components/footer';
 import LogoSection from '@/components/logo';
 import SvgIcon from '@/components/SvgIcon';
-
 import { CopyrightType } from '@/enum';
 import { DOCS_URL, FREEBIES_URL } from '@/path';
 import { SECTION_COMMON_PY } from '@/utils/constant';
 
-/*************************** FOOTER - 7 DATA  ***************************/
 
-/**
- *
- * Demos:
- * - [Footer7](https://www.Planify.io/blocks/footer/footer7)
- */
 
 const linkProps = { target: '_blank', rel: 'noopener noreferrer' };
 const data = [
@@ -126,15 +112,14 @@ const usefullLinks = [
   }
 ];
 
-/*************************** FOOTER - 7  ***************************/
 
 export default function Footer7() {
   const logoFollowContent = (
     <Stack sx={{ alignItems: 'flex-start', gap: { xs: 1.5, sm: 3 } }}>
       <LogoSection />
-      <Typography variant="h6" sx={{ maxWidth: { sm: 280 }, mb: { xs: -1, sm: -2.5 } }}>
+      {/* <Typography variant="h6" sx={{ maxWidth: { sm: 280 }, mb: { xs: -1, sm: -2.5 } }}>
         v{import.meta.env.VITE_VERSION}
-      </Typography>
+      </Typography> */}
       <Typography variant="body2" sx={{ maxWidth: { sm: 280 } }}>
         Build scalable task management applications with the {branding.brandName} UI Kit.
       </Typography>

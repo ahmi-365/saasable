@@ -1,15 +1,10 @@
 import PropTypes from 'prop-types';
-// @mui
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-
-// @project
 import { GraphicsCard } from '@/components/cards';
 import SvgIcon from '@/components/SvgIcon';
-
-/***************************  COMMON - ICON CARD  ***************************/
 
 export default function IconCard({ icon, title, content, iconAvatar, contentCard, titleProps, stackProps, contentProps, cardPadding }) {
   const defaultBoxPadding = { xs: 3, sm: 4, md: 5 };

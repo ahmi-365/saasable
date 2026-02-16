@@ -1,8 +1,5 @@
 import PropTypes from 'prop-types';
-
 import { useState } from 'react';
-
-// @mui
 import { useTheme } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
@@ -20,18 +17,11 @@ import Popper from '@mui/material/Popper';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-
-// @third-party
 import { useForm, Controller } from 'react-hook-form';
-
-// @project
 import ButtonAnimationWrapper from '@/components/ButtonAnimationWrapper';
 import SvgIcon from '@/components/SvgIcon';
-
 import countries from '@/data/countries';
 import { emailSchema, firstNameSchema, lastNameSchema, phoneSchema } from '@/utils/validationSchema';
-
-/***************************  FORM - INPUT LABEL  ***************************/
 
 function FieldLabel({ name }) {
   return (
@@ -40,9 +30,6 @@ function FieldLabel({ name }) {
     </Typography>
   );
 }
-
-/***************************  FORM - ERROR MESSAGE  ***************************/
-
 function ErrorMessage({ message }) {
   return (
     <Typography variant="caption" sx={{ color: 'error.main' }}>
@@ -50,8 +37,6 @@ function ErrorMessage({ message }) {
     </Typography>
   );
 }
-
-/***************************  CONTACT US - FORM 2  ***************************/
 
 export default function ContactUsForm2() {
   const theme = useTheme();
@@ -65,7 +50,6 @@ export default function ContactUsForm2() {
   const open = Boolean(anchorEl);
   const id = open ? 'dialcode-popper' : undefined;
 
-  // Initialize the form with default values and error handling
   const {
     register,
     handleSubmit,
@@ -76,7 +60,6 @@ export default function ContactUsForm2() {
     setValue
   } = useForm({ defaultValues: { dialcode: '+91' } });
 
-  // Handle form submission
   const onSubmit = (data) => {
     console.log(data);
     reset();

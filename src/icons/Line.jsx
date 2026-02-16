@@ -1,16 +1,10 @@
 import PropTypes from 'prop-types';
-
 import { useId } from 'react';
-
-// @mui
 import { useTheme } from '@mui/material/styles';
-
-/***************************  ICON - LINE  ***************************/
 
 export default function Line({ size = 24, color }) {
   const theme = useTheme();
-  const uniqueId = useId(); // Generate a unique ID
-
+  const uniqueId = useId(); 
   return (
     <svg width={size} height="2" viewBox="0 0 497 2" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M1 1.19458H496" stroke={`url(#${uniqueId})`} strokeLinecap="round" strokeDasharray="5 5" />

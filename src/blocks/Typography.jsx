@@ -1,15 +1,12 @@
 import PropTypes from 'prop-types';
-// @mui
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-
-// @project
 import { GraphicsCard } from '@/components/cards';
 import Typeset from '@/components/Typeset';
 
-/***************************  TYPOGRAPHY - DATA  ***************************/
+
 
 const typographyData = [
   {
@@ -151,8 +148,6 @@ const typographyData = [
   }
 ];
 
-/***************************  TYPOGRAPHY - BLOCK  ***************************/
-
 function FontSizeBlock({ desktop, tablet, mobile, type }) {
   let label1 = 'Desktop';
   let label2 = 'Tablet';
@@ -196,13 +191,6 @@ function FontSizeBlock({ desktop, tablet, mobile, type }) {
   );
 }
 
-/***************************  SECTIONS - TYPOGRAPHY  ***************************/
-
-/**
- *
- * Demos:
- * - [Typography](https://www.Planify.io/sections/typography)
- */
 
 export default function TypographyPage() {
   return (

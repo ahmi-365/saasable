@@ -1,6 +1,4 @@
 import { useEffect, useState } from 'react';
-
-// @mui
 import Divider from '@mui/material/Divider';
 import Grid from '@mui/material/Grid';
 import List from '@mui/material/List';
@@ -8,16 +6,13 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-
-// @project
 import ContainerWrapper from '@/components/ContainerWrapper';
 import { SECTION_COMMON_PY } from '@/utils/constant';
 
-// Helper functions for scrollspy
+
 const clamp = (value) => Math.max(0, value);
 const isBetween = (value, floor, ceil) => value >= floor && value <= ceil;
 
-/***************************  HOOKS - SCROLLSPY  ***************************/
 
 function useScrollspy(ids, offset = 0) {
   const [activeId, setActiveId] = useState('');
@@ -44,7 +39,7 @@ function useScrollspy(ids, offset = 0) {
 
     window.addEventListener('scroll', listener);
     window.addEventListener('resize', listener);
-    listener(); // Initial call to set the activeId
+    listener();
 
     return () => {
       window.removeEventListener('scroll', listener);
@@ -55,7 +50,6 @@ function useScrollspy(ids, offset = 0) {
   return activeId;
 }
 
-/***************************  TERMS CONDITION - DATA  ***************************/
 
 const menuItems = [
   {
@@ -114,18 +108,8 @@ const menuItems = [
   }
 ];
 
-/***************************  SECTIONS - TERMS CONDITION  ***************************/
-
-/**
- *
- * Demos:
- * - [Terms Condition](https://www.Planify.io/sections/terms-condition)
- */
-
 export default function TermsConditionPage() {
   const ids = menuItems.map((item) => item.id);
-
-  // Adjust offset as per header height
   const activeId = useScrollspy(ids, 60);
   const [selectedID, setSelectedID] = useState(activeId);
 

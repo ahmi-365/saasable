@@ -1,18 +1,11 @@
 import PropTypes from 'prop-types';
-
-// @next
 import { useLocation } from 'react-router-dom';
-
 import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-
-// @project
 import GraphicsCard from '@/components/cards/GraphicsCard';
 import GraphicsImage from '@/components/GraphicsImage';
 import SvgIcon from '@/components/SvgIcon';
-
-/***************************  PREVIEW CARD  ***************************/
 
 export default function PreviewCard({ title, theme, image, status }) {
   const { search } = useLocation();
