@@ -5,43 +5,45 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import { useTheme } from '@mui/material/styles';
 
-// Quick access cards for TeamPage
+// Lucide icons import
+import { UserPlus, Shield, Users, MessageCircle, TrendingUp, ClipboardList } from 'lucide-react';
+
 const teamCards = [
   {
     title: 'Add Team Member',
     description: 'Invite new members to your team and assign roles.',
-    action: 'Invite Member',
-    icon: '➕',
+    // action removed
+    icon: UserPlus,
   },
   {
     title: 'Assign Roles',
     description: 'Set roles and permissions for each team member.',
-    action: 'Set Roles',
-    icon: '🛡️',
+    // action removed
+    icon: Shield,
   },
   {
     title: 'Project Collaboration',
     description: 'Collaborate on projects and share updates in real time.',
-    action: 'Collaborate',
-    icon: '🤝',
+    // action removed
+    icon: Users,
   },
   {
     title: 'Team Chat',
     description: 'Communicate with your team using built-in chat tools.',
-    action: 'Open Chat',
-    icon: '💬',
+    // action removed
+    icon: MessageCircle,
   },
   {
     title: 'Track Performance',
     description: 'Monitor team performance and productivity.',
-    action: 'View Reports',
-    icon: '📈',
+    // action removed
+    icon: TrendingUp,
   },
   {
     title: 'Manage Projects',
     description: 'Assign projects and tasks to your team.',
-    action: 'Assign Project',
-    icon: '📋',
+    // action removed
+    icon: ClipboardList,
   },
 ];
 
@@ -237,7 +239,7 @@ export default function TeamPage() {
                       }}
                       className="card-icon"
                     >
-                      {card.icon}
+                      {card.icon && <card.icon size={32} color={isDarkMode ? '#90caf9' : '#1976d2'} />}
                     </Box>
                     {/* Arrow indicator */}
                     <Box
@@ -276,34 +278,7 @@ export default function TeamPage() {
                   >
                     {card.description}
                   </Typography>
-                  {/* Action Link */}
-                  <Box sx={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: 1,
-                    mt: 2.5,
-                    pt: 2,
-                    borderTop: 1,
-                    borderColor: 'divider',
-                  }}>
-                    <Typography
-                      variant="body2"
-                      sx={{
-                        color: 'primary.main',
-                        fontWeight: 600,
-                        fontSize: '0.875rem',
-                      }}
-                    >
-                      {card.action}
-                    </Typography>
-                    <Box sx={{
-                      fontSize: '0.875rem',
-                      color: 'primary.main',
-                      transition: 'transform 0.3s ease',
-                    }}>
-                      →
-                    </Box>
-                  </Box>
+                  {/* Action Link removed */}
                 </CardContent>
               </Card>
             ))}

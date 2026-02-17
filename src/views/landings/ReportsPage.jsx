@@ -5,42 +5,49 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import { useTheme } from '@mui/material/styles';
 
+import { BarChart2, Share2, Search, AlarmClock, TrendingUp, Users } from 'lucide-react';
+
 const reportsCards = [
   {
     title: 'View Reports',
     description: 'Access detailed reports on your productivity, projects, and time tracking.',
-    action: 'Open Reports',
-    icon: '📊',
+    // action removed
+    icon: BarChart2,
   },
   {
     title: 'Export Data',
     description: 'Export your reports as PDF or CSV for sharing and analysis.',
     action: 'Export',
-    icon: '📤',
+    // action removed
+    icon: Share2,
   },
   {
     title: 'Custom Filters',
     description: 'Apply filters to focus on specific projects, dates, or team members.',
     action: 'Filter',
-    icon: '🔎',
+    // action removed
+    icon: Search,
   },
   {
     title: 'Schedule Reports',
     description: 'Schedule automatic report generation and delivery.',
     action: 'Schedule',
-    icon: '⏰',
+    // action removed
+    icon: AlarmClock,
   },
   {
     title: 'Visual Analytics',
     description: 'Visualize your data with charts and graphs.',
     action: 'View Analytics',
-    icon: '📈',
+    // action removed
+    icon: TrendingUp,
   },
   {
     title: 'Share Reports',
     description: 'Share reports with your team or stakeholders.',
     action: 'Share',
-    icon: '🤝',
+    // action removed
+    icon: Users,
   },
 ];
 
@@ -236,7 +243,7 @@ export default function ReportsPage() {
                       }}
                       className="card-icon"
                     >
-                      {card.icon}
+                      {card.icon && <card.icon size={32} color={isDarkMode ? '#90caf9' : '#1976d2'} />}
                     </Box>
                     {/* Arrow indicator */}
                     <Box
@@ -285,6 +292,7 @@ export default function ReportsPage() {
                     borderTop: 1,
                     borderColor: 'divider',
                   }}>
+                    {/* Action Link removed */}
                     <Typography
                       variant="body2"
                       sx={{
@@ -293,14 +301,14 @@ export default function ReportsPage() {
                         fontSize: '0.875rem',
                       }}
                     >
-                      {card.action}
+                      {/* Action removed */}
                     </Typography>
                     <Box sx={{
                       fontSize: '0.875rem',
                       color: 'primary.main',
                       transition: 'transform 0.3s ease',
                     }}>
-                      →
+                      {/* Arrow removed */}
                     </Box>
                   </Box>
                 </CardContent>

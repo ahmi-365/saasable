@@ -5,43 +5,45 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import { useTheme } from '@mui/material/styles';
 
-// Quick access cards for TimeTrackingPage
+// Lucide icons import
+import { Timer, Edit, BarChart2, AlarmClock, Share2, Banknote } from 'lucide-react';
+
 const timeCards = [
   {
     title: 'Start Timer',
     description: 'Track your work hours in real time with a single click.',
-    action: 'Start Timer',
-    icon: '⏱️',
+    // action removed
+    icon: Timer,
   },
   {
     title: 'Manual Entry',
     description: 'Add time entries manually for flexible tracking.',
-    action: 'Add Entry',
-    icon: '✍️',
+    // action removed
+    icon: Edit,
   },
   {
     title: 'View Reports',
     description: 'Analyze your productivity with detailed time reports.',
-    action: 'View Reports',
-    icon: '📊',
+    // action removed
+    icon: BarChart2,
   },
   {
     title: 'Set Reminders',
     description: 'Get notified to start or stop tracking your time.',
-    action: 'Set Reminder',
-    icon: '⏰',
+    // action removed
+    icon: AlarmClock,
   },
   {
     title: 'Export Timesheet',
     description: 'Export your timesheet for payroll or record keeping.',
-    action: 'Export',
-    icon: '📤',
+    // action removed
+    icon: Share2,
   },
   {
     title: 'Integrate Payroll',
     description: 'Connect with payroll systems for seamless processing.',
-    action: 'Integrate',
-    icon: '💸',
+    // action removed
+    icon: Banknote,
   },
 ];
 
@@ -237,7 +239,7 @@ export default function TimeTrackingPage() {
                       }}
                       className="card-icon"
                     >
-                      {card.icon}
+                      {card.icon && <card.icon size={32} color={isDarkMode ? '#90caf9' : '#1976d2'} />}
                     </Box>
                     {/* Arrow indicator */}
                     <Box
@@ -276,34 +278,7 @@ export default function TimeTrackingPage() {
                   >
                     {card.description}
                   </Typography>
-                  {/* Action Link */}
-                  <Box sx={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: 1,
-                    mt: 2.5,
-                    pt: 2,
-                    borderTop: 1,
-                    borderColor: 'divider',
-                  }}>
-                    <Typography
-                      variant="body2"
-                      sx={{
-                        color: 'primary.main',
-                        fontWeight: 600,
-                        fontSize: '0.875rem',
-                      }}
-                    >
-                      {card.action}
-                    </Typography>
-                    <Box sx={{
-                      fontSize: '0.875rem',
-                      color: 'primary.main',
-                      transition: 'transform 0.3s ease',
-                    }}>
-                      →
-                    </Box>
-                  </Box>
+                  {/* Action Link removed */}
                 </CardContent>
               </Card>
             ))}

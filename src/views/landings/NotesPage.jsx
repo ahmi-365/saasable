@@ -5,42 +5,44 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import { useTheme } from '@mui/material/styles';
 
+import { StickyNote, Folder, Search, Share2, Pin, Archive } from 'lucide-react';
+
 const notesCards = [
   {
     title: 'Create Note',
     description: 'Quickly jot down ideas, meeting notes, or reminders.',
-    action: 'New Note',
-    icon: '📝',
+    // action removed
+    icon: StickyNote,
   },
   {
     title: 'Organize Notes',
     description: 'Categorize and tag your notes for easy retrieval.',
-    action: 'Organize',
-    icon: '📂',
+    // action removed
+    icon: Folder,
   },
   {
     title: 'Search Notes',
     description: 'Find notes instantly with powerful search.',
-    action: 'Search',
-    icon: '🔍',
+    // action removed
+    icon: Search,
   },
   {
     title: 'Share Notes',
     description: 'Share notes with your team or export as PDF.',
-    action: 'Share',
-    icon: '📤',
+    // action removed
+    icon: Share2,
   },
   {
     title: 'Pin Important',
     description: 'Pin important notes to keep them at the top.',
-    action: 'Pin Note',
-    icon: '📌',
+    // action removed
+    icon: Pin,
   },
   {
     title: 'Archive Notes',
     description: 'Archive old notes to keep your workspace tidy.',
-    action: 'Archive',
-    icon: '🗄️',
+    // action removed
+    icon: Archive,
   },
 ];
 
@@ -234,7 +236,7 @@ export default function NotesPage() {
                       }}
                       className="card-icon"
                     >
-                      {card.icon}
+                      {card.icon && <card.icon size={32} color={isDarkMode ? '#90caf9' : '#1976d2'} />}
                     </Box>
                     {/* Arrow indicator */}
                     <Box
@@ -274,33 +276,7 @@ export default function NotesPage() {
                     {card.description}
                   </Typography>
                   {/* Action Link */}
-                  <Box sx={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: 1,
-                    mt: 2.5,
-                    pt: 2,
-                    borderTop: 1,
-                    borderColor: 'divider',
-                  }}>
-                    <Typography
-                      variant="body2"
-                      sx={{
-                        color: 'primary.main',
-                        fontWeight: 600,
-                        fontSize: '0.875rem',
-                      }}
-                    >
-                      {card.action}
-                    </Typography>
-                    <Box sx={{
-                      fontSize: '0.875rem',
-                      color: 'primary.main',
-                      transition: 'transform 0.3s ease',
-                    }}>
-                      →
-                    </Box>
-                  </Box>
+                    {/* Action Link removed */}
                 </CardContent>
               </Card>
             ))}

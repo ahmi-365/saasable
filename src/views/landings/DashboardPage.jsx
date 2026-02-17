@@ -7,37 +7,38 @@ import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import Chip from '@mui/material/Chip';
+import { Users, DollarSign, CheckSquare, Link2, Bell, Settings as SettingsIcon } from 'lucide-react';
 
 const dashboardCards = [
   {
     title: 'User Analytics',
     description: 'Track user signups, active users, and engagement trends in real time.',
-    action: 'View Analytics',
+    icon: Users,
   },
   {
     title: 'Revenue Overview',
     description: 'Monitor your monthly recurring revenue, churn rate, and growth metrics.',
-    action: 'View Revenue',
+    icon: DollarSign,
   },
   {
     title: 'Tasks & Productivity',
     description: 'Manage team tasks, deadlines, and productivity stats from one place.',
-    action: 'Go to Tasks',
+    icon: CheckSquare,
   },
   {
     title: 'Integrations',
     description: 'Connect with third-party tools and manage integrations easily.',
-    action: 'Manage Integrations',
+    icon: Link2,
   },
   {
     title: 'Notifications',
     description: 'See system alerts, user feedback, and important updates.',
-    action: 'View Notifications',
+    icon: Bell,
   },
   {
     title: 'Settings',
     description: 'Configure your dashboard, manage users, and set preferences.',
-    action: 'Go to Settings',
+    icon: SettingsIcon,
   },
 ];
 
@@ -168,15 +169,7 @@ export default function DashboardPage() {
         </Typography>
         <Grid container spacing={3} sx={{ mb: 6 }}>
           {dashboardCards.map((card, idx) => {
-            // Icon mapping for each card
-            const iconMap = {
-              'User Analytics': '👥',
-              'Revenue Overview': '💰',
-              'Tasks & Productivity': '✅',
-              'Integrations': '🔗',
-              'Notifications': '🔔',
-              'Settings': '⚙️',
-            };
+            // Lucide icon is now directly in card.icon
 
             return (
               <Grid item xs={12} sm={6} md={4} key={card.title}>
@@ -235,7 +228,7 @@ export default function DashboardPage() {
                       }}
                       className="card-icon"
                       >
-                        {iconMap[card.title]}
+                        {card.icon && <card.icon size={32} color={isDarkMode ? '#90caf9' : '#1976d2'} />}
                       </Box>
                       
                       {/* Arrow indicator */}
@@ -278,34 +271,7 @@ export default function DashboardPage() {
                       {card.description}
                     </Typography>
 
-                    {/* Action Link */}
-                    <Box sx={{ 
-                      display: 'flex', 
-                      alignItems: 'center', 
-                      gap: 1, 
-                      mt: 2.5,
-                      pt: 2,
-                      borderTop: 1,
-                      borderColor: 'divider',
-                    }}>
-                      <Typography 
-                        variant="body2" 
-                        sx={{ 
-                          color: 'primary.main',
-                          fontWeight: 600,
-                          fontSize: '0.875rem',
-                        }}
-                      >
-                        {card.action}
-                      </Typography>
-                      <Box sx={{ 
-                        fontSize: '0.875rem',
-                        color: 'primary.main',
-                        transition: 'transform 0.3s ease',
-                      }}>
-                        →
-                      </Box>
-                    </Box>
+                    {/* Action Link removed */}
                   </CardContent>
                 </Card>
               </Grid>

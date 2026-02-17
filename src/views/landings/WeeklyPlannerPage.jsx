@@ -6,43 +6,44 @@ import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import { useTheme } from '@mui/material/styles';
 
+import { FolderKanban, AlarmClock, CalendarDays, TrendingUp, Star, Users } from 'lucide-react';
 const plannerCards = [
-	{
-		title: 'Drag-and-Drop Tasks',
-		description: 'Easily organize your week by dragging and dropping tasks into each day.',
-		action: 'Try Drag & Drop',
-		icon: '🗂️',
-	},
-	{
-		title: 'Reminders',
-		description: 'Set reminders for important tasks and never miss a deadline.',
-		action: 'Set Reminders',
-		icon: '⏰',
-	},
-	{
-		title: 'Calendar Integration',
-		description: 'Sync your planner with your favorite calendar apps for seamless scheduling.',
-		action: 'Connect Calendar',
-		icon: '📅',
-	},
-	{
-		title: 'Progress Tracking',
-		description: 'Track your weekly progress and stay motivated to achieve your goals.',
-		action: 'View Progress',
-		icon: '📈',
-	},
-	{
-		title: 'Priority Setting',
-		description: 'Set priorities for your tasks to focus on what matters most.',
-		action: 'Set Priorities',
-		icon: '⭐',
-	},
-	{
-		title: 'Collaboration',
-		description: 'Share your planner and collaborate with your team or family.',
-		action: 'Share Planner',
-		icon: '🤝',
-	},
+       {
+	       title: 'Drag-and-Drop Tasks',
+	       description: 'Easily organize your week by dragging and dropping tasks into each day.',
+	       // action removed
+	       icon: FolderKanban,
+       },
+       {
+	       title: 'Reminders',
+	       description: 'Set reminders for important tasks and never miss a deadline.',
+	       // action removed
+	       icon: AlarmClock,
+       },
+       {
+	       title: 'Calendar Integration',
+	       description: 'Sync your planner with your favorite calendar apps for seamless scheduling.',
+	       // action removed
+	       icon: CalendarDays,
+       },
+       {
+	       title: 'Progress Tracking',
+	       description: 'Track your weekly progress and stay motivated to achieve your goals.',
+	       // action removed
+	       icon: TrendingUp,
+       },
+       {
+	       title: 'Priority Setting',
+	       description: 'Set priorities for your tasks to focus on what matters most.',
+	       // action removed
+	       icon: Star,
+       },
+       {
+	       title: 'Collaboration',
+	       description: 'Share your planner and collaborate with your team or family.',
+	       // action removed
+	       icon: Users,
+       },
 ];
 
 export default function WeeklyPlannerPage() {
@@ -218,33 +219,21 @@ export default function WeeklyPlannerPage() {
 								<CardContent sx={{ p: 3, display: 'flex', flexDirection: 'column', height: '100%' }}>
 									{/* Icon and Title Row */}
 									<Box sx={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', mb: 2 }}>
-										<Box sx={{
-											width: 56,
-											height: 56,
-											borderRadius: 2.5,
-											bgcolor: isDarkMode ? 'rgba(56, 142, 60, 0.15)' : 'rgba(129, 199, 132, 0.13)',
-											display: 'flex',
-											alignItems: 'center',
-											justifyContent: 'center',
-											fontSize: '1.75rem',
-											transition: 'transform 0.3s ease',
-										}}
-										className="card-icon"
-										>
-											{card.icon}
-										</Box>
-										{/* Arrow indicator */}
-										<Box
-											className="card-arrow"
-											sx={{
-												transition: 'all 0.3s ease',
-												opacity: 0.6,
-												color: 'primary.main',
-												fontSize: '1.25rem',
-											}}
-										>
-											→
-										</Box>
+										       <Box sx={{
+											       width: 56,
+											       height: 56,
+											       borderRadius: 2.5,
+											       bgcolor: isDarkMode ? 'rgba(56, 142, 60, 0.15)' : 'rgba(129, 199, 132, 0.13)',
+											       display: 'flex',
+											       alignItems: 'center',
+											       justifyContent: 'center',
+											       fontSize: '1.75rem',
+											       transition: 'transform 0.3s ease',
+										       }}
+										       className="card-icon"
+										       >
+											       {card.icon && <card.icon size={32} color={isDarkMode ? '#81c784' : '#388e3c'} />}
+										       </Box>
 									</Box>
 									{/* Title */}
 									<Typography
@@ -271,33 +260,7 @@ export default function WeeklyPlannerPage() {
 										{card.description}
 									</Typography>
 									{/* Action Link */}
-									<Box sx={{
-										display: 'flex',
-										alignItems: 'center',
-										gap: 1,
-										mt: 2.5,
-										pt: 2,
-										borderTop: 1,
-										borderColor: 'divider',
-									}}>
-										<Typography
-											variant="body2"
-											sx={{
-												color: 'primary.main',
-												fontWeight: 600,
-												fontSize: '0.875rem',
-											}}
-										>
-											{card.action}
-										</Typography>
-										<Box sx={{
-											fontSize: '0.875rem',
-											color: 'primary.main',
-											transition: 'transform 0.3s ease',
-										}}>
-											→
-										</Box>
-									</Box>
+									   {/* Action Link and arrow removed */}
 								</CardContent>
 							</Card>
 						</Grid>

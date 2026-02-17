@@ -1,40 +1,42 @@
-// Quick access cards for ProjectsPage
+// Lucide icons import
+import { PlusSquare, BarChart2, Users, Flag, AlarmClock, Archive } from 'lucide-react';
+
 const projectCards = [
   {
     title: 'Create New Project',
     description: 'Start a new project and set your goals, milestones, and deadlines.',
-    action: 'Start Project',
-    icon: '🆕',
+    // action removed
+    icon: PlusSquare,
   },
   {
     title: 'Track Progress',
     description: 'Monitor your project progress and stay on top of your tasks.',
-    action: 'View Progress',
-    icon: '📊',
+    // action removed
+    icon: BarChart2,
   },
   {
     title: 'Team Collaboration',
     description: 'Invite team members and collaborate on projects together.',
-    action: 'Invite Team',
-    icon: '🤝',
+    // action removed
+    icon: Users,
   },
   {
     title: 'Set Milestones',
     description: 'Break down your project into milestones and celebrate achievements.',
-    action: 'Add Milestone',
-    icon: '🏁',
+    // action removed
+    icon: Flag,
   },
   {
     title: 'Reminders',
     description: 'Set reminders for important project deadlines and meetings.',
-    action: 'Set Reminder',
-    icon: '⏰',
+    // action removed
+    icon: AlarmClock,
   },
   {
     title: 'Archive Projects',
     description: 'Archive completed projects and keep your workspace organized.',
-    action: 'Archive',
-    icon: '🗄️',
+    // action removed
+    icon: Archive,
   },
 ];
 import Box from '@mui/material/Box';
@@ -236,7 +238,7 @@ export default function ProjectsPage() {
                       }}
                       className="card-icon"
                     >
-                      {card.icon}
+                      {card.icon && <card.icon size={32} color={isDarkMode ? '#90caf9' : '#1976d2'} />}
                     </Box>
                     {/* Arrow indicator */}
                     <Box
@@ -275,34 +277,7 @@ export default function ProjectsPage() {
                   >
                     {card.description}
                   </Typography>
-                  {/* Action Link */}
-                  <Box sx={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: 1,
-                    mt: 2.5,
-                    pt: 2,
-                    borderTop: 1,
-                    borderColor: 'divider',
-                  }}>
-                    <Typography
-                      variant="body2"
-                      sx={{
-                        color: 'primary.main',
-                        fontWeight: 600,
-                        fontSize: '0.875rem',
-                      }}
-                    >
-                      {card.action}
-                    </Typography>
-                    <Box sx={{
-                      fontSize: '0.875rem',
-                      color: 'primary.main',
-                      transition: 'transform 0.3s ease',
-                    }}>
-                      →
-                    </Box>
-                  </Box>
+                  {/* Action Link removed */}
                 </CardContent>
               </Card>
             ))}
