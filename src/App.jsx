@@ -82,6 +82,10 @@ const WeeklyPlannerPage = lazy(() => import('@/views/landings/WeeklyPlannerPage'
 const ProjectsPage = lazy(() => import('@/views/landings/ProjectsPage'));
 const TimeTrackingPage = lazy(() => import('@/views/landings/TimeTrackingPage'));
 const TeamPage = lazy(() => import('@/views/landings/TeamPage'));
+const NotesPage = lazy(() => import('@/views/landings/NotesPage'));
+const ReportsPage = lazy(() => import('@/views/landings/ReportsPage'));
+const IntegrationsPage = lazy(() => import('@/views/landings/IntegrationsPage'));
+         
 
 
 function SectionsLayout() {
@@ -180,6 +184,31 @@ const App = () => (
               </MainLayout>
             }
           />
+           <Route
+            path="/notes"
+            element={
+              <MainLayout>
+                <NotesPage />
+              </MainLayout>
+            }
+          />
+          <Route
+            path="/reports"
+            element={
+              <MainLayout>
+                <ReportsPage />
+              </MainLayout>
+            }
+          />
+          <Route
+            path="/integrations"
+            element={
+              <MainLayout>
+                <IntegrationsPage />
+              </MainLayout>
+            }
+          />
+
           <Route path="/sections" element={<SectionsLayout />}>
             <Route index element={<SectionsIndex />} />
             <Route path="about" element={<AboutSection />} />

@@ -93,19 +93,19 @@ export const landingMegamenu = {
         title: 'Notes',
         theme: Themes.THEME_PMS,
         image: '/assets/images/LandingPageImages/Notes.png',
-        link: { href: '/Notes' }
+        link: { href: '/notes' }
       },
       {
         title: 'Reports',
         theme: Themes.THEME_PMS,
         image: '/assets/images/LandingPageImages/Reports.png',
-        link: { href: '/Reports' }
+        link: { href: '/reports' }
       },
       {
         title: 'Integrations',
         theme: Themes.THEME_PMS,
         image: '/assets/images/LandingPageImages/Integrations.png',
-        link: { href: '/Integrations' }
+        link: { href: '/integrations' }
       },
       // {
       //   title: 'HRM',

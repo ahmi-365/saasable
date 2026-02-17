@@ -5,56 +5,55 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import { useTheme } from '@mui/material/styles';
 
-// Quick access cards for TeamPage
-const teamCards = [
+const notesCards = [
   {
-    title: 'Add Team Member',
-    description: 'Invite new members to your team and assign roles.',
-    action: 'Invite Member',
-    icon: '➕',
+    title: 'Create Note',
+    description: 'Quickly jot down ideas, meeting notes, or reminders.',
+    action: 'New Note',
+    icon: '📝',
   },
   {
-    title: 'Assign Roles',
-    description: 'Set roles and permissions for each team member.',
-    action: 'Set Roles',
-    icon: '🛡️',
+    title: 'Organize Notes',
+    description: 'Categorize and tag your notes for easy retrieval.',
+    action: 'Organize',
+    icon: '📂',
   },
   {
-    title: 'Project Collaboration',
-    description: 'Collaborate on projects and share updates in real time.',
-    action: 'Collaborate',
-    icon: '🤝',
+    title: 'Search Notes',
+    description: 'Find notes instantly with powerful search.',
+    action: 'Search',
+    icon: '🔍',
   },
   {
-    title: 'Team Chat',
-    description: 'Communicate with your team using built-in chat tools.',
-    action: 'Open Chat',
-    icon: '💬',
+    title: 'Share Notes',
+    description: 'Share notes with your team or export as PDF.',
+    action: 'Share',
+    icon: '📤',
   },
   {
-    title: 'Track Performance',
-    description: 'Monitor team performance and productivity.',
-    action: 'View Reports',
-    icon: '📈',
+    title: 'Pin Important',
+    description: 'Pin important notes to keep them at the top.',
+    action: 'Pin Note',
+    icon: '📌',
   },
   {
-    title: 'Manage Projects',
-    description: 'Assign projects and tasks to your team.',
-    action: 'Assign Project',
-    icon: '📋',
+    title: 'Archive Notes',
+    description: 'Archive old notes to keep your workspace tidy.',
+    action: 'Archive',
+    icon: '🗄️',
   },
 ];
 
-export default function TeamPage() {
+export default function NotesPage() {
   const theme = useTheme();
   const isDarkMode = theme.palette.mode === 'dark';
   const coverImg = isDarkMode
-    ? '/assets/images/LandingPageImages/Team-Dark.png'
-    : '/assets/images/LandingPageImages/Team-Light.png';
+    ? '/assets/images/LandingPageImages/NotesDark.png'
+    : '/assets/images/LandingPageImages/Notes-Light.png';
 
   return (
     <Box sx={{ bgcolor: 'background.default', minHeight: '100vh', pb: 6 }}>
-     
+      {/* Hero Section with Image and Overlay */}
       <Box
         sx={{
           width: '100%',
@@ -67,14 +66,12 @@ export default function TeamPage() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          background: isDarkMode
-            ? 'linear-gradient(135deg, #1e293b 0%, #0f172a 100%)'
-            : 'linear-gradient(135deg, #8e24aa 0%, #ba68c8 100%)',
+          background: 'transparent',
         }}
       >
         <img
           src={coverImg}
-          alt="Team Cover"
+          alt="Notes Cover"
           style={{
             width: '100%',
             height: '100%',
@@ -112,7 +109,7 @@ export default function TeamPage() {
                 textShadow: '0 4px 12px rgba(0, 0, 0, 0.3)',
               }}
             >
-              Team
+              Notes
             </Typography>
             <Typography
               variant="h6"
@@ -123,7 +120,7 @@ export default function TeamPage() {
                 textShadow: '0 2px 8px rgba(0, 0, 0, 0.3)',
               }}
             >
-              Collaborate with your team, assign roles, and manage projects efficiently. The Team page helps you build synergy and achieve goals together.
+              Capture, organize, and share your notes with ease. Never lose an idea again!
             </Typography>
           </Box>
         </Box>
@@ -149,13 +146,13 @@ export default function TeamPage() {
                 mb: 3,
               }}
             >
-              About Team
+              About Notes
             </Typography>
             <Typography variant="body1" sx={{ mb: 2, color: 'text.secondary', lineHeight: 1.8 }}>
-              Collaborate with your team, assign roles, and manage projects efficiently. The Team page helps you build synergy and achieve goals together.
+              Capture, organize, and share your notes with ease. Never lose an idea again!
             </Typography>
             <Typography variant="body1" sx={{ color: 'text.secondary', lineHeight: 1.8 }}>
-              Features include team management, project tracking, and communication tools. Empower your team for success!
+              Features include note creation, organization, search, sharing, and archiving. Stay productive and keep your thoughts organized!
             </Typography>
           </CardContent>
         </Card>
@@ -176,7 +173,7 @@ export default function TeamPage() {
         </Typography>
         <Box sx={{ flexGrow: 1 }}>
           <Box component="div" sx={{ display: 'flex', flexWrap: 'wrap', gap: 3, mb: 6 }}>
-            {teamCards.map((card) => (
+            {notesCards.map((card) => (
               <Card
                 key={card.title}
                 sx={{
@@ -317,20 +314,20 @@ export default function TeamPage() {
               gutterBottom
               sx={{ fontWeight: 700, color: 'text.primary', mb: 3 }}
             >
-              💡 Team Tips
+              💡 Notes Tips
             </Typography>
             <Box component="ul" sx={{ pl: 2, color: 'text.secondary' }}>
               <Typography component="li" variant="body1" sx={{ mb: 1.5, lineHeight: 1.6 }}>
-                Assign clear roles to each team member.
+                Pin important notes for quick access.
               </Typography>
               <Typography component="li" variant="body1" sx={{ mb: 1.5, lineHeight: 1.6 }}>
-                Use team chat for quick communication.
+                Use tags to organize your notes efficiently.
               </Typography>
               <Typography component="li" variant="body1" sx={{ mb: 1.5, lineHeight: 1.6 }}>
-                Track team performance regularly.
+                Archive old notes to reduce clutter.
               </Typography>
               <Typography component="li" variant="body1" sx={{ lineHeight: 1.6 }}>
-                Collaborate on projects for better results.
+                Share notes with your team for better collaboration.
               </Typography>
             </Box>
           </CardContent>

@@ -5,56 +5,55 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import { useTheme } from '@mui/material/styles';
 
-// Quick access cards for TeamPage
-const teamCards = [
+const integrationsCards = [
   {
-    title: 'Add Team Member',
-    description: 'Invite new members to your team and assign roles.',
-    action: 'Invite Member',
-    icon: '➕',
+    title: 'Connect Apps',
+    description: 'Integrate with your favorite productivity and communication tools.',
+    action: 'Connect',
+    icon: '🔗',
   },
   {
-    title: 'Assign Roles',
-    description: 'Set roles and permissions for each team member.',
-    action: 'Set Roles',
-    icon: '🛡️',
+    title: 'API Access',
+    description: 'Access and manage your API keys for custom integrations.',
+    action: 'Manage API',
+    icon: '🛠️',
   },
   {
-    title: 'Project Collaboration',
-    description: 'Collaborate on projects and share updates in real time.',
-    action: 'Collaborate',
-    icon: '🤝',
+    title: 'Automation',
+    description: 'Automate workflows between your apps and services.',
+    action: 'Automate',
+    icon: '🤖',
   },
   {
-    title: 'Team Chat',
-    description: 'Communicate with your team using built-in chat tools.',
-    action: 'Open Chat',
-    icon: '💬',
+    title: 'Webhooks',
+    description: 'Set up webhooks for real-time data sync.',
+    action: 'Setup Webhook',
+    icon: '🌐',
   },
   {
-    title: 'Track Performance',
-    description: 'Monitor team performance and productivity.',
-    action: 'View Reports',
-    icon: '📈',
+    title: 'Marketplace',
+    description: 'Browse and install integrations from our marketplace.',
+    action: 'Browse',
+    icon: '🛒',
   },
   {
-    title: 'Manage Projects',
-    description: 'Assign projects and tasks to your team.',
-    action: 'Assign Project',
-    icon: '📋',
+    title: 'Support',
+    description: 'Get help and documentation for integration setup.',
+    action: 'Get Help',
+    icon: '💡',
   },
 ];
 
-export default function TeamPage() {
+export default function IntegrationsPage() {
   const theme = useTheme();
   const isDarkMode = theme.palette.mode === 'dark';
   const coverImg = isDarkMode
-    ? '/assets/images/LandingPageImages/Team-Dark.png'
-    : '/assets/images/LandingPageImages/Team-Light.png';
+    ? '/assets/images/LandingPageImages/Integrations-Dark.png'
+    : '/assets/images/LandingPageImages/Integrations-Light.png';
 
   return (
     <Box sx={{ bgcolor: 'background.default', minHeight: '100vh', pb: 6 }}>
-     
+      {/* Hero Section with Image and Overlay */}
       <Box
         sx={{
           width: '100%',
@@ -69,12 +68,12 @@ export default function TeamPage() {
           justifyContent: 'center',
           background: isDarkMode
             ? 'linear-gradient(135deg, #1e293b 0%, #0f172a 100%)'
-            : 'linear-gradient(135deg, #8e24aa 0%, #ba68c8 100%)',
+            : 'linear-gradient(135deg, #0288d1 0%, #4fc3f7 100%)',
         }}
       >
         <img
           src={coverImg}
-          alt="Team Cover"
+          alt="Integrations Cover"
           style={{
             width: '100%',
             height: '100%',
@@ -112,7 +111,7 @@ export default function TeamPage() {
                 textShadow: '0 4px 12px rgba(0, 0, 0, 0.3)',
               }}
             >
-              Team
+              Integrations
             </Typography>
             <Typography
               variant="h6"
@@ -123,7 +122,7 @@ export default function TeamPage() {
                 textShadow: '0 2px 8px rgba(0, 0, 0, 0.3)',
               }}
             >
-              Collaborate with your team, assign roles, and manage projects efficiently. The Team page helps you build synergy and achieve goals together.
+              Connect your favorite tools, automate workflows, and unlock new productivity with integrations.
             </Typography>
           </Box>
         </Box>
@@ -149,13 +148,13 @@ export default function TeamPage() {
                 mb: 3,
               }}
             >
-              About Team
+              About Integrations
             </Typography>
             <Typography variant="body1" sx={{ mb: 2, color: 'text.secondary', lineHeight: 1.8 }}>
-              Collaborate with your team, assign roles, and manage projects efficiently. The Team page helps you build synergy and achieve goals together.
+              Connect your favorite tools, automate workflows, and unlock new productivity with integrations.
             </Typography>
             <Typography variant="body1" sx={{ color: 'text.secondary', lineHeight: 1.8 }}>
-              Features include team management, project tracking, and communication tools. Empower your team for success!
+              Features include app connections, API access, automation, webhooks, and marketplace. Expand your capabilities easily!
             </Typography>
           </CardContent>
         </Card>
@@ -176,7 +175,7 @@ export default function TeamPage() {
         </Typography>
         <Box sx={{ flexGrow: 1 }}>
           <Box component="div" sx={{ display: 'flex', flexWrap: 'wrap', gap: 3, mb: 6 }}>
-            {teamCards.map((card) => (
+            {integrationsCards.map((card) => (
               <Card
                 key={card.title}
                 sx={{
@@ -317,20 +316,20 @@ export default function TeamPage() {
               gutterBottom
               sx={{ fontWeight: 700, color: 'text.primary', mb: 3 }}
             >
-              💡 Team Tips
+              💡 Integrations Tips
             </Typography>
             <Box component="ul" sx={{ pl: 2, color: 'text.secondary' }}>
               <Typography component="li" variant="body1" sx={{ mb: 1.5, lineHeight: 1.6 }}>
-                Assign clear roles to each team member.
+                Connect only the tools you use regularly.
               </Typography>
               <Typography component="li" variant="body1" sx={{ mb: 1.5, lineHeight: 1.6 }}>
-                Use team chat for quick communication.
+                Use automation to save time on repetitive tasks.
               </Typography>
               <Typography component="li" variant="body1" sx={{ mb: 1.5, lineHeight: 1.6 }}>
-                Track team performance regularly.
+                Check the marketplace for new integrations.
               </Typography>
               <Typography component="li" variant="body1" sx={{ lineHeight: 1.6 }}>
-                Collaborate on projects for better results.
+                Contact support for help with setup or troubleshooting.
               </Typography>
             </Box>
           </CardContent>
