@@ -79,7 +79,7 @@ const ScrollFab = lazy(() => import('@/components/ScrollFab'));
 const NotFound = lazy(() => import('@/views/sections/Error404'));
 const DashboardPage = lazy(() => import('@/views/landings/DashboardPage'));
 const WeeklyPlannerPage = lazy(() => import('@/views/landings/WeeklyPlannerPage'));
-const GoalsPage = lazy(() => import('@/views/landings/GoalsPage'));
+const ProjectsPage = lazy(() => import('@/views/landings/ProjectsPage'));
 const TimeTrackingPage = lazy(() => import('@/views/landings/TimeTrackingPage'));
 const TeamPage = lazy(() => import('@/views/landings/TeamPage'));
 
@@ -157,10 +157,10 @@ const App = () => (
             }
           />
           <Route
-            path="/goals"
+            path="/Projects"
             element={
               <MainLayout>
-                <GoalsPage />
+                <ProjectsPage />
               </MainLayout>
             }
           />

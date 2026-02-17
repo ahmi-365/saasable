@@ -22,7 +22,7 @@ export default function PreviewCard({ title, theme, image, status }) {
   return (
     <GraphicsCard sx={cardStyle}>
       <Stack sx={{ gap: 1 }}>
-        <GraphicsImage cardMediaProps={{ component: 'img' }} image={image} sx={{ minHeight: { xs: 115, sm: 160 } }} />
+        <GraphicsImage cardMediaProps={{ component: 'img' }} image={image} sx={{ minHeight: { xs: 115, sm: 160 }, borderRadius: 5 }} />
         <Stack direction="row" sx={{ justifyContent: 'space-between' }}>
           <Typography variant="subtitle1" sx={{ color: 'text.primary', mt: 0.25 }}>
             {title}

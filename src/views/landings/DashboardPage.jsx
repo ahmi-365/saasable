@@ -45,14 +45,13 @@ export default function DashboardPage() {
   const theme = useTheme();
   const isDarkMode = theme.palette.mode === 'dark';
   
-  // Select image based on global theme mode
   const coverImg = isDarkMode 
     ? '/assets/images/LandingPageImages/DashboardDark.png'
     : '/assets/images/LandingPageImages/DashboardLight.png';
 
   return (
     <Box sx={{ bgcolor: 'background.default', minHeight: '100vh', pb: 6 }}>
-      {/* Hero Cover Image */}
+      
       <Box
         sx={{
           width: '100%',

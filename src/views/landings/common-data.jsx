@@ -1,25 +1,21 @@
-// @mui
 import Button from '@mui/material/Button';
 import CardMedia from '@mui/material/CardMedia';
 import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-
-// @project
 import branding from '@/branding.json';
 import { Themes } from '@/config';
 import { MegaMenuType } from '@/enum';
 import { ADMIN_PATH, BUY_NOW_URL, DOCS_URL, PAGE_PATH, PRIVIEW_PATH } from '@/path';
 
-const linkProps = { target: '_blank', rel: 'noopener noreferrer' };
 
-/***************************  MEGAMENU 4 - FOOTER  ***************************/
+const linkProps = { target: '_blank', rel: 'noopener noreferrer' };
 
 function FooterData() {
   return (
     <Stack direction={{ sm: 'row' }} sx={{ gap: 1.5, justifyContent: 'space-between', alignItems: { xs: 'flex-start', sm: 'center' } }}>
       <Stack sx={{ gap: 1 }}>
-        <Stack direction="row" sx={{ alignItems: 'center', gap: 1 }}>
+        {/* <Stack direction="row" sx={{ alignItems: 'center', gap: 1 }}>
           <Typography variant="h5">Explore our range of landing demos tailored to suit your needs</Typography>
           <Chip
             label="Featured"
@@ -36,7 +32,7 @@ function FooterData() {
               />
             }
           />
-        </Stack>
+        </Stack> */}
         <Typography variant="body2" sx={{ color: 'text.secondary' }}>
           {branding.brandName} offers 200+ customizable blocks, empowering you to effortlessly design and build landing pages tailored to
           your product or service needs.
@@ -55,8 +51,6 @@ function FooterData() {
   );
 }
 
-/***************************  NAVBAR - MEGAMENU LANDINGS  ***************************/
-
 export const landingMegamenu = {
   id: 'landings',
   title: 'Landings',
@@ -69,36 +63,49 @@ export const landingMegamenu = {
         title: 'Dashboard',
         theme: Themes.THEME_CRM,
         image: '/assets/images/LandingPageImages/Dashboard.png',
-        // status: 'Pro',
         link: { href: '/dashboard' }
       },
       {
         title: 'Weekly Planner',
         theme: Themes.THEME_AI,
         image: '/assets/images/LandingPageImages/Weekly-Planner.png',
-        // status: 'Pro',
-          link: { href: '/weekly-planner' }
+        link: { href: '/weekly-planner' }
       },
       {
-        title: 'Goals',
+        title: 'Projects',
         theme: Themes.THEME_CRYPTO,
-        image: '/assets/images/LandingPageImages/Goals.png',
-        // status: 'Pro',
-          link: { href: '/goals' }
+        image: '/assets/images/LandingPageImages/Projects.png',
+        link: { href: '/Projects' }
       },
       {
         title: 'Time Tracking',
         theme: Themes.THEME_HOSTING,
         image: '/assets/images/LandingPageImages/Time-Tracking.png',
-        // status: 'Pro',
-          link: { href: '/time-tracking' }
+        link: { href: '/time-tracking' }
       },
       {
         title: 'Team',
         theme: Themes.THEME_PMS,
         image: '/assets/images/LandingPageImages/Team.png',
-        // status: 'Pro',
-          link: { href: '/team' }
+        link: { href: '/team' }
+      },
+      {
+        title: 'Notes',
+        theme: Themes.THEME_PMS,
+        image: '/assets/images/LandingPageImages/Notes.png',
+        link: { href: '/Notes' }
+      },
+      {
+        title: 'Reports',
+        theme: Themes.THEME_PMS,
+        image: '/assets/images/LandingPageImages/Reports.png',
+        link: { href: '/Reports' }
+      },
+      {
+        title: 'Integrations',
+        theme: Themes.THEME_PMS,
+        image: '/assets/images/LandingPageImages/Integrations.png',
+        link: { href: '/Integrations' }
       },
       // {
       //   title: 'HRM',
@@ -126,7 +133,6 @@ export const landingMegamenu = {
   }
 };
 
-/***************************  MEGAMENU 5 - BANNER  ***************************/
 
 function BannerData() {
   return (
@@ -161,7 +167,6 @@ function BannerData() {
   );
 }
 
-/***************************  NAVBAR - MEGAMENU PAGES  ***************************/
 
 export const pagesMegamenu = {
   id: 'pages',

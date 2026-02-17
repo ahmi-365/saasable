@@ -44,10 +44,15 @@ export default function MenuPopper({
       setAnchorEl(anchorRef.current);
     }
   }, [defaultOpen]);
-  // Close dropdown on scroll (window or scrollable parent)
+  // Close dropdown on scroll (window or scrollable parent), but NOT if scrolling inside dropdown
   useEffect(() => {
     if (!open) return;
-    const handleScroll = () => setAnchorEl(null);
+    const handleScroll = (e) => {
+      // If the scroll event target is inside the Popper, do not close
+      const popperEl = document.getElementById('menu-popper');
+      if (popperEl && e && e.target && popperEl.contains(e.target)) return;
+      setAnchorEl(null);
+    };
     window.addEventListener('scroll', handleScroll, true);
     let scrollParent = anchorRef.current;
     while (scrollParent && scrollParent !== document.body && scrollParent !== document.documentElement) {
