@@ -139,7 +139,7 @@ function BannerData() {
     <Stack sx={{ alignItems: 'flex-start', gap: 3, height: 1, justifyContent: 'center' }}>
       <Stack sx={{ gap: 1 }}>
         <Stack sx={{ alignItems: 'flex-start', gap: 1.5 }}>
-          <Chip
+          {/* <Chip
             label={`${branding.brandName} Admin Template`}
             icon={
               <CardMedia
@@ -153,7 +153,7 @@ function BannerData() {
             size="small"
             slotProps={{ label: { sx: { px: 1.5, py: 0.5, typography: 'subtitle2' } } }}
             sx={{ bgcolor: 'background.default', '& .MuiChip-icon': { ml: 1.25 } }}
-          />
+          /> */}
           <Typography variant="h5">Stunning dashboards designed to meet your needs.</Typography>
         </Stack>
         <Typography variant="body2" sx={{ color: 'text.secondary' }}>
@@ -167,7 +167,6 @@ function BannerData() {
   );
 }
 
-
 export const pagesMegamenu = {
   id: 'pages',
   title: 'Pages',
@@ -179,34 +178,34 @@ export const pagesMegamenu = {
       {
         title: 'General',
         itemsList: [
-          { title: 'About', link: { href: 'https://stage.saasable.io/about', ...linkProps } },
-          { title: 'Career', status: 'Pro' },
+          { title: 'About', link: { href: 'https://planify-task.vercel.app/', ...linkProps } },
+          // { title: 'Career', status: 'Pro' },
           { title: 'Privacy Policy', link: { href: PAGE_PATH.privacyPolicyPage, ...linkProps } },
-          { title: 'Contact Us', status: 'Pro' },
-          { title: 'FAQs', status: 'Pro' },
-          { title: 'Pricing', status: 'Pro' }
+          // { title: 'Contact Us', status: 'Pro' },
+          // { title: 'FAQs', status: 'Pro' },
+          // { title: 'Pricing', status: 'Pro' }
         ]
       },
       {
         title: 'Maintenance',
         itemsList: [
-          { title: 'Coming Soon', status: 'Pro' },
+          // { title: 'Coming Soon', status: 'Pro' },
           { title: 'Error 404', link: { href: PRIVIEW_PATH.error404, ...linkProps } },
           { title: 'Error 500', link: { href: PRIVIEW_PATH.error500, ...linkProps } },
-          { title: 'Under Maintenance', status: 'Pro' }
+          // { title: 'Under Maintenance', status: 'Pro' }
         ]
       },
       {
         title: 'External',
         itemsList: [
-          { title: 'Blog', link: { href: 'https://blog.saasable.io/', ...linkProps } },
+          { title: 'Blog', link: { href: 'https://planify-task.vercel.app/', ...linkProps } },
           { title: 'Documentation', link: { href: DOCS_URL, ...linkProps } },
           { title: 'Support', link: { href: branding.company.socialLink.support, ...linkProps } },
           {
             title: 'Discord',
             link: { href: branding.company.socialLink.discord, ...linkProps }
           },
-          { title: 'Terms & Conditions', link: { href: 'https://mui.com/store/terms/', ...linkProps } }
+          { title: 'Terms & Conditions', link: { href: 'https://planify-task.vercel.app/', ...linkProps } }
         ]
       }
     ],

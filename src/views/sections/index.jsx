@@ -43,7 +43,6 @@ var SectionCategory;
 
 const imagePrefix = '/assets/images/presentation';
 
-/***************************  SECTIONS - DATA  ***************************/
 
 const sections = [
   {

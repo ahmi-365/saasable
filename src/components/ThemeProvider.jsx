@@ -15,19 +15,21 @@ const themeMap = {
 };
 
 
+
 export default function ThemeProvider({ children }) {
   const { state, setField } = useConfig();
   const location = useLocation();
 
-  const [loader, setLoader] = useState(true);
+  // Wait for colorScheme to be loaded from localStorage
+  const [hydrated, setHydrated] = useState(false);
 
+  useEffect(() => {
+    // Only set hydrated to true after first render (localStorage read)
+    setHydrated(true);
+  }, []);
 
   const selectedTheme = themeMap[state.currentTheme]?.('data-color-scheme') || aiTheme('data-color-scheme');
   const mode = state.colorScheme || 'light';
-
-  useEffect(() => {
-    setLoader(false);
-  }, []);
 
   useEffect(() => {
     if (typeof document === 'undefined') return;
@@ -46,21 +48,19 @@ export default function ThemeProvider({ children }) {
     setField('currentTheme', normalizedTheme);
   }, [location.search, setField, state.currentTheme]);
 
- 
+  // Only render Loader or children after hydration
+  if (!hydrated) {
+    // Optionally, you can return null or a blank div for a flash-free experience
+    return null;
+  }
 
   return (
     <>
       <InitColorSchemeScript attribute="data-color-scheme" defaultMode={mode} />
-      <Suspense fallback={<Loader />}>
-        {loader ? (
-          <Loader />
-        ) : (
-          <MuiThemeProvider disableTransitionOnChange theme={selectedTheme} defaultMode={mode}>
-            <CssBaseline enableColorScheme />
-            {children}
-          </MuiThemeProvider>
-        )}
-      </Suspense>
+      <MuiThemeProvider disableTransitionOnChange theme={selectedTheme} defaultMode={mode}>
+        <CssBaseline enableColorScheme />
+        {children}
+      </MuiThemeProvider>
     </>
   );
 }
