@@ -178,34 +178,29 @@ export const pagesMegamenu = {
       {
         title: 'General',
         itemsList: [
-          { title: 'About', link: { href: 'https://planify-task.vercel.app/', ...linkProps } },
-          // { title: 'Career', status: 'Pro' },
+          {
+            title: 'About',
+            link: { href: '/about', ...linkProps }
+          },
           { title: 'Privacy Policy', link: { href: PAGE_PATH.privacyPolicyPage, ...linkProps } },
-          // { title: 'Contact Us', status: 'Pro' },
-          // { title: 'FAQs', status: 'Pro' },
-          // { title: 'Pricing', status: 'Pro' }
+
         ]
       },
       {
         title: 'Maintenance',
         itemsList: [
-          // { title: 'Coming Soon', status: 'Pro' },
           { title: 'Error 404', link: { href: PRIVIEW_PATH.error404, ...linkProps } },
           { title: 'Error 500', link: { href: PRIVIEW_PATH.error500, ...linkProps } },
-          // { title: 'Under Maintenance', status: 'Pro' }
         ]
       },
       {
         title: 'External',
         itemsList: [
-          { title: 'Blog', link: { href: 'https://planify-task.vercel.app/', ...linkProps } },
-          { title: 'Documentation', link: { href: DOCS_URL, ...linkProps } },
-          { title: 'Support', link: { href: branding.company.socialLink.support, ...linkProps } },
-          {
-            title: 'Discord',
-            link: { href: branding.company.socialLink.discord, ...linkProps }
-          },
-          { title: 'Terms & Conditions', link: { href: 'https://planify-task.vercel.app/', ...linkProps } }
+          { title: 'Blog', link: { to: '/blog',  ...linkProps } },
+          { title: 'Documentation', link: { to: '/documentation', ...linkProps } },
+          { title: 'Support', link: { to: '/support' , ...linkProps}  },
+          { title: 'Discord', link: { to: '/discord', ...linkProps } },
+          { title: 'Terms & Conditions', link: { to: '/terms-condition', ...linkProps } }
         ]
       }
     ],

@@ -1,4 +1,10 @@
+import BlogPage from '@/views/landings/BlogPage';
+import DocumentationPage from '@/views/landings/DocumentationPage';
+import SupportPage from '@/views/landings/SupportPage';
+import DiscordPage from '@/views/landings/DiscordPage';
+// import TermsConditionPage from '@/views/landings/TermsConditionPage';
 import { lazy, Suspense } from 'react';
+import AboutPage from '@/views/landings/AboutPage';
 import { Outlet, Route, Routes } from 'react-router-dom';
 import Loader from '@/components/Loader';
 import ThemeProvider from '@/components/ThemeProvider';
@@ -129,6 +135,14 @@ const App = () => (
             }
           />
           <Route
+            path="/about"
+            element={
+              <MainLayout>
+                <AboutPage />
+              </MainLayout>
+            }
+          />
+          <Route
             path="/privacy-policy"
             element={
               <MainLayout>
@@ -141,6 +155,38 @@ const App = () => (
             element={
               <MainLayout>
                 <TermsConditionPage />
+              </MainLayout>
+            }
+          />
+          <Route
+            path="/blog"
+            element={
+              <MainLayout>
+                <BlogPage />
+              </MainLayout>
+            }
+          />
+          <Route
+            path="/documentation"
+            element={
+              <MainLayout>
+                <DocumentationPage />
+              </MainLayout>
+            }
+          />
+          <Route
+            path="/support"
+            element={
+              <MainLayout>
+                <SupportPage />
+              </MainLayout>
+            }
+          />
+          <Route
+            path="/discord"
+            element={
+              <MainLayout>
+                <DiscordPage />
               </MainLayout>
             }
           />
