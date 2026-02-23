@@ -1,9 +1,5 @@
 import { useEffect, useState } from 'react';
-
-// @project
 import { NextLink } from '@/components/routes';
-
-// @mui
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import CardMedia from '@mui/material/CardMedia';
@@ -13,23 +9,16 @@ import OutlinedInput from '@mui/material/OutlinedInput';
 import Stack from '@mui/material/Stack';
 import { alpha, useTheme } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
-
-// @third-party
 import { motion } from 'framer-motion';
-
-// @project
 import branding from '@/branding.json';
 import { GraphicsCard } from '@/components/cards';
 import ContainerWrapper from '@/components/ContainerWrapper';
 import SectionHero from '@/components/SectionHero';
 import SvgIcon from '@/components/SvgIcon';
-
 import useFocusWithin from '@/hooks/useFocusWithin';
 import { PAGE_PATH } from '@/path';
 import { generateFocusVisibleStyles } from '@/utils/CommonFocusStyle';
 import GetImagePath from '@/utils/GetImagePath';
-
-// @assets
 import Background from '@/images/graphics/Background';
 import Wave from '@/images/graphics/Wave';
 
@@ -45,281 +34,281 @@ const imagePrefix = '/assets/images/presentation';
 
 
 const sections = [
-  {
-    title: 'Nav Bar',
-    subTitle: '10 Different Variants',
-    image: `${imagePrefix}/navbar-light.svg`,
-    link: PAGE_PATH.navbar,
-    category: SectionCategory.ESSENTIAL
-  },
-  {
-    title: 'Hero',
-    subTitle: '19 Different Variants',
-    image: `${imagePrefix}/hero-light.svg`,
-    link: PAGE_PATH.hero,
-    category: SectionCategory.MARKETING
-  },
-  {
-    title: 'Clientele',
-    subTitle: '8 Different Variants',
-    image: `${imagePrefix}/clientele-light.svg`,
-    link: PAGE_PATH.clientele,
-    category: SectionCategory.MARKETING
-  },
-  {
-    title: 'Metrics',
-    subTitle: '10 Different Variants',
-    image: `${imagePrefix}/metrics-light.svg`,
-    link: PAGE_PATH.metrics,
-    category: SectionCategory.FEATURE
-  },
-  {
-    title: 'Features',
-    subTitle: '27 Different Variants',
-    image: `${imagePrefix}/feature-light.svg`,
-    link: PAGE_PATH.feature,
-    category: SectionCategory.FEATURE
-  },
-  {
-    title: 'Process',
-    subTitle: '8 Different Variants',
-    image: `${imagePrefix}/process-light.svg`,
-    link: PAGE_PATH.process,
-    category: SectionCategory.FEATURE
-  },
-  {
-    title: 'Integration',
-    subTitle: '9 Different Variants',
-    image: `${imagePrefix}/integration-light.svg`,
-    link: PAGE_PATH.integration,
-    category: SectionCategory.FEATURE
-  },
-  {
-    title: 'Testimonial',
-    subTitle: '13 Different Variants',
-    image: `${imagePrefix}/testimonial-light.svg`,
-    link: PAGE_PATH.testimonial,
-    category: SectionCategory.MARKETING
-  },
-  {
-    title: 'Call-To-Action',
-    subTitle: '14 Different Variants',
-    image: `${imagePrefix}/cta-light.svg`,
-    link: PAGE_PATH.cta,
-    category: SectionCategory.MARKETING
-  },
-  {
-    title: 'Blog',
-    subTitle: '10 Different Variants',
-    image: `${imagePrefix}/blog-light.svg`,
-    link: PAGE_PATH.blog,
-    category: SectionCategory.MARKETING
-  },
-  {
-    title: 'FAQs',
-    subTitle: '8 Different Variants',
-    image: `${imagePrefix}/faqs-light.svg`,
-    link: PAGE_PATH.faq,
-    category: SectionCategory.ESSENTIAL
-  },
-  {
-    title: 'Footer',
-    subTitle: '7 Different Variants',
-    image: `${imagePrefix}/footer-light.svg`,
-    link: PAGE_PATH.footer,
-    category: SectionCategory.ESSENTIAL
-  },
-  {
-    title: 'Team',
-    subTitle: '8 Different Variants',
-    image: `${imagePrefix}/team-light.svg`,
-    link: PAGE_PATH.team,
-    category: SectionCategory.MARKETING
-  },
-  {
-    title: 'Contact Us',
-    subTitle: '6 Different Variants',
-    image: `${imagePrefix}/contact-us-light.svg`,
-    link: PAGE_PATH.contactUs,
-    category: SectionCategory.ESSENTIAL
-  },
-  {
-    title: 'Gallery',
-    subTitle: '4 Different Variants',
-    image: `${imagePrefix}/gallery-light.svg`,
-    link: PAGE_PATH.gallery,
-    category: SectionCategory.MARKETING
-  },
-  {
-    title: 'Login',
-    subTitle: '5 Different Variants',
-    image: `${imagePrefix}/sign-in-light.svg`,
-    link: PAGE_PATH.login,
-    category: SectionCategory.ESSENTIAL
-  },
-  {
-    title: 'Register',
-    subTitle: '1 Variant',
-    image: `${imagePrefix}/sign-up-light.svg`,
-    link: PAGE_PATH.register,
-    category: SectionCategory.ESSENTIAL
-  },
-  {
-    title: 'Pricing',
-    subTitle: '10 Different Variants',
-    image: `${imagePrefix}/pricing-light.svg`,
-    link: PAGE_PATH.pricing,
-    category: SectionCategory.FEATURE
-  },
-  {
-    title: 'Small Hero',
-    subTitle: '8 Different Variants',
-    image: `${imagePrefix}/small-hero-light.svg`,
-    link: PAGE_PATH.smallHero,
-    category: SectionCategory.MARKETING
-  },
-  {
-    title: 'Cookies',
-    subTitle: '3 Different Variants',
-    image: `${imagePrefix}/cookies-light.svg`,
-    link: PAGE_PATH.cookie,
-    category: SectionCategory.ESSENTIAL
-  },
-  {
-    title: 'Top-Offer',
-    subTitle: '5 Different Variants',
-    image: `${imagePrefix}/top-offer-bar-light.svg`,
-    link: PAGE_PATH.topOffer,
-    category: SectionCategory.MARKETING
-  },
-  {
-    title: 'Mega Menu',
-    subTitle: '5 Different Variants',
-    image: `${imagePrefix}/mega-menu-light.svg`,
-    link: PAGE_PATH.megaMenu,
-    category: SectionCategory.ESSENTIAL
-  },
-  {
-    title: 'About',
-    subTitle: '3 Different Variants',
-    image: `${imagePrefix}/content-light.svg`,
-    link: PAGE_PATH.about,
-    category: SectionCategory.MARKETING
-  },
-  {
-    title: 'Forgot Password',
-    subTitle: '1 Variant',
-    image: `${imagePrefix}/forgot-pass-light.svg`,
-    link: PAGE_PATH.forgotPassword,
-    category: SectionCategory.ESSENTIAL
-  },
-  {
-    title: 'Create New Password',
-    subTitle: '1 Variant',
-    image: `${imagePrefix}/new-pass-light.svg`,
-    link: PAGE_PATH.newPassword,
-    category: SectionCategory.ESSENTIAL
-  },
-  {
-    title: 'OTP Verification',
-    subTitle: '1 Variant',
-    image: `${imagePrefix}/otp-gen-light.svg`,
-    link: PAGE_PATH.otpVerification,
-    category: SectionCategory.ESSENTIAL
-  },
-  {
-    title: '404 Error',
-    subTitle: '1 Variant',
-    image: `${imagePrefix}/404-light.svg`,
-    link: PAGE_PATH.error404,
-    category: SectionCategory.ESSENTIAL
-  },
+  // {
+  //   title: 'Nav Bar',
+  //   subTitle: '10 Different Variants',
+  //   image: `${imagePrefix}/navbar-light.svg`,
+  //   link: PAGE_PATH.navbar,
+  //   category: SectionCategory.ESSENTIAL
+  // },
+  // {
+  //   title: 'Hero',
+  //   subTitle: '19 Different Variants',
+  //   image: `${imagePrefix}/hero-light.svg`,
+  //   link: PAGE_PATH.hero,
+  //   category: SectionCategory.MARKETING
+  // },
+  // {
+  //   title: 'Clientele',
+  //   subTitle: '8 Different Variants',
+  //   image: `${imagePrefix}/clientele-light.svg`,
+  //   link: PAGE_PATH.clientele,
+  //   category: SectionCategory.MARKETING
+  // },
+  // {
+  //   title: 'Metrics',
+  //   subTitle: '10 Different Variants',
+  //   image: `${imagePrefix}/metrics-light.svg`,
+  //   link: PAGE_PATH.metrics,
+  //   category: SectionCategory.FEATURE
+  // },
+  // {
+  //   title: 'Features',
+  //   subTitle: '27 Different Variants',
+  //   image: `${imagePrefix}/feature-light.svg`,
+  //   link: PAGE_PATH.feature,
+  //   category: SectionCategory.FEATURE
+  // },
+  // {
+  //   title: 'Process',
+  //   subTitle: '8 Different Variants',
+  //   image: `${imagePrefix}/process-light.svg`,
+  //   link: PAGE_PATH.process,
+  //   category: SectionCategory.FEATURE
+  // },
+  // {
+  //   title: 'Integration',
+  //   subTitle: '9 Different Variants',
+  //   image: `${imagePrefix}/integration-light.svg`,
+  //   link: PAGE_PATH.integration,
+  //   category: SectionCategory.FEATURE
+  // },
+  // {
+  //   title: 'Testimonial',
+  //   subTitle: '13 Different Variants',
+  //   image: `${imagePrefix}/testimonial-light.svg`,
+  //   link: PAGE_PATH.testimonial,
+  //   category: SectionCategory.MARKETING
+  // },
+  // {
+  //   title: 'Call-To-Action',
+  //   subTitle: '14 Different Variants',
+  //   image: `${imagePrefix}/cta-light.svg`,
+  //   link: PAGE_PATH.cta,
+  //   category: SectionCategory.MARKETING
+  // },
+  // {
+  //   title: 'Blog',
+  //   subTitle: '10 Different Variants',
+  //   image: `${imagePrefix}/blog-light.svg`,
+  //   link: PAGE_PATH.blog,
+  //   category: SectionCategory.MARKETING
+  // },
+  // {
+  //   title: 'FAQs',
+  //   subTitle: '8 Different Variants',
+  //   image: `${imagePrefix}/faqs-light.svg`,
+  //   link: PAGE_PATH.faq,
+  //   category: SectionCategory.ESSENTIAL
+  // },
+  // {
+  //   title: 'Footer',
+  //   subTitle: '7 Different Variants',
+  //   image: `${imagePrefix}/footer-light.svg`,
+  //   link: PAGE_PATH.footer,
+  //   category: SectionCategory.ESSENTIAL
+  // },
+  // {
+  //   title: 'Team',
+  //   subTitle: '8 Different Variants',
+  //   image: `${imagePrefix}/team-light.svg`,
+  //   link: PAGE_PATH.team,
+  //   category: SectionCategory.MARKETING
+  // },
+  // {
+  //   title: 'Contact Us',
+  //   subTitle: '6 Different Variants',
+  //   image: `${imagePrefix}/contact-us-light.svg`,
+  //   link: PAGE_PATH.contactUs,
+  //   category: SectionCategory.ESSENTIAL
+  // },
+  // {
+  //   title: 'Gallery',
+  //   subTitle: '4 Different Variants',
+  //   image: `${imagePrefix}/gallery-light.svg`,
+  //   link: PAGE_PATH.gallery,
+  //   category: SectionCategory.MARKETING
+  // },
+  // {
+  //   title: 'Login',
+  //   subTitle: '5 Different Variants',
+  //   image: `${imagePrefix}/sign-in-light.svg`,
+  //   link: PAGE_PATH.login,
+  //   category: SectionCategory.ESSENTIAL
+  // },
+  // {
+  //   title: 'Register',
+  //   subTitle: '1 Variant',
+  //   image: `${imagePrefix}/sign-up-light.svg`,
+  //   link: PAGE_PATH.register,
+  //   category: SectionCategory.ESSENTIAL
+  // },
+  // {
+  //   title: 'Pricing',
+  //   subTitle: '10 Different Variants',
+  //   image: `${imagePrefix}/pricing-light.svg`,
+  //   link: PAGE_PATH.pricing,
+  //   category: SectionCategory.FEATURE
+  // },
+  // {
+  //   title: 'Small Hero',
+  //   subTitle: '8 Different Variants',
+  //   image: `${imagePrefix}/small-hero-light.svg`,
+  //   link: PAGE_PATH.smallHero,
+  //   category: SectionCategory.MARKETING
+  // },
+  // {
+  //   title: 'Cookies',
+  //   subTitle: '3 Different Variants',
+  //   image: `${imagePrefix}/cookies-light.svg`,
+  //   link: PAGE_PATH.cookie,
+  //   category: SectionCategory.ESSENTIAL
+  // },
+  // {
+  //   title: 'Top-Offer',
+  //   subTitle: '5 Different Variants',
+  //   image: `${imagePrefix}/top-offer-bar-light.svg`,
+  //   link: PAGE_PATH.topOffer,
+  //   category: SectionCategory.MARKETING
+  // },
+  // {
+  //   title: 'Mega Menu',
+  //   subTitle: '5 Different Variants',
+  //   image: `${imagePrefix}/mega-menu-light.svg`,
+  //   link: PAGE_PATH.megaMenu,
+  //   category: SectionCategory.ESSENTIAL
+  // },
+  // {
+  //   title: 'About',
+  //   subTitle: '3 Different Variants',
+  //   image: `${imagePrefix}/content-light.svg`,
+  //   link: PAGE_PATH.about,
+  //   category: SectionCategory.MARKETING
+  // },
+  // {
+  //   title: 'Forgot Password',
+  //   subTitle: '1 Variant',
+  //   image: `${imagePrefix}/forgot-pass-light.svg`,
+  //   link: PAGE_PATH.forgotPassword,
+  //   category: SectionCategory.ESSENTIAL
+  // },
+  // {
+  //   title: 'Create New Password',
+  //   subTitle: '1 Variant',
+  //   image: `${imagePrefix}/new-pass-light.svg`,
+  //   link: PAGE_PATH.newPassword,
+  //   category: SectionCategory.ESSENTIAL
+  // },
+  // {
+  //   title: 'OTP Verification',
+  //   subTitle: '1 Variant',
+  //   image: `${imagePrefix}/otp-gen-light.svg`,
+  //   link: PAGE_PATH.otpVerification,
+  //   category: SectionCategory.ESSENTIAL
+  // },
+  // {
+  //   title: '404 Error',
+  //   subTitle: '1 Variant',
+  //   image: `${imagePrefix}/404-light.svg`,
+  //   link: PAGE_PATH.error404,
+  //   category: SectionCategory.ESSENTIAL
+  // },
 
-  {
-    title: '500 Error',
-    subTitle: '1 Variant',
-    image: `${imagePrefix}/500-light.svg`,
-    link: PAGE_PATH.error500,
-    category: SectionCategory.ESSENTIAL
-  },
+  // {
+  //   title: '500 Error',
+  //   subTitle: '1 Variant',
+  //   image: `${imagePrefix}/500-light.svg`,
+  //   link: PAGE_PATH.error500,
+  //   category: SectionCategory.ESSENTIAL
+  // },
 
-  {
-    title: 'Under Maintenance',
-    subTitle: '1 Variant',
-    image: `${imagePrefix}/maintenance-light.svg`,
-    link: PAGE_PATH.underMaintenance,
-    category: SectionCategory.ESSENTIAL
-  },
-  {
-    title: 'Coming Soon',
-    subTitle: '1 Variant',
-    image: `${imagePrefix}/coming-soon-light.svg`,
-    link: PAGE_PATH.comingSoon,
-    category: SectionCategory.MARKETING
-  },
-  {
-    title: 'Early Access',
-    subTitle: '1 Variant',
-    image: `${imagePrefix}/early-access-light.svg`,
-    link: PAGE_PATH.earlyAccess,
-    category: SectionCategory.MARKETING
-  },
-  {
-    title: 'Onboard',
-    subTitle: '1 Variant',
-    image: `${imagePrefix}/onboard-light.svg`,
-    link: PAGE_PATH.onboard,
-    category: SectionCategory.ESSENTIAL
-  },
-  {
-    title: 'Other',
-    subTitle: '3 Different Variants',
-    image: `${imagePrefix}/other-light.svg`,
-    link: PAGE_PATH.other,
-    category: SectionCategory.ESSENTIAL
-  },
-  {
-    title: 'Privacy Policy',
-    subTitle: '2 Different Variants',
-    image: `${imagePrefix}/privacy-policy-light.svg`,
-    link: PAGE_PATH.privacyPolicy,
-    category: SectionCategory.ESSENTIAL
-  },
-  {
-    title: 'Terms Conditions',
-    subTitle: '1 Variant',
-    image: `${imagePrefix}/privacy-policy-light.svg`,
-    link: PAGE_PATH.termsCondition,
-    category: SectionCategory.ESSENTIAL
-  },
-  {
-    title: 'Blog Details',
-    subTitle: '1 Variant',
-    image: `${imagePrefix}/blog-detail-light.svg`,
-    link: PAGE_PATH.blogDetails,
-    category: SectionCategory.MARKETING
-  },
-  {
-    title: 'Typography',
-    subTitle: '1 Variant',
-    image: `${imagePrefix}/typography-light.svg`,
-    link: PAGE_PATH.typography,
-    category: SectionCategory.ESSENTIAL
-  },
-  {
-    title: 'Color',
-    subTitle: '1 Variant',
-    image: `${imagePrefix}/color-light.svg`,
-    link: PAGE_PATH.color,
-    category: SectionCategory.ESSENTIAL
-  },
-  {
-    title: 'Icons',
-    subTitle: '1 Variant',
-    image: `${imagePrefix}/icon-light.svg`,
-    link: PAGE_PATH.icon,
-    category: SectionCategory.ESSENTIAL
-  }
+  // {
+  //   title: 'Under Maintenance',
+  //   subTitle: '1 Variant',
+  //   image: `${imagePrefix}/maintenance-light.svg`,
+  //   link: PAGE_PATH.underMaintenance,
+  //   category: SectionCategory.ESSENTIAL
+  // },
+  // {
+  //   title: 'Coming Soon',
+  //   subTitle: '1 Variant',
+  //   image: `${imagePrefix}/coming-soon-light.svg`,
+  //   link: PAGE_PATH.comingSoon,
+  //   category: SectionCategory.MARKETING
+  // },
+  // {
+  //   title: 'Early Access',
+  //   subTitle: '1 Variant',
+  //   image: `${imagePrefix}/early-access-light.svg`,
+  //   link: PAGE_PATH.earlyAccess,
+  //   category: SectionCategory.MARKETING
+  // },
+  // {
+  //   title: 'Onboard',
+  //   subTitle: '1 Variant',
+  //   image: `${imagePrefix}/onboard-light.svg`,
+  //   link: PAGE_PATH.onboard,
+  //   category: SectionCategory.ESSENTIAL
+  // },
+  // {
+  //   title: 'Other',
+  //   subTitle: '3 Different Variants',
+  //   image: `${imagePrefix}/other-light.svg`,
+  //   link: PAGE_PATH.other,
+  //   category: SectionCategory.ESSENTIAL
+  // },
+  // {
+  //   title: 'Privacy Policy',
+  //   subTitle: '2 Different Variants',
+  //   image: `${imagePrefix}/privacy-policy-light.svg`,
+  //   link: PAGE_PATH.privacyPolicy,
+  //   category: SectionCategory.ESSENTIAL
+  // },
+  // {
+  //   title: 'Terms Conditions',
+  //   subTitle: '1 Variant',
+  //   image: `${imagePrefix}/privacy-policy-light.svg`,
+  //   link: PAGE_PATH.termsCondition,
+  //   category: SectionCategory.ESSENTIAL
+  // },
+  // {
+  //   title: 'Blog Details',
+  //   subTitle: '1 Variant',
+  //   image: `${imagePrefix}/blog-detail-light.svg`,
+  //   link: PAGE_PATH.blogDetails,
+  //   category: SectionCategory.MARKETING
+  // },
+  // {
+  //   title: 'Typography',
+  //   subTitle: '1 Variant',
+  //   image: `${imagePrefix}/typography-light.svg`,
+  //   link: PAGE_PATH.typography,
+  //   category: SectionCategory.ESSENTIAL
+  // },
+  // {
+  //   title: 'Color',
+  //   subTitle: '1 Variant',
+  //   image: `${imagePrefix}/color-light.svg`,
+  //   link: PAGE_PATH.color,
+  //   category: SectionCategory.ESSENTIAL
+  // },
+  // {
+  //   title: 'Icons',
+  //   subTitle: '1 Variant',
+  //   image: `${imagePrefix}/icon-light.svg`,
+  //   link: PAGE_PATH.icon,
+  //   category: SectionCategory.ESSENTIAL
+  // }
 ];
 
 const filterList = [
@@ -328,8 +317,6 @@ const filterList = [
   { title: 'Feature', value: SectionCategory.FEATURE },
   { title: 'Essential', value: SectionCategory.ESSENTIAL }
 ];
-
-/***************************  SECTIONS LAYOUT  ***************************/
 
 export default function Sections() {
   const theme = useTheme();

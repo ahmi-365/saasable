@@ -1,7 +1,4 @@
-// @mui
 import Stack from '@mui/material/Stack';
-
-// @project
 import branding from '@/branding.json';
 import ContainerWrapper from '@/components/ContainerWrapper';
 import SectionHero from '@/components/SectionHero';
@@ -10,15 +7,11 @@ import SimulatorTypeset from '@/components/SimulatorTypeset';
 import { PRIVIEW_PATH, SECTION_PATH } from '@/path';
 import { FIGMA_LINK } from '@/utils/constant';
 
-/***************************  PRO PAGE - BREADCRUMBS  ***************************/
-
 let breadcrumbs = [
   { title: 'Home', to: import.meta.env.VITE_BASE_NAME || '/' },
   { title: 'Components', to: SECTION_PATH },
   { title: 'pro-page' }
 ];
-
-/***************************  PRO PAGE - DATA  ***************************/
 
 const ProPageData = {
   typeset: {
@@ -29,8 +22,6 @@ const ProPageData = {
   },
   src: PRIVIEW_PATH.proPage
 };
-
-/***************************  SECTIONS - PRO PAGE  ***************************/
 
 export default function ProPage() {
   return (

@@ -1,7 +1,4 @@
-// @mui
 import Stack from '@mui/material/Stack';
-
-// @project
 import TermsCondition from '@/blocks/TermsCondition';
 import branding from '@/branding.json';
 import ContainerWrapper from '@/components/ContainerWrapper';
@@ -11,15 +8,11 @@ import SimulatorTypeset from '@/components/SimulatorTypeset';
 import { PRIVIEW_PATH, SECTION_PATH } from '@/path';
 import { FIGMA_LINK } from '@/utils/constant';
 
-/***************************  TERMS CONDITION - BREADCRUMBS  ***************************/
-
 let breadcrumbs = [
   { title: 'Home', to: import.meta.env.VITE_BASE_NAME || '/' },
   { title: 'Blocks', to: SECTION_PATH },
   { title: 'Terms & Conditions' }
 ];
-
-/***************************  TERMS CONDITION - DATA  ***************************/
 
 const termsConditionData = {
   typeset: {
@@ -29,8 +22,6 @@ const termsConditionData = {
   },
   src: PRIVIEW_PATH.termsCondition
 };
-
-/***************************  SECTIONS - TERMS CONDITION ***************************/
 
 export default function TermsConditionPage() {
   return (

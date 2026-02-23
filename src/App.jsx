@@ -2,7 +2,6 @@ import BlogPage from '@/views/landings/BlogPage';
 import DocumentationPage from '@/views/landings/DocumentationPage';
 import SupportPage from '@/views/landings/SupportPage';
 import DiscordPage from '@/views/landings/DiscordPage';
-// import TermsConditionPage from '@/views/landings/TermsConditionPage';
 import { lazy, Suspense } from 'react';
 import AboutPage from '@/views/landings/AboutPage';
 import { Outlet, Route, Routes } from 'react-router-dom';
@@ -91,7 +90,6 @@ const TeamPage = lazy(() => import('@/views/landings/TeamPage'));
 const NotesPage = lazy(() => import('@/views/landings/NotesPage'));
 const ReportsPage = lazy(() => import('@/views/landings/ReportsPage'));
 const IntegrationsPage = lazy(() => import('@/views/landings/IntegrationsPage'));
-         
 
 
 function SectionsLayout() {
@@ -190,7 +188,7 @@ const App = () => (
               </MainLayout>
             }
           />
-           <Route
+          <Route
             path="/dashboard"
             element={
               <MainLayout>
@@ -230,7 +228,7 @@ const App = () => (
               </MainLayout>
             }
           />
-           <Route
+          <Route
             path="/notes"
             element={
               <MainLayout>

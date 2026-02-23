@@ -1,7 +1,4 @@
-// @mui
 import Stack from '@mui/material/Stack';
-
-// @project
 import branding from '@/branding.json';
 import ContainerWrapper from '@/components/ContainerWrapper';
 import SectionHero from '@/components/SectionHero';
@@ -10,15 +7,11 @@ import SimulatorTypeset from '@/components/SimulatorTypeset';
 import { PRIVIEW_PATH, SECTION_PATH } from '@/path';
 import { FIGMA_LINK } from '@/utils/constant';
 
-/***************************  BLOG DETAILS - BREADCRUMBS  ***************************/
-
 let breadcrumbs = [
   { title: 'Home', to: import.meta.env.VITE_BASE_NAME || '/' },
   { title: 'Blocks', to: SECTION_PATH },
   { title: 'Blog Details' }
 ];
-
-/***************************  BLOG DETAILS - DATA  ***************************/
 
 const sectionsData = {
   typeset: {
@@ -28,8 +21,6 @@ const sectionsData = {
   },
   src: PRIVIEW_PATH.proPage
 };
-
-/***************************  SECTIONS - BLOG DETAILS  ***************************/
 
 export default function BlogDetails() {
   return (

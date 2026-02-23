@@ -8,13 +8,11 @@ import SimulatorTypeset from '@/components/SimulatorTypeset';
 import { PRIVIEW_PATH, SECTION_PATH } from '@/path';
 import { FIGMA_LINK } from '@/utils/constant';
 
-
 let breadcrumbs = [
   { title: 'Home', to: import.meta.env.VITE_BASE_NAME || '/' },
   { title: 'Components', to: SECTION_PATH },
   { title: 'Testimonial' }
 ];
-
 
 const sectionsData = [
   {
@@ -135,7 +133,6 @@ const sectionsData = [
     src: PRIVIEW_PATH.proPage
   }
 ];
-
 
 export default function Testimonial() {
   return (

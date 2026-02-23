@@ -56,7 +56,7 @@ export default function TimeTrackingPage() {
 
   return (
     <Box sx={{ bgcolor: 'background.default', minHeight: '100vh', pb: 6 }}>
-      {/* Hero Section with Image and Overlay */}
+      
       <Box
         sx={{
           width: '100%',

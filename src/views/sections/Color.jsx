@@ -1,7 +1,4 @@
-// @mui
 import Stack from '@mui/material/Stack';
-
-// @project
 import { ProPage } from '@/blocks/pro-page';
 import branding from '@/branding.json';
 import ContainerWrapper from '@/components/ContainerWrapper';
@@ -10,15 +7,11 @@ import SimulatorTypeset from '@/components/SimulatorTypeset';
 import { SECTION_PATH } from '@/path';
 import { FIGMA_LINK } from '@/utils/constant';
 
-/***************************  COLOR - BREADCRUMBS  ***************************/
-
 let breadcrumbs = [
   { title: 'Home', to: import.meta.env.VITE_BASE_NAME || '/' },
   { title: 'Components', to: SECTION_PATH },
   { title: 'Color' }
 ];
-
-/***************************  COLOR - DATA  ***************************/
 
 const colorData = {
   typeset: {
@@ -32,8 +25,6 @@ const colorData = {
 const data = {
   image: '/assets/images/pro-page/Lock.svg'
 };
-
-/***************************  SECTIONS - COLOR  ***************************/
 
 export default function ColorPage() {
   return (

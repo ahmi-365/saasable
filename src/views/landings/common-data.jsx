@@ -8,7 +8,6 @@ import { Themes } from '@/config';
 import { MegaMenuType } from '@/enum';
 import { ADMIN_PATH, BUY_NOW_URL, DOCS_URL, PAGE_PATH, PRIVIEW_PATH } from '@/path';
 
-
 const linkProps = { target: '_blank', rel: 'noopener noreferrer' };
 
 function FooterData() {
@@ -160,9 +159,13 @@ function BannerData() {
           Effortlessly manage your app’s backend with customizable admin dashboards that enhance productivity.
         </Typography>
       </Stack>
-      <Button href={ADMIN_PATH} variant="contained" sx={{ minWidth: 92, px: { xs: 2 }, py: 1.25 }}>
-        View Dashboard
-      </Button>
+      <Button
+  href="/dashboard"
+  variant="contained"
+  sx={{ minWidth: 92, px: { xs: 2 }, py: 1.25 }}
+>
+  View Dashboard
+</Button>
     </Stack>
   );
 }
@@ -178,29 +181,30 @@ export const pagesMegamenu = {
       {
         title: 'General',
         itemsList: [
-          {
-            title: 'About',
-            link: { href: '/about', ...linkProps }
-          },
-          { title: 'Privacy Policy', link: { href: PAGE_PATH.privacyPolicyPage, ...linkProps } },
+            {
+              title: 'About',
+              link: { href: '/about' },
+              icon: 'arrow'
+            },
+            { title: 'Privacy Policy', link: { href: PAGE_PATH.privacyPolicyPage }, icon: 'arrow' },
 
         ]
       },
       {
         title: 'Maintenance',
         itemsList: [
-          { title: 'Error 404', link: { href: PRIVIEW_PATH.error404, ...linkProps } },
-          { title: 'Error 500', link: { href: PRIVIEW_PATH.error500, ...linkProps } },
+            { title: 'Error 404', link: { href: PRIVIEW_PATH.error404 }, icon: 'arrow' },
+            { title: 'Error 500', link: { href: PRIVIEW_PATH.error500 }, icon: 'arrow' },
         ]
       },
       {
         title: 'External',
         itemsList: [
-          { title: 'Blog', link: { to: '/blog',  ...linkProps } },
-          { title: 'Documentation', link: { to: '/documentation', ...linkProps } },
-          { title: 'Support', link: { to: '/support' , ...linkProps}  },
-          { title: 'Discord', link: { to: '/discord', ...linkProps } },
-          { title: 'Terms & Conditions', link: { to: '/terms-condition', ...linkProps } }
+            { title: 'Blog', link: { to: '/blog' }, icon: 'arrow' },
+            { title: 'Documentation', link: { to: '/documentation' }, icon: 'arrow' },
+            { title: 'Support', link: { to: '/support' }, icon: 'arrow' },
+            { title: 'Discord', link: { to: '/discord' }, icon: 'arrow' },
+            { title: 'Terms & Conditions', link: { to: '/terms-condition' }, icon: 'arrow' }
         ]
       }
     ],

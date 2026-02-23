@@ -1,25 +1,17 @@
-// @mui
 import Stack from '@mui/material/Stack';
-
-// @project
 import branding from '@/branding.json';
 import ContainerWrapper from '@/components/ContainerWrapper';
 import SectionHero from '@/components/SectionHero';
 import Simulator from '@/components/Simulator';
 import SimulatorTypeset from '@/components/SimulatorTypeset';
-
 import { PRIVIEW_PATH, SECTION_PATH } from '@/path';
 import { FIGMA_LINK } from '@/utils/constant';
-
-/***************************  LOGIN - BREADCRUMBS  ***************************/
 
 let breadcrumbs = [
   { title: 'Home', to: import.meta.env.VITE_BASE_NAME || '/' },
   { title: 'Components', to: SECTION_PATH },
   { title: 'Login' }
 ];
-
-/***************************  LOGIN - DATA  ***************************/
 
 const sectionsData = [
   {
@@ -68,8 +60,6 @@ const sectionsData = [
     src: PRIVIEW_PATH.proPage
   }
 ];
-
-/***************************  SECTIONS - LOGIN  ***************************/
 
 export default function Login() {
   return (

@@ -91,7 +91,7 @@ export default function MegaMenu5({ menuItems, bannerData, popperWidth = 750 }) 
                             }
                           }}
                         />
-                        {item && item?.link && item?.link !== undefined && item?.link?.target === '_blank' ? (
+                        {item && item?.link && item?.link !== undefined ? (
                           <SvgIcon name="tabler-arrow-up-right" size={16} stroke={2} color={theme.vars.palette.grey[800]} />
                         ) : (
                           <Chip

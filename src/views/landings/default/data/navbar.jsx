@@ -14,6 +14,8 @@ export const navbar = {
     { id: 'components', title: 'Blocks', link: SECTION_PATH },
     { id: 'dashboard', title: 'Dashboard', link: ADMIN_PATH, ...linkProps },
     pagesMegamenu,
-    { id: 'docs', title: 'Docs', link: DOCS_URL, ...linkProps, icon: 'tabler-pin-invoke' }
+    { id: 'docs', title: 'Docs',
+      //  link: DOCS_URL, ...linkProps, 
+       icon: 'tabler-pin-invoke' }
   ]
 };

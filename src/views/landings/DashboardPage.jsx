@@ -45,14 +45,14 @@ const dashboardCards = [
 export default function DashboardPage() {
   const theme = useTheme();
   const isDarkMode = theme.palette.mode === 'dark';
-  
-  const coverImg = isDarkMode 
+
+  const coverImg = isDarkMode
     ? '/assets/images/LandingPageImages/DashboardDark.png'
     : '/assets/images/LandingPageImages/DashboardLight.png';
 
   return (
     <Box sx={{ bgcolor: 'background.default', minHeight: '100vh', pb: 6 }}>
-      
+
       <Box
         sx={{
           width: '100%',
@@ -65,9 +65,9 @@ export default function DashboardPage() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          background: isDarkMode 
+          background: isDarkMode
             ? 'linear-gradient(135deg, #1e293b 0%, #0f172a 100%)'
-            : 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+            : 'linear-gradient(135deg, #55565a 0%, #764ba2 100%)',
         }}
       >
         <img
@@ -82,9 +82,9 @@ export default function DashboardPage() {
             opacity: 0.9,
           }}
         />
-        
+
         {/* Overlay Text */}
-        <Box sx={{ 
+        <Box sx={{
           position: 'absolute',
           top: 0,
           left: 0,
@@ -96,9 +96,9 @@ export default function DashboardPage() {
           background: 'rgba(0, 0, 0, 0.4)',
         }}>
           <Box sx={{ textAlign: 'center', px: 2 }}>
-            <Typography 
-              variant="h2" 
-              sx={{ 
+            <Typography
+              variant="h2"
+              sx={{
                 color: '#fff',
                 fontWeight: 800,
                 mb: 2,
@@ -106,11 +106,11 @@ export default function DashboardPage() {
                 textShadow: '0 4px 12px rgba(0, 0, 0, 0.3)',
               }}
             >
-              ProductivityHub Dashboard
+              Dashboard
             </Typography>
-            <Typography 
-              variant="h6" 
-              sx={{ 
+            <Typography
+              variant="h6"
+              sx={{
                 color: 'rgba(255, 255, 255, 0.95)',
                 maxWidth: 700,
                 mx: 'auto',
@@ -126,8 +126,8 @@ export default function DashboardPage() {
       {/* Main Content */}
       <Container maxWidth="lg" sx={{ mt: -8, position: 'relative', zIndex: 10 }}>
         {/* About Section */}
-        <Card sx={{ 
-          mb: 6, 
+        <Card sx={{
+          mb: 6,
           bgcolor: 'background.paper',
           boxShadow: 5,
           borderRadius: 3,
@@ -135,10 +135,10 @@ export default function DashboardPage() {
           borderColor: 'divider',
         }}>
           <CardContent sx={{ p: 5 }}>
-            <Typography 
-              variant="h4" 
-              gutterBottom 
-              sx={{ 
+            <Typography
+              variant="h4"
+              gutterBottom
+              sx={{
                 fontWeight: 700,
                 color: 'text.primary',
                 mb: 3,
@@ -156,10 +156,10 @@ export default function DashboardPage() {
         </Card>
 
         {/* Quick Access Cards */}
-        <Typography 
-          variant="h4" 
-          gutterBottom 
-          sx={{ 
+        <Typography
+          variant="h4"
+          gutterBottom
+          sx={{
             fontWeight: 700,
             color: 'text.primary',
             mb: 3,
@@ -173,9 +173,9 @@ export default function DashboardPage() {
 
             return (
               <Grid item xs={12} sm={6} md={4} key={card.title}>
-                <Card sx={{ 
-                  height: '100%', 
-                  display: 'flex', 
+                <Card sx={{
+                  height: '100%',
+                  display: 'flex',
                   flexDirection: 'column',
                   bgcolor: 'background.paper',
                   border: 1,
@@ -187,8 +187,8 @@ export default function DashboardPage() {
                   overflow: 'hidden',
                   '&:hover': {
                     transform: 'translateY(-8px)',
-                    boxShadow: isDarkMode 
-                      ? '0 12px 28px rgba(99, 102, 241, 0.3)' 
+                    boxShadow: isDarkMode
+                      ? '0 12px 28px rgba(99, 102, 241, 0.3)'
                       : '0 12px 28px rgba(79, 70, 229, 0.2)',
                     borderColor: 'primary.main',
                     '& .card-icon': {
@@ -215,9 +215,9 @@ export default function DashboardPage() {
                   <CardContent sx={{ p: 3, display: 'flex', flexDirection: 'column', height: '100%' }}>
                     {/* Icon and Title Row */}
                     <Box sx={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', mb: 2 }}>
-                      <Box sx={{ 
-                        width: 56, 
-                        height: 56, 
+                      <Box sx={{
+                        width: 56,
+                        height: 56,
                         borderRadius: 2.5,
                         bgcolor: isDarkMode ? 'rgba(99, 102, 241, 0.15)' : 'rgba(79, 70, 229, 0.1)',
                         display: 'flex',
@@ -226,15 +226,15 @@ export default function DashboardPage() {
                         fontSize: '1.75rem',
                         transition: 'transform 0.3s ease',
                       }}
-                      className="card-icon"
+                        className="card-icon"
                       >
                         {card.icon && <card.icon size={32} color={isDarkMode ? '#90caf9' : '#1976d2'} />}
                       </Box>
-                      
+
                       {/* Arrow indicator */}
-                      <Box 
+                      <Box
                         className="card-arrow"
-                        sx={{ 
+                        sx={{
                           transition: 'all 0.3s ease',
                           opacity: 0.6,
                           color: 'primary.main',
@@ -246,9 +246,9 @@ export default function DashboardPage() {
                     </Box>
 
                     {/* Title */}
-                    <Typography 
-                      variant="h6" 
-                      sx={{ 
+                    <Typography
+                      variant="h6"
+                      sx={{
                         fontWeight: 700,
                         color: 'text.primary',
                         mb: 1.5,
@@ -259,9 +259,9 @@ export default function DashboardPage() {
                     </Typography>
 
                     {/* Description */}
-                    <Typography 
-                      variant="body2" 
-                      sx={{ 
+                    <Typography
+                      variant="body2"
+                      sx={{
                         color: 'text.secondary',
                         lineHeight: 1.7,
                         flex: 1,
@@ -280,17 +280,17 @@ export default function DashboardPage() {
         </Grid>
 
         {/* Recent Activity */}
-        <Card sx={{ 
+        <Card sx={{
           mb: 6,
           bgcolor: 'background.paper',
           border: 1,
           borderColor: 'divider',
         }}>
           <CardContent sx={{ p: 4 }}>
-            <Typography 
-              variant="h5" 
+            <Typography
+              variant="h5"
               gutterBottom
-              sx={{ 
+              sx={{
                 fontWeight: 700,
                 color: 'text.primary',
                 mb: 3,
@@ -319,16 +319,16 @@ export default function DashboardPage() {
         </Card>
 
         {/* Dashboard Tips */}
-        <Card sx={{ 
+        <Card sx={{
           bgcolor: 'background.paper',
           border: 1,
           borderColor: 'divider',
         }}>
           <CardContent sx={{ p: 4 }}>
-            <Typography 
-              variant="h5" 
+            <Typography
+              variant="h5"
               gutterBottom
-              sx={{ 
+              sx={{
                 fontWeight: 700,
                 color: 'text.primary',
                 mb: 3,

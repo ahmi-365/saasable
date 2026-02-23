@@ -1,7 +1,4 @@
-// @mui
 import Stack from '@mui/material/Stack';
-
-// @project
 import Typography from '@/blocks/Typography';
 import branding from '@/branding.json';
 import ContainerWrapper from '@/components/ContainerWrapper';
@@ -10,15 +7,11 @@ import SimulatorTypeset from '@/components/SimulatorTypeset';
 import { SECTION_PATH } from '@/path';
 import { FIGMA_LINK } from '@/utils/constant';
 
-/***************************  TYPOGRAPHY - BREADCRUMBS  ***************************/
-
 let breadcrumbs = [
   { title: 'Home', to: import.meta.env.VITE_BASE_NAME || '/' },
   { title: 'Components', to: SECTION_PATH },
   { title: 'Typography' }
 ];
-
-/***************************  TYPOGRAPHY - DATA  ***************************/
 
 const typographyData = {
   typeset: {
@@ -28,8 +21,6 @@ const typographyData = {
     figmaLink: FIGMA_LINK.typography.link
   }
 };
-
-/***************************  SECTIONS - TYPOGRAPHY  ***************************/
 
 export default function TypographyPage() {
   return (
