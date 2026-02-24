@@ -1,105 +1,120 @@
+import Hero17 from '@/blocks/hero/Hero17';
+import Feature20 from '@/blocks/feature/Feature20';
+import Metrics5 from '@/blocks/metrics/Metrics5';
+import Integration2 from '@/blocks/integration/Integration2';
+import Clientele3 from '@/blocks/clientele/Clientele3';
+import Cta4 from '@/blocks/cta/Cta4';
+import Faq6 from '@/blocks/faq/Faq6';
+import Other1 from '@/blocks/other/Other1';
+import branding from '@/branding.json';
 
+const heroData = {
+  chip: { label: branding.brandName },
+  headLine: 'About ' + branding.brandName,
+  captionLine: branding.title,
+  videoSrc: '',
+  videoThumbnail: '',
+  featureButtons: []
+};
 
-import { useEffect, useState } from 'react';
-import Divider from '@mui/material/Divider';
-import Grid from '@mui/material/Grid';
-import List from '@mui/material/List';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemText from '@mui/material/ListItemText';
-import Stack from '@mui/material/Stack';
-import Typography from '@mui/material/Typography';
-import ContainerWrapper from '@/components/ContainerWrapper';
-import { SECTION_COMMON_PY } from '@/utils/constant';
+const featureData = {
+  heading: 'Our Unique Approach',
+  caption: <span style={{ display: 'block', marginTop: 24 }}>See how Planify empowers your SaaS journey with tailored solutions.</span>,
+  image: '/assets/images/LandingPageImages/Dashboard.png',
+  features: [
+    { icon: 'tabler-sparkles', title: 'Customizable Blocks', content: '200+ blocks for rapid SaaS development.' },
+    { icon: 'tabler-rocket', title: 'Fast Launch', content: 'Accelerate your product launch.' },
+    { icon: 'tabler-users', title: 'Community Driven', content: 'Built with feedback from real users.' }
+  ],
+  actionBtn: { children: 'Get Started', href: '/' },
+  secondaryBtn: { children: 'Learn More', href: '/about' }
+};
 
-const aboutSections = [
-  {
-    id: 'about-planify',
-    heading: 'About Planify',
-    caption: 'Empowering teams to build, launch, and scale SaaS products faster with beautiful, customizable UI blocks and robust tools—by Planify.'
-  },
-  {
-    id: 'mission',
-    heading: 'Our Mission',
-    caption: 'At Planify, our mission is to simplify the process of building SaaS applications. We provide a comprehensive library of over 200 UI blocks, templates, and integrations, enabling startups and enterprises to create stunning, high-performing products with ease and speed.'
-  },
-  {
-    id: 'story',
-    heading: 'Our Story',
-    caption: 'Founded by a team of passionate designers and developers, Planify was born out of the need for a flexible, scalable, and visually appealing UI kit for SaaS products. We believe that great design and seamless user experience should be accessible to every team, regardless of size or budget.'
-  },
-  {
-    id: 'values',
-    heading: 'Our Values',
-    caption: 'Innovation: We constantly evolve our products to meet the changing needs of SaaS teams. Quality: Every block and template is crafted with attention to detail and usability. Community: We listen to our users and build features that matter most to them. Support: Our team is dedicated to helping you succeed at every step.'
-  },
-  {
-    id: 'team',
-    heading: 'Meet the Team',
-    caption: 'Our diverse team brings together expertise in design, development, and customer success to deliver the best possible experience for our users.'
-  },
-];
+const metricsData = {
+  heading: 'Our Impact',
+  caption: 'Trusted by teams worldwide.',
+  blockDetail: [
+    { counter: 200, defaultUnit: '+', caption: 'UI Blocks' },
+    { counter: 50, defaultUnit: '+', caption: 'Integrations' },
+    { counter: 10, defaultUnit: 'K+', caption: 'Users' },
+    { counter: 5, defaultUnit: 'Years', caption: 'Experience' }
+  ]
+};
 
-function useScrollspy(ids, offset = 0) {
-  const [activeId, setActiveId] = useState('');
-  useEffect(() => {
-    const listener = () => {
-      const scroll = window.scrollY;
-      const position = ids
-        .map((id) => {
-          const element = document.getElementById(id);
-          if (!element) return { id, top: -1, bottom: -1 };
-          const rect = element.getBoundingClientRect();
-          const top = Math.max(0, rect.top + scroll - offset);
-          const bottom = Math.max(0, rect.bottom + scroll - offset);
-          return { id, top, bottom };
-        })
-        .find(({ top, bottom }) => scroll >= top && scroll <= bottom);
-      setActiveId(position?.id || '');
-    };
-    window.addEventListener('scroll', listener);
-    window.addEventListener('resize', listener);
-    listener();
-    return () => {
-      window.removeEventListener('scroll', listener);
-      window.removeEventListener('resize', listener);
-    };
-  }, [ids, offset]);
-  return activeId;
-}
+const integrationData = {
+  headLine: 'Integrations',
+  captionLine: 'Connect with your favorite tools.',
+  primaryBtn: { children: 'See All Integrations', href: '/integrations' },
+  tagList: [
+    { label: 'Slack', icon: 'tabler-brand-slack' },
+    { label: 'Zapier', icon: 'tabler-brand-zapier' },
+    { label: 'Google', icon: 'tabler-brand-google' }
+  ]
+};
+
+const clienteleData = {
+  title: 'Our Clients',
+  clienteleList: [
+    { image: '/assets/images/LandingPageImages/Team.png' },
+    { image: '/assets/images/LandingPageImages/Projects.png' },
+    { image: '/assets/images/LandingPageImages/Weekly-Planner.png' }
+  ]
+};
+
+const ctaData = {
+  headLine: 'Start Your Unique Journey',
+  primaryBtn: { children: 'Start Now', href: '/' },
+  profileGroups: {
+    avatarGroups: [
+      { avatar: '/assets/images/user/avatar5.png' },
+      { avatar: '/assets/images/user/avatar6.png' },
+      { avatar: '/assets/images/user/avatar7.png' }
+    ],
+    review: 'Loved by SaaS teams worldwide.'
+  },
+  list: [
+    { primary: 'No coding required' },
+    { primary: '24/7 Support' }
+  ],
+  clientContent: 'Join thousands of happy customers.'
+};
+
+const faqData = {
+  heading: 'Frequently Asked Questions',
+  caption: 'Everything you need to know about ' + branding.brandName,
+  defaultExpanded: false,
+  faqList: [
+    { question: 'What is Planify?', answer: 'A multipurpose UI kit for SaaS products.', category: 'General' },
+    { question: 'How many blocks are available?', answer: '200+ customizable blocks.', category: 'Blocks' },
+    { question: 'Is support available?', answer: 'Yes, 24/7 support is provided.', category: 'Support' }
+  ],
+  getInTouch: { link: { children: 'Contact Us', href: '/contact' } },
+  categories: ['General', 'Blocks', 'Support'],
+  activeCategory: ''
+};
+
+const otherData = {
+  heading: 'Explore More',
+  description: 'Check out other sections and features.',
+  primaryBtn: { children: 'View All', href: '/' },
+  sections: [
+    { title: 'Privacy Policy', subTitle: 'Your data is safe.', link: '/privacy-policy', image: '/assets/images/LandingPageImages/Dashboard.png', animationDelay: 0.2 },
+    { title: 'Terms & Conditions', subTitle: 'Read our terms.', link: '/terms-condition', image: '/assets/images/LandingPageImages/Projects.png', animationDelay: 0.4 }
+  ]
+};
 
 export default function AboutPage() {
-  const ids = aboutSections.map((item) => item.id);
-  const activeId = useScrollspy(ids, 60);
-  const [selectedID, setSelectedID] = useState(activeId);
-  useEffect(() => { if (activeId) setSelectedID(activeId); }, [activeId]);
   return (
-    <ContainerWrapper sx={{ pb: SECTION_COMMON_PY }}>
-      <Grid container spacing={{ xs: 2, md: 3 }}>
-        <Grid item xs={12} sm={4} md={3}>
-          <List component="div" sx={{ position: 'sticky', top: 20 }} disablePadding>
-            {aboutSections.map((item, index) => (
-              <ListItemButton
-                key={index}
-                href={`#${item.id}`}
-                sx={{ py: 1.25, px: 1.5, borderRadius: 3, mb: 0.75, ...(selectedID === item.id && { color: 'primary.main', bgcolor: 'grey.100' }), '&:hover': { bgcolor: 'grey.50' } }}
-                onClick={() => setSelectedID(item.id)}
-              >
-                <ListItemText primary={item.heading} sx={{ my: 0 }} slotProps={{ primary: { variant: 'subtitle1' } }} />
-              </ListItemButton>
-            ))}
-          </List>
-          <Divider sx={{ display: { xs: 'block', sm: 'none' } }} />
-        </Grid>
-        <Grid item xs={12} sm={8} md={9}>
-          {aboutSections.map((item, index) => (
-            <Stack key={index} id={item.id} sx={{ py: { xs: 1, sm: 1.5, md: 3 }, px: { md: 3 }, gap: 1, '&:first-of-type': { pt: { sm: 0 } } }}>
-              <Typography variant="h4">{item.heading}</Typography>
-              <Typography variant="body1" sx={{ color: 'text.secondary' }}>{item.caption}</Typography>
-            </Stack>
-          ))}
-        </Grid>
-      </Grid>
-    </ContainerWrapper>
+    <>
+      <Hero17 {...heroData} />
+      <Feature20 {...featureData} />
+      <Metrics5 {...metricsData} />
+      <Integration2 {...integrationData} />
+      <Clientele3 {...clienteleData} />
+      <Cta4 {...ctaData} />
+      <Faq6 {...faqData} />
+      <Other1 {...otherData} />
+    </>
   );
 }
 

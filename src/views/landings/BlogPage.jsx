@@ -1,4 +1,8 @@
-import { useEffect, useState } from 'react';
+
+import React, { useEffect, useState } from 'react';
+import Hero17 from '@/blocks/hero/Hero17';
+import branding from '@/branding.json';
+import ContainerWrapper from '@/components/ContainerWrapper';
 import Divider from '@mui/material/Divider';
 import Grid from '@mui/material/Grid';
 import List from '@mui/material/List';
@@ -6,7 +10,6 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-import ContainerWrapper from '@/components/ContainerWrapper';
 import { SECTION_COMMON_PY } from '@/utils/constant';
 
 const blogSections = [
@@ -16,6 +19,15 @@ const blogSections = [
   { id: 'company-news', heading: 'Company News', caption: 'Announcements, milestones, and behind-the-scenes at our company.' },
   { id: 'resources', heading: 'Resources', caption: 'Guides, eBooks, and resources to help you grow your SaaS business.' },
 ];
+
+const heroData = {
+  chip: { label: 'Blog' },
+  headLine: 'Insights & Updates',
+  captionLine: 'Explore the latest news, stories, and resources from ' + branding.brandName,
+  videoSrc: '',
+  videoThumbnail: '',
+  featureButtons: []
+};
 
 function useScrollspy(ids, offset = 0) {
   const [activeId, setActiveId] = useState('');
@@ -45,38 +57,42 @@ function useScrollspy(ids, offset = 0) {
   return activeId;
 }
 
+
 export default function BlogPage() {
   const ids = blogSections.map((item) => item.id);
   const activeId = useScrollspy(ids, 60);
   const [selectedID, setSelectedID] = useState(activeId);
   useEffect(() => { if (activeId) setSelectedID(activeId); }, [activeId]);
   return (
-    <ContainerWrapper sx={{ pb: SECTION_COMMON_PY }}>
-      <Grid container spacing={{ xs: 2, md: 3 }}>
-        <Grid item xs={12} sm={4} md={3}>
-          <List component="div" sx={{ position: 'sticky', top: 20 }} disablePadding>
+    <>
+      <Hero17 {...heroData} />
+      <ContainerWrapper sx={{ pb: SECTION_COMMON_PY }}>
+        <Grid container spacing={{ xs: 2, md: 3 }}>
+          <Grid item xs={12} sm={4} md={3}>
+            <List component="div" sx={{ position: 'sticky', top: 20, bgcolor: 'background.paper', borderRadius: 3, boxShadow: 1 }} disablePadding>
+              {blogSections.map((item, index) => (
+                <ListItemButton
+                  key={index}
+                  href={`#${item.id}`}
+                  sx={{ py: 1.25, px: 1.5, borderRadius: 3, mb: 0.75, ...(selectedID === item.id && { color: 'primary.main', bgcolor: 'grey.100' }), '&:hover': { bgcolor: 'grey.50' } }}
+                  onClick={() => setSelectedID(item.id)}
+                >
+                  <ListItemText primary={item.heading} sx={{ my: 0 }} slotProps={{ primary: { variant: 'subtitle1' } }} />
+                </ListItemButton>
+              ))}
+            </List>
+            <Divider sx={{ display: { xs: 'block', sm: 'none' } }} />
+          </Grid>
+          <Grid item xs={12} sm={8} md={9}>
             {blogSections.map((item, index) => (
-              <ListItemButton
-                key={index}
-                href={`#${item.id}`}
-                sx={{ py: 1.25, px: 1.5, borderRadius: 3, mb: 0.75, ...(selectedID === item.id && { color: 'primary.main', bgcolor: 'grey.100' }), '&:hover': { bgcolor: 'grey.50' } }}
-                onClick={() => setSelectedID(item.id)}
-              >
-                <ListItemText primary={item.heading} sx={{ my: 0 }} slotProps={{ primary: { variant: 'subtitle1' } }} />
-              </ListItemButton>
+              <Stack key={index} id={item.id} sx={{ py: { xs: 1, sm: 1.5, md: 3 }, px: { md: 3 }, gap: 1, '&:first-of-type': { pt: { sm: 0 } } }}>
+                <Typography variant="h4" color="primary.main">{item.heading}</Typography>
+                <Typography variant="body1" sx={{ color: 'text.secondary' }}>{item.caption}</Typography>
+              </Stack>
             ))}
-          </List>
-          <Divider sx={{ display: { xs: 'block', sm: 'none' } }} />
+          </Grid>
         </Grid>
-        <Grid item xs={12} sm={8} md={9}>
-          {blogSections.map((item, index) => (
-            <Stack key={index} id={item.id} sx={{ py: { xs: 1, sm: 1.5, md: 3 }, px: { md: 3 }, gap: 1, '&:first-of-type': { pt: { sm: 0 } } }}>
-              <Typography variant="h4">{item.heading}</Typography>
-              <Typography variant="body1" sx={{ color: 'text.secondary' }}>{item.caption}</Typography>
-            </Stack>
-          ))}
-        </Grid>
-      </Grid>
-    </ContainerWrapper>
+      </ContainerWrapper>
+    </>
   );
 }
