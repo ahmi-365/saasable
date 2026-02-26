@@ -20,7 +20,7 @@ const heroData = {
 const featureData = {
   heading: 'Our Unique Approach',
   caption: <span style={{ display: 'block', marginTop: 24 }}>See how Planify empowers your SaaS journey with tailored solutions.</span>,
-  image: '/assets/images/LandingPageImages/Dashboard.png',
+  // image: '/assets/images/LandingPageImages/Dashboard.png',
   features: [
     { icon: 'tabler-sparkles', title: 'Customizable Blocks', content: '200+ blocks for rapid SaaS development.' },
     { icon: 'tabler-rocket', title: 'Fast Launch', content: 'Accelerate your product launch.' },

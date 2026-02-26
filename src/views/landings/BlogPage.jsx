@@ -1,96 +1,79 @@
-
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Hero17 from '@/blocks/hero/Hero17';
-import branding from '@/branding.json';
 import ContainerWrapper from '@/components/ContainerWrapper';
-import Divider from '@mui/material/Divider';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
 import Grid from '@mui/material/Grid';
-import List from '@mui/material/List';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemText from '@mui/material/ListItemText';
-import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-import { SECTION_COMMON_PY } from '@/utils/constant';
-
-const blogSections = [
-  { id: 'intro', heading: 'Welcome to Our Blog', caption: 'Stay updated with the latest news, tips, and stories from our team and the SaaS industry.' },
-  { id: 'product-updates', heading: 'Product Updates', caption: 'Discover new features, improvements, and releases for our platform.' },
-  { id: 'case-studies', heading: 'Case Studies', caption: 'Read how our customers are succeeding with our solutions.' },
-  { id: 'company-news', heading: 'Company News', caption: 'Announcements, milestones, and behind-the-scenes at our company.' },
-  { id: 'resources', heading: 'Resources', caption: 'Guides, eBooks, and resources to help you grow your SaaS business.' },
-];
+import branding from '@/branding.json';
 
 const heroData = {
   chip: { label: 'Blog' },
   headLine: 'Insights & Updates',
-  captionLine: 'Explore the latest news, stories, and resources from ' + branding.brandName,
-  videoSrc: '',
-  videoThumbnail: '',
-  featureButtons: []
+  captionLine: `Explore the latest news, stories, and resources from ${branding.brandName}. Stay inspired and informed with our curated blog content.`
 };
 
-function useScrollspy(ids, offset = 0) {
-  const [activeId, setActiveId] = useState('');
-  useEffect(() => {
-    const listener = () => {
-      const scroll = window.scrollY;
-      const position = ids
-        .map((id) => {
-          const element = document.getElementById(id);
-          if (!element) return { id, top: -1, bottom: -1 };
-          const rect = element.getBoundingClientRect();
-          const top = Math.max(0, rect.top + scroll - offset);
-          const bottom = Math.max(0, rect.bottom + scroll - offset);
-          return { id, top, bottom };
-        })
-        .find(({ top, bottom }) => scroll >= top && scroll <= bottom);
-      setActiveId(position?.id || '');
-    };
-    window.addEventListener('scroll', listener);
-    window.addEventListener('resize', listener);
-    listener();
-    return () => {
-      window.removeEventListener('scroll', listener);
-      window.removeEventListener('resize', listener);
-    };
-  }, [ids, offset]);
-  return activeId;
-}
-
+const blogCards = [
+  {
+    heading: 'How to Scale Your SaaS Startup',
+    caption: 'Proven strategies and actionable tips to help your SaaS business grow efficiently and sustainably.',
+    image: '/assets/images/graphics/ai/desktop1-light.svg',
+    link: '#'
+  },
+  {
+    heading: 'Product Update: New Dashboard Features',
+    caption: 'A deep dive into our latest dashboard improvements and how they empower your workflow.',
+    image: '/assets/images/graphics/ai/desktop2-light.svg',
+    link: '#'
+  },
+  {
+    heading: 'Customer Success Story: Acme Corp',
+    caption: 'Discover how Acme Corp leveraged our platform to achieve 3x faster project delivery.',
+    image: '/assets/images/graphics/ai/desktop3-light.svg',
+    link: '#'
+  },
+  {
+    heading: 'The Future of SaaS: 2026 Trends',
+    caption: 'Explore the top SaaS trends and predictions shaping the industry in 2026 and beyond.',
+    image: '/assets/images/graphics/ai/desktop4-light.svg',
+    link: '#'
+  },
+  {
+    heading: 'Guide: Building a Remote Team',
+    caption: 'Best practices for hiring, onboarding, and managing a high-performing remote SaaS team.',
+    image: '/assets/images/graphics/ai/desktop5-light.svg',
+    link: '#'
+  },
+  {
+    heading: 'Resource: SaaS Metrics Cheat Sheet',
+    caption: 'A handy reference for tracking the most important metrics for your SaaS business.',
+    image: '/assets/images/graphics/ai/desktop6-light.svg',
+    link: '#'
+  }
+];
 
 export default function BlogPage() {
-  const ids = blogSections.map((item) => item.id);
-  const activeId = useScrollspy(ids, 60);
-  const [selectedID, setSelectedID] = useState(activeId);
-  useEffect(() => { if (activeId) setSelectedID(activeId); }, [activeId]);
   return (
     <>
       <Hero17 {...heroData} />
-      <ContainerWrapper sx={{ pb: SECTION_COMMON_PY }}>
-        <Grid container spacing={{ xs: 2, md: 3 }}>
-          <Grid item xs={12} sm={4} md={3}>
-            <List component="div" sx={{ position: 'sticky', top: 20, bgcolor: 'background.paper', borderRadius: 3, boxShadow: 1 }} disablePadding>
-              {blogSections.map((item, index) => (
-                <ListItemButton
-                  key={index}
-                  href={`#${item.id}`}
-                  sx={{ py: 1.25, px: 1.5, borderRadius: 3, mb: 0.75, ...(selectedID === item.id && { color: 'primary.main', bgcolor: 'grey.100' }), '&:hover': { bgcolor: 'grey.50' } }}
-                  onClick={() => setSelectedID(item.id)}
-                >
-                  <ListItemText primary={item.heading} sx={{ my: 0 }} slotProps={{ primary: { variant: 'subtitle1' } }} />
-                </ListItemButton>
-              ))}
-            </List>
-            <Divider sx={{ display: { xs: 'block', sm: 'none' } }} />
-          </Grid>
-          <Grid item xs={12} sm={8} md={9}>
-            {blogSections.map((item, index) => (
-              <Stack key={index} id={item.id} sx={{ py: { xs: 1, sm: 1.5, md: 3 }, px: { md: 3 }, gap: 1, '&:first-of-type': { pt: { sm: 0 } } }}>
-                <Typography variant="h4" color="primary.main">{item.heading}</Typography>
-                <Typography variant="body1" sx={{ color: 'text.secondary' }}>{item.caption}</Typography>
-              </Stack>
-            ))}
-          </Grid>
+      <ContainerWrapper sx={{ py: { xs: 4, sm: 6, md: 8 } }}>
+        <Grid container spacing={{ xs: 2, md: 4 }}>
+          {blogCards.map((card, idx) => (
+            <Grid key={idx} item xs={12} sm={6} md={4}>
+              <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column', borderRadius: 4, boxShadow: 2, transition: 'transform 0.2s', '&:hover': { transform: 'translateY(-6px)', boxShadow: 6 } }}>
+                <CardContent>
+                  <img src={card.image} alt={card.heading} style={{ width: '100%', borderRadius: 12, marginBottom: 16 }} />
+                  <Typography variant="h5" component="div" gutterBottom sx={{ fontWeight: 600 }}>
+                    {card.heading}
+                  </Typography>
+                  <Typography variant="body1" color="text.secondary" sx={{ mb: 2 }}>
+                    {card.caption}
+                  </Typography>
+                  <a href={card.link} style={{ color: '#1976d2', textDecoration: 'none', fontWeight: 500 }}>Read More →</a>
+                </CardContent>
+              </Card>
+            </Grid>
+          ))}
         </Grid>
       </ContainerWrapper>
     </>
