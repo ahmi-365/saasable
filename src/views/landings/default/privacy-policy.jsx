@@ -15,7 +15,6 @@ const privacyHero = {
   // Optionally add featureButtons, videoSrc, etc. if you want more animation
 };
 
-// --- Privacy Policy Data (copied from PrivacyPolicy1 for direct use) ---
 const policySections = [
   {
     id: 'acceptance-of-terms',
