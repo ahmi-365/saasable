@@ -35,7 +35,7 @@ const menuItems = [
       },
       {
         label: 'Blog',
-        link: { href: 'https://blog.saasable.io/', ...linkProps }
+        link: { href: 'https://blog.Planify.io/', ...linkProps }
       },
       {
         label: 'Refund Policy',
@@ -50,11 +50,11 @@ const menuItems = [
     menu: [
       {
         label: 'Pricing',
-        link: { href: 'https://mui.com/store/items/saasable-multipurpose-ui-kit-and-dashboard/', ...linkProps }
+        link: { href: 'https://mui.com/store/items/Planify-multipurpose-ui-kit-and-dashboard/', ...linkProps }
       },
       {
         label: 'FAQ',
-        link: { href: 'https://phoenixcoded.gitbook.io/saasable/faq', ...linkProps }
+        link: { href: 'https://phoenixcoded.gitbook.io/Planify/faq', ...linkProps }
       },
       {
         label: 'Support',
@@ -78,7 +78,7 @@ const menuItems = [
       {
         label: 'Why Phoenixcoded?',
         link: {
-          href: 'https://blog.saasable.io/a-decade-of-expertise-the-phoenixcoded-story-and-why-you-should-trust-us',
+          href: 'https://blog.Planify.io/a-decade-of-expertise-the-phoenixcoded-story-and-why-you-should-trust-us',
           ...linkProps
         }
       },
