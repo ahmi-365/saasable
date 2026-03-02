@@ -12,7 +12,6 @@ const privacyHero = {
   },
   headLine: 'Privacy Policy',
   captionLine: 'This Privacy Policy describes how we collect, use, and share information about you when you use our website or services. Your privacy and trust are important to us.',
-  // Optionally add featureButtons, videoSrc, etc. if you want more animation
 };
 
 const policySections = [

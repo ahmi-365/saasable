@@ -1,101 +1,162 @@
-import React from 'react';
-import Hero17 from '@/blocks/hero/Hero17';
-import ContainerWrapper from '@/components/ContainerWrapper';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
+import Chip from '@mui/material/Chip';
 import Grid from '@mui/material/Grid';
+import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
 import branding from '@/branding.json';
-import { useTheme } from '@mui/material/styles';
+import { Feature20 } from '@/blocks/feature';
+import { Hero17 } from '@/blocks/hero';
+import ContainerWrapper from '@/components/ContainerWrapper';
+import LazySection from '@/components/LazySection';
+import { clientele, cta4, cta5, faq, feature18, feature20, feature21, hero, integration, metrics, testimonial } from './default/data';
 
 const heroData = {
+  ...hero,
   chip: { label: 'Documentation' },
-  headLine: 'Documentation Center',
-  captionLine: `Unlock the full power of ${branding.brandName} with our guides, API docs, and best practices.`,
-  align: 'left',
+  headLine: `Documentation and product guides for ${branding.brandName}`,
+  featureButtons: [],
+  captionLine: 'Find setup guides, API references, integration steps, and practical best practices to help your team ship faster.'
 };
 
-const docCards = [
+const featuredDoc = {
+  id: 'featured-doc-1',
+  category: 'Getting Started',
+  title: 'Set up your workspace in under 10 minutes',
+  excerpt: 'A complete quickstart for installation, project configuration, and first deployment with recommended defaults.',
+  date: 'Mar 02, 2026',
+  readTime: '7 min read'
+};
+
+const docsList = [
   {
-    heading: 'Getting Started Guide',
-    caption: 'Step-by-step instructions to help you set up and launch your first project quickly.',
-    link: '#',
-    color: 'primary.main',
+    id: 'doc-1',
+    category: 'API',
+    title: 'Authentication API reference',
+    excerpt: 'Token flow, scopes, and secure usage examples for backend and frontend integrations.',
+    date: 'Feb 28, 2026',
+    readTime: '6 min read'
   },
   {
-    heading: 'API Reference',
-    caption: 'Comprehensive documentation for all API endpoints, parameters, and usage examples.',
-    link: '#',
-    color: 'success.main',
+    id: 'doc-2',
+    category: 'Integration',
+    title: 'Connect Slack and notifications',
+    excerpt: 'Configure channels, events, and alert routing for better operational visibility.',
+    date: 'Feb 22, 2026',
+    readTime: '5 min read'
   },
   {
-    heading: 'Integration Tutorials',
-    caption: 'Learn how to connect our platform with your favorite tools and services.',
-    link: '#',
-    color: 'warning.main',
-  },
-  {
-    heading: 'FAQ & Troubleshooting',
-    caption: 'Find answers to common questions and solutions to typical issues.',
-    link: '#',
-    color: 'info.main',
-  },
-  {
-    heading: 'Best Practices',
-    caption: 'Tips and recommendations for getting the most value from our platform.',
-    link: '#',
-    color: 'secondary.main',
-  },
-  {
-    heading: 'Contact Support',
-    caption: 'Need help? Reach out to our support team for assistance.',
-    link: '#',
-    color: 'error.main',
+    id: 'doc-3',
+    category: 'Best Practices',
+    title: 'Project structure recommendations',
+    excerpt: 'Naming conventions, folder patterns, and workflows that scale with team growth.',
+    date: 'Feb 18, 2026',
+    readTime: '8 min read'
   }
 ];
 
-export default function DocumentationPage() {
-  const theme = useTheme();
-  const isDark = theme.palette.mode === 'dark';
+function DocCard({ item, featured = false }) {
+  return (
+    <Card variant="outlined" sx={{ height: '100%', borderRadius: 3 }}>
+      <CardContent sx={{ p: { xs: 2.5, md: featured ? 4 : 3 } }}>
+        <Stack spacing={featured ? 2 : 1.5}>
+          <Stack direction="row" spacing={1} alignItems="center" justifyContent="space-between">
+            <Chip label={item.category} size="small" color="primary" variant="outlined" />
+            <Typography variant="caption" color="text.secondary">
+              {item.date}
+            </Typography>
+          </Stack>
 
+          <Typography variant={featured ? 'h4' : 'h6'}>{item.title}</Typography>
+
+          <Typography variant="body2" color="text.secondary">
+            {item.excerpt}
+          </Typography>
+
+          <Stack direction="row" alignItems="center" justifyContent="space-between" sx={{ pt: 0.5 }}>
+            <Typography variant="caption" color="text.secondary">
+              {item.readTime}
+            </Typography>
+            <Button size="small" variant="text">
+              Read more
+            </Button>
+          </Stack>
+        </Stack>
+      </CardContent>
+    </Card>
+  );
+}
+
+export default function DocumentationPage() {
   return (
     <>
       <Hero17 {...heroData} />
-      <ContainerWrapper sx={{ py: { xs: 4, sm: 6, md: 8 } }}>
-        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
-          {docCards.map((card, idx) => (
-            <Box key={idx} sx={{ display: 'flex', alignItems: 'flex-start', gap: 3 }}>
-              <Card
-                variant="outlined"
-                sx={{
-                  flex: 1,
-                  borderLeft: `6px solid`,
-                  borderColor: card.color,
-                  borderRadius: 3,
-                  boxShadow: 2,
-                  px: 2,
-                  py: 1,
-                  backgroundColor: isDark ? theme.palette.grey[800] : 'white',
-                  color: isDark ? theme.palette.text.primary : 'inherit',
-                  transition: 'box-shadow 0.2s',
-                  '&:hover': { boxShadow: 6 },
-                }}
-              >
-                <CardContent>
-                  <Typography variant="h5" component="div" gutterBottom sx={{ fontWeight: 700, color: card.color }}>
-                    {card.heading}
-                  </Typography>
-                  <Typography variant="body1" color="text.secondary" sx={{ mb: 2 }}>
-                    {card.caption}
-                  </Typography>
-                  <a href={card.link} style={{ color: '#1976d2', textDecoration: 'none', fontWeight: 500 }}>Read More →</a>
-                </CardContent>
-              </Card>
-            </Box>
-          ))}
+
+      <ContainerWrapper>
+        <Box sx={{ py: { xs: 4, md: 6 } }}>
+          <Stack spacing={2} sx={{ mb: { xs: 2.5, md: 3 } }}>
+            <Typography variant="overline" color="text.secondary">
+              Featured Guide
+            </Typography>
+            <Typography variant="h3">Start here</Typography>
+          </Stack>
+          <DocCard item={featuredDoc} featured />
+        </Box>
+
+        <Box sx={{ pb: { xs: 6, md: 8 } }}>
+          <Stack spacing={2} sx={{ mb: { xs: 2.5, md: 3.5 } }}>
+            <Typography variant="overline" color="text.secondary">
+              Latest Docs
+            </Typography>
+            <Typography variant="h3">Most used resources</Typography>
+          </Stack>
+
+          <Grid container spacing={{ xs: 2, md: 3 }}>
+            {docsList.map((item) => (
+              <Grid key={item.id} item xs={12} sm={6} md={4}>
+                <DocCard item={item} />
+              </Grid>
+            ))}
+          </Grid>
         </Box>
       </ContainerWrapper>
+
+      <Feature20 {...feature20} />
+
+      <LazySection
+        sections={[
+          { importFunc: () => import('@/blocks/metrics').then((module) => ({ default: module.Metrics5 })), props: metrics },
+          { importFunc: () => import('@/blocks/integration').then((module) => ({ default: module.Integration2 })), props: integration }
+        ]}
+        offset="200px"
+      />
+
+      <LazySection
+        sections={[
+          { importFunc: () => import('@/blocks/feature').then((module) => ({ default: module.Feature18 })), props: feature18 },
+          { importFunc: () => import('@/blocks/feature').then((module) => ({ default: module.Feature21 })), props: feature21 },
+          { importFunc: () => import('@/blocks/cta').then((module) => ({ default: module.Cta4 })), props: cta4 }
+        ]}
+        offset="200px"
+      />
+
+      <LazySection
+        sections={[
+          { importFunc: () => import('@/blocks/testimonial').then((module) => ({ default: module.Testimonial10 })), props: testimonial },
+          { importFunc: () => import('@/blocks/clientele').then((module) => ({ default: module.Clientele3 })), props: clientele }
+        ]}
+        offset="200px"
+      />
+
+      <LazySection
+        sections={[
+          { importFunc: () => import('@/blocks/cta').then((module) => ({ default: module.Cta5 })), props: cta5 },
+          { importFunc: () => import('@/blocks/faq').then((module) => ({ default: module.Faq6 })), props: faq }
+        ]}
+        offset="200px"
+      />
     </>
   );
 }
